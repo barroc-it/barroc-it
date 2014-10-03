@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Barroc-IT</title>
-	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="http://bootswatch.com/paper/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 
 	<script src="text/javascript"></script>
