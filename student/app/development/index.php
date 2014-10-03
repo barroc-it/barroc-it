@@ -56,6 +56,6 @@
   			<span class="glyphicon glyphicon"></span><a href="createUser.php">Toevoegen</a>
 		</button> -->
 	</div>
-
-</body>
-</html>
+<?php 
+	include '../templates/footer.php'; 
+	?>
