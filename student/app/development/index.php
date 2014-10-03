@@ -1,63 +1,85 @@
-<?php
-
-require '../../config/config.php';
-if ( isset($_POST['create_projects']) ) 
-
-$company_name                =mysqli_real_escape_string($con, $_POST['company_name']);
-$address 		             =mysqli_real_escape_string($con, $_POST['address']);
-$postcode                    =mysqli_real_escape_string($con, $_POST['postcode']);
-$residence                   =mysqli_real_escape_string($con, $_POST['residence']);
-$contact_persons             =mysqli_real_escape_string($con, $_POST['contact_persons']);
-$telephone_number            =mysqli_real_escape_string($con, $_POST['telephone_number']);
-$fax_number                  =mysqli_real_escape_string($con, $_POST['fax_number']);
-$email                       =mysqli_real_escape_string($con, $_POST['email']);
-$maintenance_contract        =mysqli_real_escape_string($con, $_POST['maintenance_contract']);
-$open_projects               =mysqli_real_escape_string($con, $_POST['open_projects']);
-$applications                =mysqli_real_escape_string($con, $_POST['applications']);
-$hardware                    =mysqli_real_escape_string($con, $_POST['hardware']);
-$software                    =mysqli_real_escape_string($con, $_POST['software']);
-$appointments                =mysqli_real_escape_string($con, $_POST['appointments']);
-$internal_contact_person     =mysqli_real_escape_string($con, $_POST['internal_contact_person']);
-
-
-
-
-
-$sql = "INSERT INTO projecten (company_name, address, postcode, residence, contact_persons, telephone_number, fax_number, email, maintenance_contract,
- open_projects, applications, hardware, software, appointments, internal_contact_person)
-			VALUES (
-				'$company_name',
-				'$address',
-				'$postcode',
-				'$residence',
-				'$contact_persons',
-				'$telephone_number',
-				'$fax_number',
-				'$email',
-				'$maintenance_contract',
-				'$open_projects',
-				'$applications',
-				'$hardware',
-				'$software',
-				'$appointments',
-				'$internal_contact_person',
-
-						)";
-
-	$query = mysqli_query($con, $sql);
-
-	if (!$query) {
-		$msg = urlencode(trigger_error('query niet gelukt. geprobeerde query was ' . $sql));
-		header('location: ../development/create_projects.php?msg='.$msg);	
-	}
-
-	$msg = urlencode('project  is succesvol toegevoegd.');
-	header ('location: ../development/create_projects.php?msg='.$msg);
-
-				
-
-
-
-
-
+<?php 
+	include '../templates/header.php'; 
+	require '../../config/config.php';
 ?>
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Projecten</title>
+	<link rel="stylesheet" href="http://bootswatch.com/cyborg/bootstrap.min.css">
+	<style>
+		span.glyphicon {
+			padding-right: 5px;
+		}
+
+		button.btn {
+			margin-bottom: 20px;
+		}
+		.test123 {
+			float: left;
+		}
+	</style>
+	<script src="../assets/jquery/jquery.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".projectinfo").hide();
+		  	$(".projects").click(function(){
+		    $(".projectinfo").slideToggle();
+
+		  });
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<h1>Projecten</h1>
+		<button type="button" class="btn btn-default btn-lg">
+  			<span class="glyphicon glyphicon-plus"></span><a href="createuser.php">Toevoegen</a>
+		</button>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Opdrachtgever</th>
+					<th>Project</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody class="projects">
+				<?php 
+					$sql = "SELECT * FROM projectentest";
+					$query = mysqli_query($con, $sql);
+
+					while ($row = mysqli_fetch_assoc($query)) {
+						echo '<tr>';
+						// printf('<td>%s</td>', $row['company_name']);
+						printf('<td>%s</td>', $row['opdrachtgever']);
+						printf('<td>%s</td>', $row['project']);
+						printf('<td><a href="editUser.php?id=%s"><span class="glyphicon glyphicon-pencil">', $row['id']);
+						printf('<td><a href="deleteUser.php?id=%s"><span class="glyphicon glyphicon-remove">', $row['id']);
+						echo '</tr>';
+					}
+
+				?>
+				<div>
+					<tr>
+						<td><p class="projectinfo">
+							<?php
+								// while ($row = mysqli_fetch_assoc($query)) {
+								// 	printf('<td>%s</td>', $row['adress']);
+								// 	printf('<td>%s</td>', $row['postcode']);
+								// 	printf('<td>%s</td>', $row['telefoonnummer']);
+								// 	echo '</tr>';
+								// }
+							?>
+						</p></td>
+					</tr>
+				</div>
+			</tbody>		
+		</table>
+	</div>
+
+</body>
+</html>
