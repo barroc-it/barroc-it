@@ -2,7 +2,7 @@
 	include '../templates/header.php'; 
 	require '../../config/config.php';
 ?>
-
+	
 	<div class="container">
 		<h1>Projecten</h1>
 		<table class="table table-striped">
@@ -33,10 +33,16 @@
 						echo '</tr>';
 						}
 					?>
-
-				<!-- <div>
-					<tr>
-						<td class="projectinfo"> -->
+	</div>
+				<div>
+					<table class="projectinfo">
+						<!-- <tr>
+							<td>adress:</td>
+							<td>postcode:</td>
+							<td>opdrachtgever:</td>
+							<td>telefoonnummer:</td>
+						</tr> -->
+						<tr>
 							<?php
 								// $sql = "SELECT * FROM projectentest";
 								// $query = mysqli_query($con, $sql);
@@ -44,12 +50,13 @@
 								// while ($row = mysqli_fetch_assoc($query)) {
 								// 	echo '<td>' . $row['adress'] . '</td>' ;
 								// 	echo '<td>' . $row['postcode'] . '</td>' ;
+								// 	echo '<td>' . $row['opdrachtgever'] . '</td>' ;
 								// 	echo '<td>' . $row['telefoonnummer'] . '</td>' ;
 								// }
 							?>
-					<!-- 	</td>
-					</tr>
-				</div> -->
+						</tr>
+					</table>
+				</div>
 			</tbody>		
 		</table>
 		<!-- <button type="button" class="btn btn-default btn-lg">
