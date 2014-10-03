@@ -28,19 +28,19 @@
 // 	}
 // }
 
-// 	$id = $_GET['id'];
-// 	$sql = "DELETE FROM projectentest WHERE id = '$id'";
+	$id = $_GET['id'];
+	$sql = "DELETE FROM projectentest WHERE id = '$id'";
 	
-// 		if ( isset($_GET['delete']) ) {
+		if ( isset($_GET['delete']) ) {
 		
 
-// 		if ($query = mysqli_query($con, $sql)) {
-// 		header("location: ../index.php");
+		if ($query = mysqli_query($con, $sql)) {
+ 		header("location: ../index.php");
 
-// 	} else {
-// 		echo "foutje met de verwijder query..";
-// 	}
-// }
+ 	} else {
+ 		echo "foutje met de verwijder query..";
+ 	}
+}
 
 if (!$con)
 	{

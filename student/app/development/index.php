@@ -26,11 +26,9 @@
 						echo '<td>' . $row['project'] . '</td>';
 						echo '<td><a href="../controllers/projectcontroller.php?id=' . $row['id'] . '">';
 						echo '<span class="glyphicon glyphicon-pencil"></td>';
-						echo '<td>';
-					?>
-							<a href="../controllers/projectcontroller.php?id='<?php echo $row['id']; ?>" onclick="return confirm('Are you sure you want to delete this item?')"><span class="glyphicon glyphicon-remove"></span></a>
-					<?php 
-						echo '</td>';
+						
+							 echo '<td><a href="../controllers/projectcontroller.php?id=' . $row['id'] .  '&delete=true">X</a>';
+					
 						echo '</tr>';
 						}
 					?>
