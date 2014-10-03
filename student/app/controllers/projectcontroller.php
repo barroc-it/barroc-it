@@ -1,5 +1,6 @@
 <?php 
-require '../database.php';
+	include '../templates/header.php'; 
+	require '../../config/config.php';
 
 if (isset($_POST['createUser'] ) ) {
 

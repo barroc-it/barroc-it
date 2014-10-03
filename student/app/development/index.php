@@ -25,7 +25,7 @@
 						printf('<td>%s</td>', $row['opdrachtgever']);
 						printf('<td>%s</td>', $row['project']);
 						printf('<td><a href="editUser.php?id=%s"><span class="glyphicon glyphicon-pencil"></td>', $row['id']);
-						echo '<td>'; ?> <a href="deleteUser.php?id=%s" onclick="return confirm('Are you sure you want to delete this item?');">
+						echo '<td>'; ?> <a href="controllers/projectcontroller/deleteUser.php?id=%s" onclick="return confirm('Are you sure you want to delete this item?');">
 						<span class="glyphicon glyphicon-remove"></a>
 						<?php 
 						echo '</td>';
