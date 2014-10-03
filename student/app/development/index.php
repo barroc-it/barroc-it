@@ -35,11 +35,23 @@
 						printf('<td><a href="editUser.php?id=%s"><span class="glyphicon glyphicon-pencil">', $row['id']);
 						printf('<td><a href="deleteUser.php?id=%s"><span class="glyphicon glyphicon-remove">', $row['id']);
 						echo '</tr>';
+						echo '<tr>';
+						printf('<td>%s</td>', $row['opdrachtgever']);
+						printf('<td>%s</td>', $row['project']);
+						printf('<td><a href="editUser.php?id=%s"><span class="glyphicon glyphicon-pencil">', $row['id']);
+						printf('<td><a href="deleteUser.php?id=%s"><span class="glyphicon glyphicon-remove">', $row['id']);
+						echo '</tr>';
+						echo '<tr>';
+						printf('<td>%s</td>', $row['opdrachtgever']);
+						printf('<td>%s</td>', $row['project']);
+						printf('<td><a href="editUser.php?id=%s"><span class="glyphicon glyphicon-pencil">', $row['id']);
+						printf('<td><a href="deleteUser.php?id=%s"><span class="glyphicon glyphicon-remove">', $row['id']);
+						echo '</tr>';
 					}
 
 				?>
 				<div>
-					<tr>
+					<!-- <tr>
 						<td class="projectinfo">
 							<?php
 								// $sql = "SELECT * FROM projectentest";
@@ -51,7 +63,7 @@
 								// 	echo '<td>' . $row['telefoonnummer'] . '</td>' ;
 								// }
 							?>
-						</td>
+						</td> -->
 					</tr>
 				</div>
 			</tbody>		
