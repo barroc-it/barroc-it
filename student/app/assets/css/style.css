@@ -1,14 +1,12 @@
 .login-form {
 	margin-top: 150px;
-}
-body{
-	background-image: url('hoofdafbeelding.jpg');
-	-webkit-background-size: cover;
+	}
+body	{
+	background: url(hoofdafbeelding.jpg) no-repeat center center fixed; 
+  	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
-  	background-repeat: no-repeat;
-  }
 
 	span.glyphicon {
 		padding-right: 5px;
@@ -17,6 +15,10 @@ body{
 	button.btn {
 		margin-bottom: 20px;
 	}
-	.test123 {
-		float: left;
+	
+	.form-group {
+		color: #444444;
+	}
+	.borderline {
+		border-bottom: 0px solid #444444;
 	}
