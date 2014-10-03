@@ -22,17 +22,18 @@
 
 					while ($row = mysqli_fetch_assoc($query)) {
 						echo '<tr>';
-						printf('<td>%s</td>', $row['opdrachtgever']);
-						printf('<td>%s</td>', $row['project']);
-						printf('<td><a href="editUser.php?id=%s"><span class="glyphicon glyphicon-pencil"></td>', $row['id']);
-						echo '<td>'; ?> <a href="controllers/projectcontroller/deleteUser.php?id=%s" onclick="return confirm('Are you sure you want to delete this item?');">
-						<span class="glyphicon glyphicon-remove"></a>
-						<?php 
+						echo '<td>' . $row['opdrachtgever'] . '</td>';
+						echo '<td>' . $row['project'] . '</td>';
+						echo '<td><a href="../controllers/projectcontroller.php?id=' . $row['id'] . '">';
+						echo '<span class="glyphicon glyphicon-pencil"></td>';
+						echo '<td>';
+					?>
+							<a href="../controllers/projectcontroller.php?id='<?php echo $row['id']; ?>" onclick="return confirm('Are you sure you want to delete this item?')"><span class="glyphicon glyphicon-remove"></span></a>
+					<?php 
 						echo '</td>';
 						echo '</tr>';
 						}
-
-				?>
+					?>
 				<div>
 					<!-- <tr>
 						<td class="projectinfo">
