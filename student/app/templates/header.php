@@ -6,6 +6,19 @@
 	<title>Barroc-IT</title>
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
 	<link rel="stylesheet" href="assets/css/style.css">
+
+	<script src="text/javascript"></script>
+	<script type="../assets/jquery/jqueryoffline.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".projectinfo").hide();
+		  	$(".projects").click(function(){
+		    $(".projectinfo").slideToggle();
+
+		  });
+		});
+	</script>
+
 </head>
 <body>
 

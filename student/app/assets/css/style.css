@@ -10,3 +10,13 @@ body{
   	background-repeat: no-repeat;
   }
 
+	span.glyphicon {
+		padding-right: 5px;
+	}
+
+	button.btn {
+		margin-bottom: 20px;
+	}
+	.test123 {
+		float: left;
+	}
