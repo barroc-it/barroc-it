@@ -1,6 +1,6 @@
 <?php require 'templates/header.php'; ?>
 <style>
-	.loginbackground {
+.loginbackground {
 		background-color: black;
 		position: absolute;
 		margin-left: -20px;

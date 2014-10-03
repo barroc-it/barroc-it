@@ -1,4 +1,5 @@
 <?php 
+
 	include '../templates/header.php'; 
 	require '../../config/config.php';
 
@@ -78,33 +79,26 @@ if ( isset($_GET['id']) ) {
 
 ?>
 
-<style>
-	.editform {
-		margin: 0 auto;
-		width: 500px;
-	}
-</style>
-
-<div class="editform">
+<div class="page-header">
 	<h1>Edit project</h1>
 </div>
 
-<form action="" method="POST" class="editform">
+<form action="" method="POST">
 	<div class="form-group col-sm-12">
-		<label for="opdrachtgever">Opdrachtgever</label>
+		<label for="titel">Opdrachtgever</label>
 		<input type="text" value='<?php echo $row['opdrachtgever']; ?>' class="form-control" name="opdrachtgever" id="opdrachtgever">
 	</div>
 	<div class="form-group col-sm-12">
-		<label for="project">Project</label>
+		<label for="uitgever">Project</label>
 		<input type="text" value='<?php echo $row['project']; ?>' class="form-control" name="project" id="project">
 	</div>
 	<div class="form-group col-sm-12">
-		<label for="postcode">Postcode</label>
+		<label for="genre">Postcode</label>
 		<input type="text" value='<?php echo $row['postcode']; ?>' class="form-control" name="postcode" id="postcode">
 	</div>
 	<div class="form-group col-sm-12">
-		<label for="telefoonnummer">Telefoonnummer</label>
-		<input type="text" value='<?php echo $row['telefoonnummer']; ?>' class="form-control" name="telefoonnummer" id="telefoonnummer">
+		<label for="omschrijving">Telefoonnummer</label>
+		<input type="telefoonnummer" class="form-control"  id="telefoonnummer"><?php echo $row['telefoonnummer']; ?>
 	</div>
 	<div class="form-group col-sm-12">
 		<input name="submit" type="submit" value="Bewerken" class="btn btn-default btn-lg btn-block">
@@ -112,3 +106,5 @@ if ( isset($_GET['id']) ) {
 
 </body>
 </html>
+
+?>
