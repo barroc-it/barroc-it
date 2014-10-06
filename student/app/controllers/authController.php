@@ -15,15 +15,16 @@ if ( isset($_POST['authUser'])){
     if(mysqli_num_rows($query) == 1){
         $row = mysqli_fetch_assoc($query);
 
-        if ($password == $row['password']){
-            $_SESSION['name'] = $row['name'];
+             $_SESSION['name'] = $row['name'];
             $_SESSION['role'] = $row['gebruikersrol'];
             header('location:../index.php');
-        } else{
-            $msg = url_encode('Gebruikersnaam of wachtwoord onjuist');
+      
+    }
+    else{
+
+            $msg = urlencode('Gebruikersnaam of wachtwoord onjuist');
             header('location: ../login.php?msg=' . $msg );
         }
-    }
 }
 
 //handelt de uitlog af 
