@@ -15,6 +15,10 @@
 					<th>Limit</th>
 					<th>Ledger account</th>
 					<th>BKR</th>
+					<th>Activated invoices</th>
+					<th>Deactivated invoices</th>
+					<th>edit</th>
+					<th>invoice number</th>
 				</tr>
 			</thead>
 					
@@ -31,7 +35,7 @@
 						echo '<td>' . $row['omzetbedrag'] . '</td>';
 						echo '<td>' . $row['limiet'] . '</td>';
 						echo '<td>' . $row['grootboekingsnummer'] . '</td>';
-						echo '<td>' . $row['BKR'] . '</td>';
+						echo '<td>' . $row['bkr_controle'] . '</td>';
 					
 						echo '</tr>';
 						}
