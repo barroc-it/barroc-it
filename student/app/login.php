@@ -14,6 +14,14 @@
 	}
 	.borderline {
 		border-bottom: 0px solid #444444;
+		text-align: center;
+		color: #000000;
+	}
+	.form-group {
+		color: #444444;
+	}
+	.form-control {
+		color: #444444;
 	}
 </style>
 <div class="login">
