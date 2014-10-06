@@ -3,10 +3,10 @@ require '../../config/config.php';
 
 //handelt  de inlog af
 if ( isset($_POST['authUser'])){
-    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $name = mysqli_real_escape_string($con, $_POST['name']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
 
-    $sql = "SELECT email, password, gebruikersrol FROM users WHERE email = '$email' AND password = '$password'";
+    $sql = "SELECT name, password, gebruikersrol FROM users WHERE name = '$name' AND password = '$password'";
 
     if(! $query = mysqli_query($con, $sql)){
         trigger_error('check de sql op fouten');
@@ -16,8 +16,7 @@ if ( isset($_POST['authUser'])){
         $row = mysqli_fetch_assoc($query);
 
         if ($password == $row['password']){
-            session_start();
-            $_SESSION['name'] = $row['email'];
+            $_SESSION['name'] = $row['name'];
             $_SESSION['role'] = $row['gebruikersrol'];
             header('location:../index.php');
         } else{
@@ -29,7 +28,6 @@ if ( isset($_POST['authUser'])){
 
 //handelt de uitlog af 
 if (isset($_GET['logout'])) {
-    session_start();
     session_destroy();
     $msg = urlencode("u bent succelsvol uitgelogd");
     header('location:../login.php?msg='. $msg );    

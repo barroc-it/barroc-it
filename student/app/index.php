@@ -1,4 +1,8 @@
-<?php require 'templates/header.php'; ?>
+<?php 
+
+require '../config/config.php'; 
+require 'templates/header.php';
+ ?>
 
 <?php 
 
@@ -12,16 +16,16 @@ if (!isset($_SESSION['name'])) {
  $role = $_SESSION['role'];
  switch ($role) {
  	case 1:
- 		header('location:finance');
- 		break;
- 	case 2:
- 		header('location:development');
- 		break;
- 	case 3:
  		header('location:sales');
  		break;
+ 	case 2:
+ 		header('location:finance');
+ 		break;
+ 	case 3:
+ 		header('location:development');
+ 		break;
  	case 4:
- 		header('location:it');
+ 		header('location:sales');
  		break;
 
  	default:

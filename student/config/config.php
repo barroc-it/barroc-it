@@ -1,3 +1,4 @@
 <?php
 
-$con = mysqli_connect('localhost', 'root', '', 'phpseries');
+    session_start();
+$con = mysqli_connect('localhost', 'root', '', 'barrocit');
