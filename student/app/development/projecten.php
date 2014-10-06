@@ -6,7 +6,7 @@
 	if ( isset($_GET['id']) ) {
 		
 		$id = $_GET['id'];
-		$sql = "SELECT * FROM projects WHERE id = '$id'";
+		$sql = "SELECT * FROM projects WHERE customerNR = '$id'";
 
 		if (!$query = mysqli_query($con, $sql)) {
 			echo 'Kan selectie niet uitvoeren';
@@ -20,7 +20,7 @@
 ?>
 
 <div class="container">
-	<h1>Projecten</h1>
+	<h1>Projects</h1>
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -35,7 +35,7 @@
 					while ($row = mysqli_fetch_assoc($query)) {
 						echo '<tr>';
 						echo '<td>' . $row['projectsNR'] . '</td>' ;
-						echo '<td>' . $row['custumerNR'] . '</td>' ;
+						echo '<td>' . $row['customerNR'] . '</td>' ;
 						echo '<td>' . $row['maintenance contract'] . '</td>' ;
 						echo '<td>' . $row['software'] . '</td>' ;
 						echo '<td>' . $row['hardware'] . '</td>' ;
