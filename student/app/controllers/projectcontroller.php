@@ -2,50 +2,41 @@
 	include '../templates/header.php'; 
 	require '../../config/config.php';
 
-// if (isset($_POST['createUser'] ) ) {
-	
-// 	$sql = "INSERT INTO contacten1 (naam, skype_id) VALUES ('$username', '$skype_id')";
+// checkt of hij verbinding heeft met database
+	if (!$con)
+		{
+			echo 'Kan geen connectie maken met de database';
+			die();
+		}
 
-// 	if( $query = mysqli_query($con, $sql)){
-// 		$msg = "gebruiker is succesvol aangemaakt";
-// 		header('location: ../../index.php');
-// 	}else{
-// 		echo "kan de query niet uitvoeren";
-// 	}
-// }
+// klant aanmaken
 
+	// if (isset($_POST['createUser'] ) ) {
+		
+	// 	$sql = "INSERT INTO projectentest (opdrachtgever, project) VALUES ('$opdrachtgever', '$project')";
 
-// if (isset($_GET['delete'])){
-// 	$id = $_GET['id'];
-// 	$sql= "DELETE FROM projectentest WHERE id = '$id'";
+	// 	if( $query = mysqli_query($con, $sql)){
+	// 		$msg = "Klant is succesvol toegevoegd";
+	// 		header('location: ../../index.php');
+	// 	}else{
+	// 		echo "kan de query niet uitvoeren";
+	// 	}
+	// }
 
-// 	if ($query = mysqli_query($con, $sql)) {
-// 		header("location: ../index.php");
-
-// 	} else {
-// 		echo "foutje met de verwijder query..";
-// 	}
-// }
+// klant verwijderen
 
 	$id = $_GET['id'];
 	$sql = "DELETE FROM projectentest WHERE id = '$id'";
 	
-		if ( isset($_GET['delete']) ) {
-		
-
+	if ( isset($_GET['delete']) ) {
 		if ($query = mysqli_query($con, $sql)) {
  		header("location: ../index.php");
-
- 	} else {
+	} else {
  		echo "foutje met de verwijder query..";
- 	}
-}
-
-if (!$con)
-	{
-		echo 'Kan geen connectie maken met de database';
-		die();
+ 		}
 	}
+
+// klant bewerken
 
 if ( isset($_GET['id']) ) {
 	$id = $_GET['id'];
@@ -54,11 +45,11 @@ if ( isset($_GET['id']) ) {
 	if (!$query = mysqli_query($con, $sql)) {
 		echo 'Kan selectie niet uitvoeren';
 		die();
-	}
+		}
 	$row = mysqli_fetch_assoc($query);
-} else {
-	header('location: index.php');
-}
+	} else {
+		header('location: index.php');
+	}
 
 	if ( isset($_POST['submit']) ) {
 		$opdrachtgever = mysqli_real_escape_string($con, $_POST['opdrachtgever']);

@@ -10,8 +10,10 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script>
 		// $(document).ready(function(){
+		// 	$(".projectinfo1").hide();
 		// 	$(".projectinfo").hide();
 		//   	$(".projects").click(function(){
+		//     $(".projectinfo1").slideToggle();
 		//     $(".projectinfo").slideToggle();
 		//   	});
 		// });
