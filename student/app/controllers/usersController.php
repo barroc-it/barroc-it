@@ -47,6 +47,34 @@ if ( isset($_POST['createUser']) )
 }
 
 if ( isset($_POST['input_customer']) ) 
+
 {
-	
+	$companyName      	=mysqli_real_escape_string($con, $_POST['companyName']);
+	$address 			=mysqli_real_escape_string($con, $_POST['address']);
+	$postcode    		=mysqli_real_escape_string($con, $_POST['postcode']);
+	$residence      	=mysqli_real_escape_string($con, $_POST['residence']);
+	$telephonenumber    =mysqli_real_escape_string($con, $_POST['telephonenumber']);
+	$email           	=mysqli_real_escape_string($con, $_POST['email']);
+		
+
+	$sql = "INSERT INTO customers (companyName, address, postcode, residence, telephonenumber, email)
+			VALUES (
+					'$companyName',
+					'$address',
+					'$postcode',
+					'$residence',
+					'$telephonenumber',
+					'$email'
+					
+	)";
+
+	$query = mysqli_query($con, $sql);
+
+	if (!$query) {
+		$msg = urlencode(trigger_error('query niet gelukt. geprobeerde query was ' . $sql));
+		header('location: ../sales/index.php?msg='.$msg);	
+	}
+
+	$msg = urlencode('bedrijf <b>' . $companyName . '</b> is succesvol toegevoegd.');
+	header ('location: ../sales/index.php?msg='.$msg);
 }
