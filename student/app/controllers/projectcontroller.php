@@ -101,5 +101,4 @@ if ( isset($_GET['id']) ) {
 		<input name="submit" type="submit" value="Bewerken" class="btn btn-default btn-lg btn-block">
 	</div>
 
-</body>
-</html>
+<?php include '../templates/footer.php'; ?>
