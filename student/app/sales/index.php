@@ -10,7 +10,12 @@
 	</div>
 	<div class="customers">
 		<table class="table table-striped">
-			<input type="input_customer" value="toevoegen	" name="input_customers" class="btn btn-primary col-md-2 col-md-offset-10">
+			
+				<a href="add_custumers.php" class="btn">toevoegen</a>
+
+
+			<br>
+			<br>
 		<tr>
 			<th>companyName</th>
 			<th>address</th>

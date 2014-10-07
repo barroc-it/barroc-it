@@ -46,3 +46,7 @@ if ( isset($_POST['createUser']) )
 	header ('location: ../createUser.php?msg='.$msg);
 }
 
+if ( isset($_POST['input_customer']) ) 
+{
+	
+}
