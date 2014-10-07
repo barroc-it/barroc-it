@@ -36,7 +36,9 @@
 						echo '<td>' . $row['limiet'] . '</td>';
 						echo '<td>' . $row['grootboekingsnummer'] . '</td>';
 						echo '<td>' . $row['bkr_controle'] . '</td>';
-					
+						echo '<td><a href="activate.php">View</a></td>';
+						echo '<td><a href="deactivate.php">View</a></td>';
+						echo '<td><a href="editFinace.php">Edit</a></td>';
 						echo '</tr>';
 						}
 					?>

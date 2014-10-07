@@ -36,7 +36,8 @@
 						echo '</tr>';
 						}
 					?>
-	
+
 <?php 
 	include '../templates/footer.php'; 
 	?>
+	<a href="index.php">Back</a>
