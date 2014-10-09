@@ -13,7 +13,7 @@
 					<th>Credit</th>
 					<th>Revenue ammount</th>
 					<th>Limit</th>
-					<th>Ledger account</th>
+					<th>Reservation number</th>
 					<th>BKR</th>
 					<th>Activated invoices</th>
 					<th>Deactivated invoices</th>
@@ -28,6 +28,7 @@
 					$query = mysqli_query($con, $sql);
 
 					while ($row = mysqli_fetch_assoc($query)) {
+
 						echo '<tr>';
 						echo '<td>' . $row['companyName'] . '</td>';
 						echo '<td>' . $row['banknumber'] . '</td>';
@@ -38,7 +39,8 @@
 						echo '<td>' . $row['bkr_controle'] . '</td>';
 						echo '<td><a href="activate.php">View</a></td>';
 						echo '<td><a href="deactivate.php">View</a></td>';
-						echo '<td><a href="editFinace.php">Edit</a></td>';
+						echo '<td><a href="editFinance.php?customerNR='.$row['customerNR'] . '">Edit</a></td>';
+
 						echo '</tr>';
 						}
 					?>

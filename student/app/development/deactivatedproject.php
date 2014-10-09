@@ -26,7 +26,7 @@
 		font-size: 63px;
 	}
 	.text_1 {
-		margin-top: 150px;
+		margin-top: 120px;
 	}
 	.navibar {
 		height: 36px;
@@ -82,60 +82,14 @@
 	<div class="navibar">
 		<ul class="navibarbutton">
 			<li><a class="menutext" href="index.php">Home</a></li>
-			<li><a class="menutext" href="deactivatedproject.php">Deactivated projects</a></li>		
+			<li><a class="active" href="deactivatedproject.php">Deactivated projects</a></li>
 		</ul>
-		<a href=""><button class="blue-btn">ADD</button></a>
+		<div class="searchitem">
+			<form  method="post" action="search.php?go"  id="searchform"> 
+				<input  type="text" class="form-control inputsearch" value="Search..." name="name"> 
+				<input  type="submit" class="search-btn" name="submit" value""> 
+			</form> 
+		</div>		
+		<button class="blue-btn"><a href="">ADD</a></button>
 	</div>
 </header>
-
-<?php
-
-	if ( isset($_GET['customerNR']) ) {
-		
-		$customerNR = $_GET['customerNR'];
-		$sql = "SELECT * FROM barrocit WHERE customerNR = '$customerNR'";
-
-		if (!$query = mysqli_query($con, $sql)) {
-			echo 'Kan selectie niet uitvoeren';
-			die();
-			}
-		$row = mysqli_fetch_assoc($query);
-		} else {
-			header('location: index.php');
-		}
-
-?>
-
-<div class="container">
-	<h1>Projects</h1>
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th>CustomerNR</th>
-					<th>Maintenance contract</th>
-					<th>Software</th>
-					<th>Hardware</th>
-					<th>Prospect</th>
-					<th>Deactivate</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php
-					$query = mysqli_query($con, $sql);
-
-					while ($row = mysqli_fetch_assoc($query)) {
-						echo '<tr>';
-						echo '<td>' . $row['customerNR'] . '</td>' ;
-						echo '<td>' . $row['maintenance_contract'] . '</td>' ;
-						echo '<td>' . $row['software'] . '</td>' ;
-						echo '<td>' . $row['hardware'] . '</td>' ;
-						echo '<td>' . $row['description'] . '</td>' ;
-					?>
-						<td><button>Deactivate</button></td>
-					<?php 						
-						echo '</tr>';
-					}
-					?>
-			</tbody>
-		</table>
-	</div>

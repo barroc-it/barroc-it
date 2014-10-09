@@ -1,0 +1,60 @@
+	.bannerimg {
+		background-image: url(../images/banner.png);
+		height: 300px;
+		width: 100%;
+	}
+	.bannertext {
+		position: absolute;
+	}
+	.bannertext h1 {
+		text-shadow: 2px 2px 3px black;
+		color: gray;
+		line-height: 0.8em;
+		font-size: 63px;
+	}
+	.text_1 {
+		margin-top: 120px;
+	}
+	.navibar {
+		height: 36px;
+		width: 100%;
+		border-bottom: 1px solid #e7e7e7;
+	}
+	.navibar li {
+		float: left;
+		list-style: none;
+	}
+	.navibarbutton {
+		margin-top: 24px;
+	}
+	.menutext {
+		list-style: none;
+		padding: 11px 20px 5px 20px;
+		text-shadow: 0.5px 0.5px 1px black;
+		color: gray;
+		text-decoration: none;
+		font-size: 26px;
+	}
+	.active {
+		list-style: none;
+		padding: 11px 20px 5px 20px;
+		border-bottom: 3px solid #2196F3;
+		text-shadow: 0.5px 0.5px 1px black;
+		color: gray;
+		text-decoration: none;
+		font-size: 26px;
+	}
+	.menutext:hover {
+		list-style: none;
+		padding: 11px 20px 5px 20px;
+		border-bottom: 3px solid #2196F3;
+		text-shadow: 0.5px 0.5px 1px black;
+		color: gray;
+		text-decoration: none;
+	}
+	.active:hover {
+		list-style: none;
+		padding: 11px 20px 5px 20px;
+		color: gray;
+		text-decoration: none;
+	}
