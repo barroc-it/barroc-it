@@ -32,6 +32,8 @@
 						echo '<td>' . $row['bedrag'] . '</td>';
 						echo '<td>' . $row['btw'] . '</td>';
 						echo '<td>' . $row['amount'] . '</td>';
+						echo '<td><a href="activateEdit.php">Edit</a></td>';
+						echo '<td><a href="deactivefinance.php?invoicesNR=' . $row['invoicesNR'] .  '&delete=true">Deactivate</a>';
 					
 						echo '</tr>';
 						}
