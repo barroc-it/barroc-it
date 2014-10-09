@@ -23,6 +23,7 @@
 			<th>residence</th>
 			<th>telephonenumber</th>
 			<th>email</th>
+			<th>edit</th>
 		</tr>
 			<?php 
 			$sql = "SELECT * FROM customers";
@@ -36,6 +37,7 @@
 					echo '<td>' . $row['residence'] . '</td>';
 					echo '<td>' . $row['telephoneNumber'] . '</td>';
 					echo '<td>' . $row['email'] . '</td>';
+					echo '<td> <a href="custumersEdit.php?customerNR=' . $row['customerNR'] . '">edit</td>';
 					
 				echo "</tr>";
 			}
