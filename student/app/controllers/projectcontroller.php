@@ -40,7 +40,7 @@
 
 if ( isset($_GET['id']) ) {
 	$id = $_GET['id'];
-	$sql = "SELECT * FROM projectentest WHERE id = '$id'";
+	$sql = "SELECT * FROM customers WHERE id = '$id'";
 
 	if (!$query = mysqli_query($con, $sql)) {
 		echo 'Kan selectie niet uitvoeren';
