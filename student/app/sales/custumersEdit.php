@@ -25,6 +25,34 @@ while ($row = mysqli_fetch_assoc($query)){
         <input value="<?php echo $row['companyName'] ?>" class="form-control" type="text" customerNR="companyName" name="companyName">
     </div>
 
+
+
+		    <div class="form-group">
+		        <label class="col-md-4"for="address">address</label>
+		        <input value="<?php echo $row['address'] ?>"class="col-md-8" type="text" id="address" name="address">
+		    </div>
+<br>
+		    <div class="form-group">
+		        <label class="col-md-4" for="postcode">postcode</label>
+		        <input value="<?php echo $row['postcode'] ?>"class="col-md-8" type="text" id="postcode" name="postcode">
+		    </div>
+<br>
+		    <div class="form-group">
+		        <label class="col-md-4" for="residence">residence</label>
+		        <input value="<?php echo $row['residence'] ?>"class="col-md-8" type="text" id="residence" name="residence">
+		    </div>
+<br>
+		    <div class="form-group">
+		        <label class="col-md-4" for="telephoneNumber">telephoneNumber</label>
+		        <input value="<?php echo $row['telephoneNumber'] ?>"class="col-md-8" type="text" id="telephoneNumber" name="telephoneNumber">
+		    </div>
+<br>	
+		    <div class="form-group">
+		        <label class="col-md-4"for="email">email</label>
+		        <input value="<?php echo $row['email'] ?>"class="col-md-8" type="email" id="email" name="email">
+		    </div>
+
+
     <div>
         <input type="submit" value="edit" name="edit_customer" class="btn btn-primary col-md-4">
     </div>
@@ -36,10 +64,21 @@ while ($row = mysqli_fetch_assoc($query)){
 if (isset($_POST['edit_customer'])){
 
     $companyName = mysqli_real_escape_string($con,$_POST['companyName']);
+    $address = mysqli_real_escape_string($con,$_POST['address']);
+    $postcode = mysqli_real_escape_string($con,$_POST['postcode']);
+    $residence = mysqli_real_escape_string($con,$_POST['residence']);
+    $telephoneNumber = mysqli_real_escape_string($con,$_POST['telephoneNumber']);
+    $email = mysqli_real_escape_string($con,$_POST['email']);
 
     
 
-    $sql  = "UPDATE customers SET companyName = '$companyName'
+    $sql  = "UPDATE customers SET 	companyName = '$companyName',
+									address = '$address',
+									postcode = '$postcode',
+									residence = '$residence',
+									telephoneNumber = '$telephoneNumber',
+									email = '$email'
+
                                WHERE customerNR = $customerNR";
     if(!$query = mysqli_query($con, $sql)){
         echo "update is niet goed gegaan";
