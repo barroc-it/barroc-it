@@ -1,7 +1,6 @@
 <?php 
 session_start();
 if($_SESSION['login'] == 1) {  
-echo "you have successful logged in";
 
 }
 else
