@@ -31,22 +31,22 @@ while ($row = mysqli_fetch_assoc($query)){
 		        <label class="col-md-4"for="address">address</label>
 		        <input value="<?php echo $row['address'] ?>"class="col-md-8" type="text" id="address" name="address">
 		    </div>
-<br>
+
 		    <div class="form-group">
 		        <label class="col-md-4" for="postcode">postcode</label>
 		        <input value="<?php echo $row['postcode'] ?>"class="col-md-8" type="text" id="postcode" name="postcode">
 		    </div>
-<br>
+
 		    <div class="form-group">
 		        <label class="col-md-4" for="residence">residence</label>
 		        <input value="<?php echo $row['residence'] ?>"class="col-md-8" type="text" id="residence" name="residence">
 		    </div>
-<br>
+
 		    <div class="form-group">
 		        <label class="col-md-4" for="telephoneNumber">telephoneNumber</label>
 		        <input value="<?php echo $row['telephoneNumber'] ?>"class="col-md-8" type="text" id="telephoneNumber" name="telephoneNumber">
 		    </div>
-<br>	
+	
 		    <div class="form-group">
 		        <label class="col-md-4"for="email">email</label>
 		        <input value="<?php echo $row['email'] ?>"class="col-md-8" type="email" id="email" name="email">
@@ -97,4 +97,4 @@ if (isset($_POST['edit_customer'])){
 	</div>
  </div>
 
-<?php include '../templates/header.php' ?>
+<?php include '../templates/footer.php' ?>
