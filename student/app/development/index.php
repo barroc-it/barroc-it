@@ -12,8 +12,6 @@ header("location:../login.php");
 	require '../../config/config.php';
 ?>
 
-<link rel="stylesheet" type="text/css" href="../assets/css/buttons.css">
-<link rel="stylesheet" type="text/css" href="../assets/css/navimenu.css">
 <style>
 	* {
 		margin-top: -12px;
