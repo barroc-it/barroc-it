@@ -1,6 +1,16 @@
 <?php 
 	include '../templates/header.php'; 
 	require '../../config/config.php';
+
+
+	if(isset($_GET['id'])){
+
+		$id = $_GET['id'];
+	$sql = "SELECT * FROM invoices WHERE invoicesNR = $id";
+	$query = mysqli_query($con, $sql);
+
+
+	}
 ?>
 	
 	<div class="container">
@@ -21,8 +31,6 @@
 					
 			<tbody class="finance">
 				<?php 
-					$sql = "SELECT * FROM invoices" ;
-					$query = mysqli_query($con, $sql);
 
 					while ($row = mysqli_fetch_assoc($query)) {
 						echo '<tr>';

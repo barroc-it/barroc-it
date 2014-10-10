@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if($_SESSION['login'] == 2) {  
-echo "you have successful logged in";
+
 
 }
 else
@@ -46,7 +46,7 @@ header("location:../login.php");
 						echo '<td>' . $row['limiet'] . '</td>';
 						echo '<td>' . $row['grootboekingsnummer'] . '</td>';
 						echo '<td>' . $row['bkr_controle'] . '</td>';
-						echo '<td><a href="activate.php">View</a></td>';
+						echo '<td><a href="activate.php?id='.$row['customerNR']. '">View</a></td>';
 						echo '<td><a href="deactivate.php">View</a></td>';
 						echo '<td><a href="editFinance.php?customerNR='.$row['customerNR'] . '">Edit</a></td>';
 
