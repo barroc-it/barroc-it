@@ -27,9 +27,9 @@ header("location:../login.php");
 			<li><a class="menutext" href="deactivatedproject.php">Deactivated projects</a></li>		
 		</ul>
 		<div class="searchitem">
-			<form  method="post" action="search.php?go" id="searchform" name="search"> 
-			    <input  type="text" class="form-control inputsearch" value="Search..." name="search"> 
-			    <input  type="submit" class="search-btn" name="submit" value""> 
+			<form  method="GET" action="indexsearch.php" id="searchform" name="search"> 
+			    <input id="search-bar" type="text" class="form-control inputsearch" value="Search..." name="search"> 
+			    <input type="submit" class="search-btn"> 
 			</form> 
 		</div>
 		<button class="blue-btn"><a href="../controllers/developmentcontroller.php">ADD</a></button>

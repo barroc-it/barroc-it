@@ -18,12 +18,7 @@
 			<li><a class="menutext" href="index.php">Home</a></li>
 			<li><a class="menutext" href="deactivatedproject.php">Deactivated projects</a></li>		
 		</ul>
-		<div class="searchitem">
-			<form  method="post" action="search.php?go" id="searchform" name="search"> 
-			    <input  type="text" class="form-control inputsearch" value="Search..." name="search"> 
-			    <input  type="submit" class="search-btn" name="submit" value""> 
-			</form> 
-		</div>
+
 		<a href=""><button class="blue-btn">ADD</button></a>
 	</div>
 </header>
