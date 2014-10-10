@@ -11,23 +11,7 @@ header("location:../login.php");
 	require '../../config/config.php';
 ?>
 
-<link rel="stylesheet" type="text/css" href="../assets/css/buttons.css">
-<link rel="stylesheet" type="text/css" href="../assets/css/navimenu.css">
-<style>
-	* {
-		margin-top: -12px;
-	}
-	body {
-		min-width: 900px;
-	}
-</style>
-<header>
-	<div class="bannertext">
-			<h1 class="text_1">BARROC IT.<br></h1>
-			<h1 class="text_2">SOFTWARE FOR REAL</h1>
-		</div>
-	<div class="bannerimg">
-	</div>
+
 	<div class="navibar">
 		<ul class="navibarbutton">
 			<li><a class="active" href="index.php">Home</a></li>
