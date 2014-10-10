@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if($_SESSION['login'] == 1) {  
+if($_SESSION['login'] == 3) {  
 echo "you have successful logged in";
 
 }
