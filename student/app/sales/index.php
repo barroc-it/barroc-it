@@ -35,6 +35,7 @@ header("location:../login.php");
 			<th>telephonenumber</th>
 			<th>email</th>
 			<th>edit</th>
+			<th>appointments</th>
 		</tr>
 			<?php 
 			$sql = "SELECT * FROM customers";
@@ -49,6 +50,7 @@ header("location:../login.php");
 					echo '<td>' . $row['telephoneNumber'] . '</td>';
 					echo '<td>' . $row['email'] . '</td>';
 					echo '<td> <a href="custumersEdit.php?customerNR=' . $row['customerNR'] . '">edit</td>';
+					echo '<td> <a href="appointments.php">Appointments</td>';
 					
 				echo "</tr>";
 			}
