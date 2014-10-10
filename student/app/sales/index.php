@@ -1,4 +1,14 @@
 <?php 
+session_start();
+if($_SESSION['login'] == 1) {  
+echo "you have successful logged in";
+
+}
+else
+{
+header("location:../login.php");
+}
+
 	include '../templates/header.php'; 
 	require '../../config/config.php'; 
 ?>
@@ -6,6 +16,7 @@
 	<div class="page-header">
 		<h2>sales</h2>
 		<h3>customers</h3>
+		<a class="btn" href="logout.php">logout</a>
 		
 	</div>
 	<div class="customers">

@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 require '../config/config.php'; 
 require 'templates/header.php';
  ?>
@@ -16,38 +16,26 @@ if (!isset($_SESSION['name'])) {
  $role = $_SESSION['role'];
  switch ($role) {
  	case 1:
+ 		$_SESSION['login'] = 1;
  		header('location:sales');
  		break;
  	case 2:
+ 		$_SESSION['login'] = 2;
  		header('location:finance');
  		break;
  	case 3:
+ 		$_SESSION['login'] = 3;
  		header('location:development');
  		break;
- 	case 4:
- 		header('location:sales');
- 		break;
+
 
  	default:
- 		header('location:controller/authController.php?logout=true');
+ 		header('location:controllers/authController.php?logout=true');
  		break;
  }
 
   
 
-if ( isset($_SESSION['name']) ) {
-	echo 'Welkom, ' . $_SESSION['name'];
-}
 
+require 'templates/footer.php'; 
 ?>
-
-<div class="container">
-<p>Hier mag je niet kunnen komen als je niet bent ingelogd!</p>
-<a href="admin.php">naar Admin pagina</a>
-<a href="controllers/authController.php?logout=treu">uitloggen</a>
-</div>
-
-
-
-
-<?php require 'templates/footer.php'; ?>
