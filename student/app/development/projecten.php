@@ -13,12 +13,6 @@
 </style>
 
 <header>
-	<div class="bannertext">
-			<h1 class="text_1">BARROC IT.<br></h1>
-			<h1 class="text_2">SOFTWARE FOR REAL</h1>
-		</div>
-	<div class="bannerimg">
-	</div>
 	<div class="navibar">
 		<ul class="navibarbutton">
 			<li><a class="menutext" href="index.php">Home</a></li>
@@ -36,9 +30,9 @@
 
 <?php
 
-	if ( isset($_GET['customerNR']) ) {
+	if ( isset($_GET['projectsNR']) ) {
 		
-		$customerNR = $_GET['customerNR'];
+		$projectsNR = $_GET['projectsNR'];
 		$sql = "SELECT * FROM projects";
 
 		if (!$query = mysqli_query($con, $sql)) {
@@ -76,12 +70,10 @@
 							echo '<td>' . $row['software'] . '</td>' ;
 							echo '<td>' . $row['hardware'] . '</td>' ;
 							echo '<td>' . $row['description'] . '</td>' ;
-					 		echo '<td><a href="../controllers/developmentcontroller.php?projectsNR=' . $row['projectsNR'] . '">' ?><button class="warning-btn">Deactivate</button></a></td>
+					 		echo '<td><a href="deactivate.php?projectsNR=' . $row['projectsNR'] . '">' ?><button class="warning-btn">Deactivate</button></a></td>
 					 	<?php 						
 							echo '</tr>';
 						} 
-					
-
 					
 				?>
 			</tbody>

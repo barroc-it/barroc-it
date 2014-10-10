@@ -9,14 +9,15 @@
 		}
 
 			if ( isset($_GET['projectsNR']) ) {
-				$sql = "UPDATE projects SET actief = 1";
+				$projectsNR = $_GET['projectsNR']
+;				$sql = "UPDATE projects SET actief = 1 WHERE projectsNR = '$projectsNR' ";
 
 				if (!$query = mysqli_query($con, $sql)) {
 					echo 'Kan helaas niet updaten...';
 					die();
 				} else {
 					$msg = urlencode('Project changed!');
-					header('location: ../development/projecten.php?projectsNR=' . $row['projectsNR'] . '');
+					header('location: projecten.php?projectsNR=' . $row['projectsNR'] . '');
 				}
 			}
 ?>

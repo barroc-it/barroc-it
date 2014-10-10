@@ -1,6 +1,7 @@
 <?php 
 session_start();
 if($_SESSION['login'] == 3) {  
+echo "you have successful logged in";
 
 }
 else
@@ -11,7 +12,6 @@ header("location:../login.php");
 	require '../../config/config.php';
 ?>
 
-<<<<<<< HEAD
 <style>
 	* {
 		margin-top: -12px;
@@ -21,15 +21,6 @@ header("location:../login.php");
 	}
 </style>
 <header>
-	<div class="bannertext">
-			<h1 class="text_1">BARROC IT.<br></h1>
-			<h1 class="text_2">SOFTWARE FOR REAL</h1>
-		</div>
-	<div class="bannerimg">
-	</div>
-=======
-
->>>>>>> origin/master
 	<div class="navibar">
 		<ul class="navibarbutton">
 			<li><a class="active" href="index.php">Home</a></li>
