@@ -35,8 +35,8 @@ header("location:../login.php");
 			<li><a class="menutext" href="deactivatedproject.php">Deactivated projects</a></li>		
 		</ul>
 		<div class="searchitem">
-			<form  method="post" action="search.php?go"  id="searchform"> 
-			    <input  type="text" class="form-control inputsearch" value="Search..." name="name"> 
+			<form  method="post" action="search.php?go" id="searchform" name="search"> 
+			    <input  type="text" class="form-control inputsearch" value="Search..." name="search"> 
 			    <input  type="submit" class="search-btn" name="submit" value""> 
 			</form> 
 		</div>
@@ -49,28 +49,28 @@ header("location:../login.php");
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Customer number</th>
-					<th>projects</th>
-					<th>Edit</th>
-					<th>Deactivate</th>
+					<th>Company name</th>
+					<th>Contact person</th>
+					<th>Open projects</th>
+					<th>Last contact date</th>
+					<th>Saldo</th>
+					<th>Limit</th>
 				</tr>
 			</thead>
 					
 			<tbody class="projects">
 				<?php 
-					$sql = "SELECT * FROM barrocit";
+					$sql = "SELECT * FROM customers";
 					$query = mysqli_query($con, $sql);
 
 					while ($row = mysqli_fetch_assoc($query)) {
 						echo '<tr>';
-						echo '<td><a href="projecten.php?id=' . $row['customerNR'] . '">' . $row['customerNR'] . '</a></td>';
-						echo '<td><a href="projecten.php?id=' . $row['customerNR'] . '">' . $row['companyName'] . '</a></td>';
-						
-						echo '<td><a href="../controllers/projectcontroller.php?id=' . $row['customerNR'] . '">'; ?><button class="edit-btn">Edit</button></a>
-					<?php
-						echo '<td><a href="../controllers/projectcontroller.php?id=' . $row['customerNR'] .  '&delete=true"'; ?> onclick="return confirm('Are you sure you want to deactivate this item?')"><button class="warning-btn">Deactivate</a></button>
-					<?php
-						echo '</td>';
+						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['companyName'] . '</a></td>';
+						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['contactPerson'] . '</a></td>';
+						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['openProjects'] . '</a></td>';
+						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['lastcontactDate'] . '</a></td>';
+						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['saldo'] . '</a></td>';
+						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['limiet'] . '</a></td>';
 						echo '</tr>';
 						}
 					?>

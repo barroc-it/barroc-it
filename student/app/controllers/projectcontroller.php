@@ -52,12 +52,27 @@ if ( isset($_GET['id']) ) {
 	}
 
 	if ( isset($_POST['submit']) ) {
-		$opdrachtgever = mysqli_real_escape_string($con, $_POST['opdrachtgever']);
-		$project = mysqli_real_escape_string($con, $_POST['project']);
-		$postcode = mysqli_real_escape_string($con, $_POST['postcode']);
-		$telefoonnummer = mysqli_real_escape_string($con, $_POST['telefoonnummer']);
+		// $telephoneNumber = mysqli_real_escape_string($con, $_POST['telephoneNumber']);
+		// $email = mysqli_real_escape_string($con, $_POST['email']);
+		// $aantalFacturen = mysqli_real_escape_string($con, $_POST['aantalFacturen']);
+		// $openProjects = mysqli_real_escape_string($con, $_POST['openProjects']);
+		// $appointments = mysqli_real_escape_string($con, $_POST['appointments']);
+		// $internalContact = mysqli_real_escape_string($con, $_POST['internalContact']);
+		// $dateAction = mysqli_real_escape_string($con, $_POST['dateAction']);
+		// $lastcontactDate = mysqli_real_escape_string($con, $_POST['lastcontactDate']);
+		// $nextAction = mysqli_real_escape_string($con, $_POST['nextAction']);
+		// $contactPerson = mysqli_real_escape_string($con, $_POST['contactPerson']);
+		// $BTW = mysqli_real_escape_string($con, $_POST['BTW']);
+		// $omzetbedrag = mysqli_real_escape_string($con, $_POST['omzetbedrag']);
+		// $saldo = mysqli_real_escape_string($con, $_POST['saldo']);
+		// $krediet = mysqli_real_escape_string($con, $_POST['krediet']);
+		// $limiet = mysqli_real_escape_string($con, $_POST['limiet']);
+		// $grootboekingsnummer = mysqli_real_escape_string($con, $_POST['grootboekingsnummer']);
+		// $offerStatus = mysqli_real_escape_string($con, $_POST['offerStatus']);
+		// $prospect = mysqli_real_escape_string($con, $_POST['prospect']);
+		// $bkr_controle = mysqli_real_escape_string($con, $_POST['bkr_controle']);
 	
-		$sql = "UPDATE projectentest SET opdrachtgever = '$opdrachtgever', project = '$project', postcode = '$postcode', telefoonnummer = '$telefoonnummer' WHERE id = '$id'";
+		// $sql = "UPDATE customers SET companyName = '$companyName', address = '$address', postcode = '$postcode', residence = '$residence', telephoneNumber = '$telephoneNumber', email = '$email', aantalFacturen = '$aantalFacturen', openProjects = '$openProjects', appointments = '$appointments', internalContact = '$internalContact', dateAction = '$dateAction', lastcontactDate = '$lastcontactDate', nextAction = '$nextAction', contactPerson = '$contactPerson', BTW = '$BTW', omzetbedrag = '$omzetbedrag', saldo = '$saldo', krediet = '$krediet', limiet = '$limiet', grootboekingsnummer = '$grootboekingsnummer', offerStatus = '$offerStatus', prospect = '$prospect' WHERE customerNR = '$customerNR'";
 
 		if (!$query = mysqli_query($con, $sql)) {
 			echo 'Kan helaas niet updaten...';

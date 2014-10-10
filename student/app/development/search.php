@@ -1,42 +1,55 @@
-<?php
-	$search = mysqli_real_escape_string($con, $_GET['search']);
-	$query = "SELECT * FROM customers WHERE"; 
-?>
+<?php	
+	include '../templates/header.php'; 
+	require '../../config/config.php';
+
+	// checkt of hij verbinding heeft met database
+	if (!$con) {
+		echo 'Kan geen connectie maken met de database';
+		die();
+	}
+
+		// indien geen zoekterm gepost is, stoppen... 
+		if(!isset($_POST['search'])){
+		    die();
+		    };
+
+		// omzetten variabelen
+		$search = $_POST['search'];
+
+		// checken op een leeg invoerveld, zo ja, stoppen...
+		if(strlen($search)=="0"){
+		    echo '<p align="center"><strong>Er is niets ingevuld</strong></p>';
+		    die("");
+		    }
+
+		// indien in alle kolommen gezocht wil worden, volgend scenario uitvoeren
+		if($search=='alles'){
+
+		$selectie="SELECT * FROM customers WHERE ('customerNR' LIKE '%$customerNR') OR
+		                                         ('companyName' LIKE '%$companyName%') OR
+		                                         ('customerNR' LIKE '%$search%') OR
+		                                         ('address' LIKE '%$address%') OR
+		                                         ('postcode' LIKE '%$postcode%')";
+		$selectiequery = mysqli_query($selectie);
+		$aantal = mysqli_num_rows($selectiequery);
+
+		}
 
 
-		<?php
-		$search = trim($search);					
-		if ($search){
-			$query .= " CustomerNR = '". $search ."'
-			OR CompanyName LIKE '%". $search ."%'
-			OR ContactPerson LIKE '%". $search ."%'";
-			$result = mysqli_query($con, $query);
-			$row = mysqli_num_rows($result);
-			
-			if($row > 0){
-				while ($row = mysqli_fetch_assoc($result)) {
-				    echo '<tr>';
-				    echo '<td>' . $row['CompanyName'] . '</td>';
-				    echo '<td>' . $row['ContactPerson'] . '</td>';
-				    echo '<td> <a class="btn btn-primary"href="activate.php?cid=' . $row['CustomerNR'] . '"</a>View</td>';
-				    echo '<td> <a class="btn btn-primary"href="deactivate.php?cid=' . $row['CustomerNR'] . '"</a>View</td>'; 
+		// indien niet in alle kolommen gezocht wil worden, volgend scenario uitvoeren
+		else {
 
-				    $count = "SELECT COUNT(ProjectNR) FROM projects WHERE CustomerNR = '$i'";
-					$r_count = mysqli_query($con, $count); 
-					$i++;
+		$sql = "SELECT * FROM customers WHERE $search LIKE '%$search%' ";
+		$selectiequery = mysqli_query($sql, $con);
+		$aantal = mysqli_num_rows($selectiequery);
+		}
 
-			    	while($rows = mysqli_fetch_assoc($r_count))
-					{
-						$separater = implode(",", $rows);
-						echo '<td>' . $separater . '</td>';
-						echo '</tr>';
-					}  
-				}  
-			}
-		}							
-		?>
-		</tbody>
-</table>
-<div class='form-group'>
-  	<a class='btn btn-default' href='index.php'>Back</a>
-</div>
+
+		// als het aantal uitkomsten nul is:
+		if($aantal=="0"){
+		    echo ' <p align="center"><strong>Geen resultaten</strong></p> ';
+		    die();
+		    }
+
+		// Weergeven van resultaten
+		$kop="Er zijn ".$aantal." resultaten gevonden";

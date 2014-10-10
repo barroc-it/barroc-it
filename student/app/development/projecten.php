@@ -26,7 +26,7 @@
 		font-size: 63px;
 	}
 	.text_1 {
-		margin-top: 150px;
+		margin-top: 120px;
 	}
 	.navibar {
 		height: 36px;
@@ -72,6 +72,7 @@
 		text-decoration: none;
 	}
 </style>
+
 <header>
 	<div class="bannertext">
 			<h1 class="text_1">BARROC IT.<br></h1>
@@ -84,6 +85,12 @@
 			<li><a class="menutext" href="index.php">Home</a></li>
 			<li><a class="menutext" href="deactivatedproject.php">Deactivated projects</a></li>		
 		</ul>
+		<div class="searchitem">
+			<form  method="post" action="search.php?go" id="searchform" name="search"> 
+			    <input  type="text" class="form-control inputsearch" value="Search..." name="search"> 
+			    <input  type="submit" class="search-btn" name="submit" value""> 
+			</form> 
+		</div>
 		<a href=""><button class="blue-btn">ADD</button></a>
 	</div>
 </header>
@@ -93,25 +100,22 @@
 	if ( isset($_GET['customerNR']) ) {
 		
 		$customerNR = $_GET['customerNR'];
-		$sql = "SELECT * FROM barrocit WHERE customerNR = '$customerNR'";
+		$sql = "SELECT * FROM projects";
 
 		if (!$query = mysqli_query($con, $sql)) {
-			echo 'Kan selectie niet uitvoeren';
+			echo '<a href="index.php"><button class="blue-btn2" style="font-size: 20px; height: 100px; width: 350px; float: left; margin-top: 10px; margin-left: 35%;">Kan selectie niet uitvoeren,<br>Klik hier om terug te gaan.</button></a>';
 			die();
 			}
 		$row = mysqli_fetch_assoc($query);
-		} else {
-			header('location: index.php');
 		}
 
 ?>
 
 <div class="container">
-	<h1>Projects</h1>
+	<h1>Projects</h1> 
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>CustomerNR</th>
 					<th>Maintenance contract</th>
 					<th>Software</th>
 					<th>Hardware</th>
@@ -121,21 +125,22 @@
 			</thead>
 			<tbody>
 				<?php
+
+					$sql = "SELECT * FROM projects WHERE customerNR = '$customerNR'";
 					$query = mysqli_query($con, $sql);
 
 					while ($row = mysqli_fetch_assoc($query)) {
 						echo '<tr>';
-						echo '<td>' . $row['customerNR'] . '</td>' ;
 						echo '<td>' . $row['maintenance_contract'] . '</td>' ;
 						echo '<td>' . $row['software'] . '</td>' ;
 						echo '<td>' . $row['hardware'] . '</td>' ;
 						echo '<td>' . $row['description'] . '</td>' ;
-					?>
-						<td><button>Deactivate</button></td>
-					<?php 						
+				?>
+						<td><button class="warning-btn">Deactivate</button></td>
+				<?php 						
 						echo '</tr>';
 					}
-					?>
+				?>
 			</tbody>
 		</table>
 	</div>
