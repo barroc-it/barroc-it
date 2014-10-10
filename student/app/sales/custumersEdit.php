@@ -21,8 +21,8 @@ while ($row = mysqli_fetch_assoc($query)){
 <form action="" method="post" class="col-md-6">
 	<h2>edit customers</h2>
     <div class="form-group">
-        <label for="companyName">companyName</label>
-        <input value="<?php echo $row['companyName'] ?>" class="form-control" type="text" customerNR="companyName" name="companyName">
+        <label class="col-md-4" for="companyName">companyName</label>
+        <input value="<?php echo $row['companyName'] ?>" class="col-md-8" type="text" customerNR="companyName" name="companyName">
     </div>
 
 
