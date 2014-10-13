@@ -12,26 +12,24 @@ header("location:../login.php");
 ?>
 
 <style>
-	* {
-		margin-top: -12px;
-	}
 	body {
 		min-width: 900px;
 	}
 </style>
 <header>
 	<div class="navibar">
+		<button class="btn btn-primary btn-sm"><a href="logout.php">Log out</a></button>
 		<ul class="navibarbutton">
 			<li><a class="active" href="index.php">Home</a></li>
 			<li><a class="menutext" href="deactivatedproject.php">Deactivated projects</a></li>		
 		</ul>
+
 		<div class="searchitem">
 			<form  method="GET" action="indexsearch.php" id="searchform" name="search"> 
 			    <input id="search-bar" type="text" class="form-control inputsearch" placeholder="Search..." name="search"> 
 			    <input type="submit" class="search-btn"> 
 			</form> 
 		</div>
-		<button class="blue-btn"><a href="logout.php">Log out</a></button>
 	</div>
 </header>
 

@@ -4,9 +4,6 @@
 ?>
 
 <style>
-	* {
-		margin-top: -12px;
-	}
 	body {
 		min-width: 900px;
 	}
@@ -14,6 +11,7 @@
 
 <header>
 	<div class="navibar">
+		<button class="btn btn-primary btn-sm"><a href="logout.php">Log out</a></button>
 		<ul class="navibarbutton">
 			<li><a class="menutext" href="index.php">Home</a></li>
 			<li><a class="menutext" href="deactivatedproject.php">Deactivated projects</a></li>		
@@ -24,7 +22,6 @@
 			    <input  type="submit" class="search-btn" name="submit" value""> 
 			</form> 
 		</div>
-		<button class="blue-btn"><a href="logout.php">Log out</a></button>
 	</div>
 </header>
 

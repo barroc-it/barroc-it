@@ -25,7 +25,11 @@
 		list-style: none;
 	}
 	.navibarbutton {
-		margin-top: 24px;
+		margin-top: 20px;
+	}
+	.btn a {
+		color: white;
+		text-decoration: none;
 	}
 	.menutext {
 		list-style: none;
