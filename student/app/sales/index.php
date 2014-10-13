@@ -15,13 +15,14 @@ header("location:../login.php");
 	<div class="page-header">
 		<h2>sales</h2>
 		<h3>customers</h3>
-		<a class="btn" href="logout.php">logout</a>
+		
 		
 	</div>
 	<div class="customers">
 		<table class="table table-striped">
-			
-				<a href="add_custumers.php" class="btn">toevoegen</a>
+				<br>
+				<a class="btn btn-primary col-md-2" href="add_custumers.php">toevoegen</a>
+				<a class="btn btn-info col-md-2 col-md-offset-8" href="logout.php">logout</a>
 
 
 			<br>
