@@ -20,7 +20,7 @@
 		</ul>
 		<div class="searchitem">
 			<form  method="post" action="projectsearch.php" id="searchform" name="search"> 
-			    <input  type="text" class="form-control inputsearch" value="Search..." name="search"> 
+			    <input  type="text" class="form-control inputsearch" placeholder="Search..." name="search"> 
 			    <input  type="submit" class="search-btn" name="submit" value""> 
 			</form> 
 		</div>

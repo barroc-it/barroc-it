@@ -27,7 +27,7 @@ header("location:../login.php");
 		</ul>
 		<div class="searchitem">
 			<form  method="GET" action="indexsearch.php" id="searchform" name="search"> 
-			    <input id="search-bar" type="text" class="form-control inputsearch" value="Search..." name="search"> 
+			    <input id="search-bar" type="text" class="form-control inputsearch" placeholder="Search..." name="search"> 
 			    <input type="submit" class="search-btn"> 
 			</form> 
 		</div>
