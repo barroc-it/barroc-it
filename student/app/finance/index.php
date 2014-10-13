@@ -23,6 +23,7 @@ header("location:../login.php");
 			<thead>
 				<tr>
 					<th>Companyname</th>
+					<th>Omschrijving</th>
 					<th>bank account number</th>
 					<th>Credit</th>
 					<th>Revenue ammount</th>
@@ -38,13 +39,15 @@ header("location:../login.php");
 					
 			<tbody class="finance">
 				<?php 
-					$sql = "SELECT * FROM customers" ;
+					
+					$sql = "SELECT * FROM customers";;
 					$query = mysqli_query($con, $sql);
 
 					while ($row = mysqli_fetch_assoc($query)) {
 
 						echo '<tr>';
 						echo '<td>' . $row['companyName'] . '</td>';
+						echo '<td>' . $row['omschrijving'] . '</td>';
 						echo '<td>' . $row['banknumber'] . '</td>';
 						echo '<td>' . $row['krediet'] . '</td>';
 						echo '<td>' . $row['omzetbedrag'] . '</td>';

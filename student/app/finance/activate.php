@@ -7,14 +7,14 @@
 
 	if ( isset($_GET['id']) ) {
 		$id = $_GET['id'];
-		$sql = "SELECT * FROM invoices WHERE invoicesNR = '$id' ";
+		$sql = "SELECT * FROM invoices WHERE projectsNR = '$id' ";
+		$query = mysqli_query($con, $sql);
 
-		if (!$query = mysqli_query($con, $sql)) {
-			echo '<a href="index.php"><button>Kan selectie niet uitvoeren, Klik hier om terug te gaan.</button></a>';
-			die();
-			}
-		$row = mysqli_fetch_assoc($query);
-		}
+	}
+		
+			/*echo '<a href="index.php"><button>Kan selectie niet uitvoeren, Klik hier om terug te gaan.</button></a>';
+			die();*/
+		
 	
 ?>
 	
@@ -36,16 +36,8 @@
 					
 			<tbody class="finance">
 				<?php 
-				
-
-	
-
-
-
-
-	$sql = "SELECT * FROM invoices";
-		$query = mysqli_query($con, $sql);
-					while ($row = mysqli_fetch_assoc($query)) {
+				while($row = mysqli_fetch_assoc($query))
+				{
 						echo '<tr>';
 						echo '<td>' . $row['datum'] . '</td>';
 						echo '<td>' . $row['hoeveelheid'] . '</td>';
@@ -57,7 +49,28 @@
 						echo '<td><a href="deactivefinance.php?invoicesNR=' . $row['projectsNR'] .  '&delete=true">Deactivate</a>';
 					
 						echo '</tr>';
-						}
+				}
+
+	
+
+
+
+/*
+	$sql = "SELECT * FROM invoices";
+		$query = mysqli_query($con, $sql);
+					{
+						echo '<tr>';
+						echo '<td>' . $row['datum'] . '</td>';
+						echo '<td>' . $row['hoeveelheid'] . '</td>';
+						echo '<td>' . $row['description'] . '</td>';
+						echo '<td>' . $row['bedrag'] . '</td>';
+						echo '<td>' . $row['btw'] . '</td>';
+						echo '<td>' . $row['amount'] . '</td>';
+						echo '<td><a href="activateEdit.php">Edit</a></td>';
+						echo '<td><a href="deactivefinance.php?invoicesNR=' . $row['projectsNR'] .  '&delete=true">Deactivate</a>';
+					
+						echo '</tr>';
+						}*/
 					?>
 
 <?php 

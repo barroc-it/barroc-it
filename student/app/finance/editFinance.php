@@ -20,6 +20,7 @@ if ( isset($_GET['customerNR']) ) {
 
 	if ( isset($_POST['submit']) ) {
 		$companyName = mysqli_real_escape_string($con, $_POST['companyName']);
+		$omschrijving = mysqli_real_escape_string($con, $_POST['omschrijving']);
 		$banknumber = mysqli_real_escape_string($con, $_POST['banknumber']);
 		$krediet = mysqli_real_escape_string($con, $_POST['krediet']);
 		$omzetbedrag = mysqli_real_escape_string($con, $_POST['omzetbedrag']);
