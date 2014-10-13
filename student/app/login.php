@@ -45,7 +45,7 @@
 					</ul>
 
 						<div class="form-group">
-							<label for="name">user-name</label>
+							<label for="name">Username</label>
 							<input type="text" name="name" id="name" class="form-control">	
 						</div>
 						<div class="form-group">

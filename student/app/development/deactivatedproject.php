@@ -18,16 +18,14 @@
 			<li><a class="menutext" href="index.php">Home</a></li>
 			<li><a class="menutext" href="deactivatedproject.php">Deactivated projects</a></li>		
 		</ul>
-
-		<a href=""><button class="blue-btn">ADD</button></a>
 	</div>
 </header>
 
 <?php
 
-	if ( isset($_GET['projectsNR']) ) {
+	if ( isset($_GET['projectNR']) ) {
 		
-		$projectsNR = $_GET['projectsNR'];
+		$projectNR = $_GET['projectNR'];
 		$sql = "SELECT * FROM projects";
 
 		if (!$query = mysqli_query($con, $sql)) {
@@ -54,7 +52,7 @@
 			<tbody>
 				<?php
 				
-					$sql = "SELECT * FROM projects WHERE actief = 1";
+					$sql = "SELECT * FROM projects WHERE active = 1";
 
 					$query = mysqli_query($con, $sql);
 
@@ -65,7 +63,7 @@
 							echo '<td>' . $row['software'] . '</td>' ;
 							echo '<td>' . $row['hardware'] . '</td>' ;
 							echo '<td>' . $row['description'] . '</td>' ;
-					 		echo '<td><a href="activate.php?projectsNR=' . $row['projectsNR'] . '">' ?><button class="edit-btn">Activate</button></a></td>
+					 		echo '<td><a href="activate.php?projectNR=' . $row['projectNR'] . '">' ?><button class="edit-btn">Activate</button></a></td>
 					 	<?php 						
 							echo '</tr>';
 						} 

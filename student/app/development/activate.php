@@ -8,16 +8,15 @@
 			die();
 		}
 
-			if ( isset($_GET['projectsNR']) ) {
-				$projectsNR = $_GET['projectsNR'];
-				$sql = "UPDATE projects SET actief = 0 WHERE projectsNR = '$projectsNR'";
+			if ( isset($_GET['projectNR']) ) {
+				$projectNR = $_GET['projectNR'];
+				$sql = "UPDATE projects SET active = 0 WHERE projectNR = '$projectNR'";
 
 				if (!$query = mysqli_query($con, $sql)) {
 					echo 'Kan helaas niet updaten...';
 					die();
 				} else {
-					$msg = urlencode('Project changed!');
-					header('location: deactivatedproject.php?projectsNR=' . $row['projectsNR'] . '');
+					header('location: deactivatedproject.php');
 				}
 			}
 ?>

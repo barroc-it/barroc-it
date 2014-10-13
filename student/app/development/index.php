@@ -31,13 +31,12 @@ header("location:../login.php");
 			    <input type="submit" class="search-btn"> 
 			</form> 
 		</div>
-		<button class="blue-btn"><a href="../controllers/developmentcontroller.php">ADD</a></button>
 	</div>
 </header>
 
 	<div class="container">
 		<h1>Customers</h1>
-		<table class="table table-striped">
+		<table class="table table-striped sortable">
 			<thead>
 				<tr>
 					<th>Company name</th>
@@ -61,8 +60,8 @@ header("location:../login.php");
 						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['contactPerson'] . '</a></td>';
 						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['openProjects'] . '</a></td>';
 						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['lastcontactDate'] . '</a></td>';
-						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['saldo'] . '</a></td>';
-						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['limiet'] . '</a></td>';
+						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['balance'] . '</a></td>';
+						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['limit'] . '</a></td>';
 						echo '</tr>';
 						}
 					?>

@@ -24,7 +24,6 @@
 			    <input  type="submit" class="search-btn" name="submit" value""> 
 			</form> 
 		</div>
-		<a href=""><button class="blue-btn">ADD</button></a>
 	</div>
 </header>
 
@@ -57,7 +56,7 @@
 			</thead>
 			<tbody>
 				<?php
-					$sql = "SELECT * FROM projects WHERE actief = 0 AND customerNR = '$customerNR' " ;
+					$sql = "SELECT * FROM projects WHERE active = 0 AND customerNR = '$customerNR' " ;
 					$query = mysqli_query($con, $sql);
 
 						while ($row = mysqli_fetch_assoc($query)) {
@@ -66,7 +65,7 @@
 							echo '<td>' . $row['software'] . '</td>' ;
 							echo '<td>' . $row['hardware'] . '</td>' ;
 							echo '<td>' . $row['description'] . '</td>' ;
-					 		echo '<td><a href="deactivate.php?projectsNR=' . $row['projectsNR'] . '">' ?><button class="warning-btn">Deactivate</button></a></td>
+					 		echo '<td><a href="deactivate.php?projectNR=' . $row['projectNR'] . '">' ?><button class="warning-btn">Deactivate</button></a></td>
 					 	<?php 						
 							echo '</tr>';
 						} 	
