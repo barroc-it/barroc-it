@@ -6,48 +6,34 @@
 	if(isset($_GET['id'])){
 
 		$id = $_GET['id'];
-	$sql = "SELECT * FROM invoices WHERE invoicesNR = $id";
+	$sql = "SELECT * FROM invoices WHERE `invoicesNR = $id";
 	$query = mysqli_query($con, $sql);
 
 
 	}
 ?>
 	
-	<div class="container">
-		<h1>Finance panel Activate</h1>
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th>Invoice duration</th>
-					<th>Quintity</th>
-					<th>Description</th>
-					<th>Price</th>
-					<th>BTW</th>
-					<th>Amount</th>
-					<th>Edit</th>
-					<th>Deactivate</th>
-				</tr>
-			</thead>
-					
-			<tbody class="finance">
-				<?php 
-
-					while ($row = mysqli_fetch_assoc($query)) {
-						echo '<tr>';
-						echo '<td>' . $row['datum'] . '</td>';
-						echo '<td>' . $row['hoeveelheid'] . '</td>';
-						echo '<td>' . $row['description'] . '</td>';
-						echo '<td>' . $row['bedrag'] . '</td>';
-						echo '<td>' . $row['btw'] . '</td>';
-						echo '<td>' . $row['amount'] . '</td>';
-						echo '<td><a href="activateEdit.php">Edit</a></td>';
-						echo '<td><a href="deactivefinance.php?invoicesNR=' . $row['invoicesNR'] .  '&delete=true">Deactivate</a>';
-					
-						echo '</tr>';
-						}
-					?>
-
 <?php 
-	include '../templates/footer.php'; 
-	?>
-	<a href="index.php">Back</a>
+
+
+	if (!$con) {
+			echo 'Kan geen connectie maken met de database';
+			die();
+		}
+
+			if ( isset($_GET['invoicesNR']) ) {
+				$projectsNR = $_GET['invoicesNR'];
+				$sql = "UPDATE invoices SET actief = 0 WHERE invoicesNR= '$invoicesNR'";
+
+				if (!$query = mysqli_query($con, $sql)) {
+					echo 'Kan helaas niet updaten...';
+					die();
+				} else {
+					$msg = urlencode('Invoices changed!');
+					header('location: deactivefinance.php?invoicesNR=' . $row['invoicesNR'] . '');
+				}
+			}
+?>
+
+</body>
+</html>
