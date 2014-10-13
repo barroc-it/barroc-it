@@ -54,6 +54,7 @@ header("location:../login.php");
 				<?php 
 					$sql = "SELECT * FROM customers";
 					$query = mysqli_query($con, $sql);
+					
 
 					while ($row = mysqli_fetch_assoc($query)) {
 						echo '<tr>';

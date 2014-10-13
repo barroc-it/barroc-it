@@ -38,5 +38,5 @@ $search = mysqli_real_escape_string($con, $_GET['search']);
 ?>
 				</tbody>		
 			</table>
-		<a href="#" class="btn btn-primary">Back</a>
+		<a href="projecten.php" class="btn btn-primary">Back</a>
 	</div>

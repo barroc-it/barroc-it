@@ -30,13 +30,12 @@
 
 <?php
 
-	if ( isset($_GET['projectsNR']) ) {
-		
-		$projectsNR = $_GET['projectsNR'];
-		$sql = "SELECT * FROM projects";
+	if ( isset($_GET['customerNR']) ) {
+		$customerNR = $_GET['customerNR'];
+		$sql = "SELECT * FROM customers WHERE customerNR = '$customerNR' ";
 
 		if (!$query = mysqli_query($con, $sql)) {
-			echo '<a href="index.php"><button class="blue-btn2" style="font-size: 20px; height: 100px; width: 350px; float: left; margin-top: 10px; margin-left: 35%;">Kan selectie niet uitvoeren,<br>Klik hier om terug te gaan.</button></a>';
+			echo '<a href="index.php"><button>Kan selectie niet uitvoeren, Klik hier om terug te gaan.</button></a>';
 			die();
 			}
 		$row = mysqli_fetch_assoc($query);
@@ -59,8 +58,7 @@
 			<tbody>
 				<?php
 				
-					$sql = "SELECT * FROM projects WHERE actief = 0";
-
+					$sql = "SELECT * FROM projects WHERE actief = 0 AND customerNR = '$customerNR' " ;
 					$query = mysqli_query($con, $sql);
 
 
@@ -73,8 +71,7 @@
 					 		echo '<td><a href="deactivate.php?projectsNR=' . $row['projectsNR'] . '">' ?><button class="warning-btn">Deactivate</button></a></td>
 					 	<?php 						
 							echo '</tr>';
-						} 
-					
+						} 	
 				?>
 			</tbody>
 		</table>

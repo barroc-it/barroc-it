@@ -1,5 +1,8 @@
 <?php require 'templates/header.php'; ?>
 <style>
+	h1 {
+		display: none;
+	}
 	.loginbackground {
 		background-color: black;
 		position: absolute;
