@@ -19,7 +19,7 @@ header("location:../login.php");
 	
 	<div class="container">
 		<h1>Finance</h1>
-		<table class="table table-striped">
+		<table class="table table-striped sortable">
 			<thead>
 				<tr>
 					<th>Companyname</th>
