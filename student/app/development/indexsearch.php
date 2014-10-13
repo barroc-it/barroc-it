@@ -14,11 +14,12 @@ $search = mysqli_real_escape_string($con, $_GET['search']);
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>Maintenance contract</th>
-						<th>Software</th>
-						<th>Hardware</th>
-						<th>Prospect</th>
-						<th>Deactivate</th>
+						<th>Company name</th>
+						<th>Contact person</th>
+						<th>Open projects</th>
+						<th>Last contact date</th>
+						<th>Balance</th>
+						<th>Limit</th>
 					</tr>
 				</thead>
 				
@@ -30,8 +31,8 @@ $search = mysqli_real_escape_string($con, $_GET['search']);
 							echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['contactPerson'] . '</a></td>';
 							echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['openProjects'] . '</a></td>';
 							echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['lastcontactDate'] . '</a></td>';
-							echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['saldo'] . '</a></td>';
-							echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['limiet'] . '</a></td>';
+							echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['balance'] . '</a></td>';
+							echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['limit'] . '</a></td>';
 							echo '</tr>';
 						}
 	}

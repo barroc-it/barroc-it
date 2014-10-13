@@ -42,7 +42,7 @@ header("location:../login.php");
 					<th>Contact person</th>
 					<th>Open projects</th>
 					<th>Last contact date</th>
-					<th>Saldo</th>
+					<th>Balance</th>
 					<th>Limit</th>
 				</tr>
 			</thead>
