@@ -31,6 +31,7 @@ header("location:../login.php");
 			    <input type="submit" class="search-btn"> 
 			</form> 
 		</div>
+		<button class="blue-btn"><a href="logout.php">Log out</a></button>
 	</div>
 </header>
 

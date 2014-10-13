@@ -45,7 +45,7 @@
 ?>
 <div class="container">
 		<h1>Finance panel Activate</h1>
-		<table class="table table-striped">
+		<table class="table table-striped sortable">
 			<thead>
 				<tr>
 					<th>Invoice duration</th>

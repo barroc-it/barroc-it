@@ -16,8 +16,15 @@
 	<div class="navibar">
 		<ul class="navibarbutton">
 			<li><a class="menutext" href="index.php">Home</a></li>
-			<li><a class="menutext" href="deactivatedproject.php">Deactivated projects</a></li>		
+			<li><a class="active" href="deactivatedproject.php">Deactivated projects</a></li>		
 		</ul>
+		<div class="searchitem">
+			<form  method="GET" action="indexsearch.php" id="searchform" name="search"> 
+			    <input id="search-bar" type="text" class="form-control inputsearch" placeholder="Search..." name="search"> 
+			    <input type="submit" class="search-btn"> 
+			</form> 
+		</div>
+		<button class="blue-btn"><a href="logout.php">Log out</a></button>
 	</div>
 </header>
 
