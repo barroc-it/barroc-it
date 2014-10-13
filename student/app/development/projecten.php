@@ -57,10 +57,8 @@
 			</thead>
 			<tbody>
 				<?php
-				
 					$sql = "SELECT * FROM projects WHERE actief = 0 AND customerNR = '$customerNR' " ;
 					$query = mysqli_query($con, $sql);
-
 
 						while ($row = mysqli_fetch_assoc($query)) {
 							echo '<tr>';

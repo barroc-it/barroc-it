@@ -31,12 +31,7 @@
 
 	<script type="../assets/jquery/jquery.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script>
-
-
-	</script>
-
-</script>
+	<script src="sorttable.js"></script>
 
 </head>
 <body>
