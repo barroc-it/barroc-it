@@ -47,9 +47,21 @@
 	.form-control {
 		color: #444444;
 	}
-	.commentfieldhead {
-		width: 100px;
-		height: 100px;
-		background-color: green;
-
+	.commentform {
+		width: 500px;
+	}
+	.tablewidth {
+		width: 500px;
+	}
+	.commentdate {
+		float: right;
+	}
+	.tablebottom {
+		border-bottom: 1px solid #DDDDDD;
+	}
+	.footerclass {
+		margin: 0 auto;
+		width: 1200px;
+		margin-top: 50px;
+		box-shadow: 5px 5px 5px 5px #DDDDDD;
 	}
