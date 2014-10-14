@@ -16,9 +16,22 @@ header("location:../login.php");
 			<li><a class="active" href="index.php">Home</a></li>
 			<li><a class="menutext" href="deactivefinance.php">Deactivated invoices</a></li>		
 		</ul>
-	
+	<br>
+	<br>
 	<div class="container">
-		<h1>Finance</h1>
+		
+		<br>
+		<br>
+
+		<a class="btn btn-primary col-md-2" href="add_custumers.php">toevoegen</a>
+
+		<form class="col-md-4 col-md-offset-2" method="GET" action="indexsearch.php" id="searchform" name="search"> 
+		    <input id="search-bar" type="text" class="form-control inputsearch" placeholder="Search..." name="search"> 
+		    <input type="submit" class="search-btn"> 
+		</form> 
+
+		<a class="btn btn-info col-md-2 col-md-offset-2" href="logout.php">logout</a>
+		<br>
 		<table class="table table-striped sortable">
 			<thead>
 				<tr>

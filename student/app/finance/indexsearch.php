@@ -6,7 +6,7 @@ $search = mysqli_real_escape_string($con, $_GET['search']);
 
 	if ($search) {
 	
-		$query = "SELECT * FROM customers WHERE companyname LIKE '%" . $search ."%' OR contactPerson LIKE '%" . $search ."%'";
+		$query = "SELECT * FROM customers WHERE companyname LIKE '%" . $search ."%' OR bankNumber LIKE '%" . $search ."%'";
 		$result = mysqli_query($con, $query);
 ?>
 

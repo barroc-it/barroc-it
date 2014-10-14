@@ -18,23 +18,27 @@ header("location:../login.php");
 </style>
 <header>
 	<div class="navibar">
-		<button class="btn btn-primary btn-sm btn-primary2"><a href="logout.php">Log out</a></button>
+		
 		<ul class="navibarbutton">
 			<li><a class="active" href="index.php">Home</a></li>
 			<li><a class="menutext" href="deactivatedproject.php">Deactivated projects</a></li>		
 		</ul>
 
-		<div class="searchitem">
-			<form  method="GET" action="indexsearch.php" id="searchform" name="search"> 
-			    <input id="search-bar" type="text" class="form-control inputsearch" placeholder="Search..." name="search"> 
-			    <input type="submit" class="search-btn"> 
-			</form> 
-		</div>
+		
 	</div>
 </header>
 
 	<div class="container">
 		<h1>Customers</h1>
+		<br><br>
+		<a class="btn btn-primary col-md-2" href="add_custumers.php">toevoegen</a>
+
+		<form class="col-md-4 col-md-offset-2" method="GET" action="indexsearch.php" id="searchform" name="search"> 
+		    <input id="search-bar" type="text" class="form-control inputsearch" placeholder="Search..." name="search"> 
+		    <input type="submit" class="search-btn"> 
+		</form> 
+
+		<a class="btn btn-info col-md-2 col-md-offset-2" href="logout.php">logout</a>
 		<table class="table table-striped sortable">
 			<thead>
 				<tr>
