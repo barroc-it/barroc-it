@@ -16,22 +16,9 @@ header("location:../login.php");
 			<li><a class="active" href="index.php">Home</a></li>
 			<li><a class="menutext" href="deactivefinance.php">Deactivated invoices</a></li>		
 		</ul>
-	<br>
-	<br>
+	
 	<div class="container">
-		
-		<br>
-		<br>
-
-		<a class="btn btn-primary col-md-2" href="add_custumers.php">toevoegen</a>
-
-		<form class="col-md-4 col-md-offset-2" method="GET" action="indexsearch.php" id="searchform" name="search"> 
-		    <input id="search-bar" type="text" class="form-control inputsearch" placeholder="Search..." name="search"> 
-		    <input type="submit" class="search-btn"> 
-		</form> 
-
-		<a class="btn btn-info col-md-2 col-md-offset-2" href="logout.php">logout</a>
-		<br>
+		<h1>Finance</h1>
 		<table class="table table-striped sortable">
 			<thead>
 				<tr>
@@ -44,7 +31,6 @@ header("location:../login.php");
 					<th>Reservation number</th>
 					<th>BKR</th>
 					<th>Activated invoices</th>
-					<th>Deactivated invoices</th>
 					<th>edit</th>
 					<th>invoice number</th>
 				</tr>
@@ -60,12 +46,18 @@ header("location:../login.php");
 
 						echo '<tr>';
 						echo '<td>' . $row['companyName'] . '</td>';
+<<<<<<< HEAD
+						echo '<td>' . $row['description'] . '</td>';
+=======
+>>>>>>> origin/master
 						echo '<td>' . $row['bankNumber'] . '</td>';
 						echo '<td>' . $row['credit'] . '</td>';
 						echo '<td>' . $row['salesAmount'] . '</td>';
 						echo '<td>' . $row['limit'] . '</td>';
 						echo '<td>' . $row['largeReservationNumber'] . '</td>';
 						echo '<td>' . $row['bkr_control'] . '</td>';
+<<<<<<< HEAD
+=======
 						echo '<td><a href="activate.php?customerNR='. $row['customerNR'] . '">View</a></td>';
 						echo '<td><a href="deactivate.php?invoicesNR=' . $row['customerNR'] . '">Deactivate</a></td>';
 						echo '<td>' . $row['omschrijving'] . '</td>';
@@ -75,8 +67,8 @@ header("location:../login.php");
 						echo '<td>' . $row['limiet'] . '</td>';
 						echo '<td>' . $row['grootboekingsnummer'] . '</td>';
 						echo '<td>' . $row['bkr_controle'] . '</td>';
+>>>>>>> origin/master
 						echo '<td><a href="activate.php?id='.$row['customerNR']. '">View</a></td>';
-						echo '<td><a href="deactivate.php?deactivate.php">Deactivated</a></td>';
 						echo '<td><a href="editFinance.php?customerNR='.$row['customerNR'] . '">Edit</a></td>';
 						echo '</tr>';
 						}

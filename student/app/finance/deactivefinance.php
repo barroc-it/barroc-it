@@ -59,12 +59,25 @@
 					
 				<tbody class="finance">
 				<?php 
-					$sql = "SELECT * FROM customers" ;
+					if ( isset($_GET['id']) ) {
+					$id= $_GET['id'];
+					$sql = "SELECT * FROM invoices WHERE projectNR = '$id'";
 					$query = mysqli_query($con, $sql);
 
 					while ($row = mysqli_fetch_assoc($query)) {
 
 						echo '<tr>';
+<<<<<<< HEAD
+						echo '<td>' . $row['date'] . '</td>';
+						echo '<td>' . $row['quintity'] . '</td>';
+						echo '<td>' . $row['description'] . '</td>';
+						echo '<td>' . $row['price'] . '</td>';
+						echo '<td>' . $row['btw'] . '</td>';
+						echo '<td>' . $row['amount'] . '</td>';
+						echo '<td><a href="activateEdit.php">Edit</a></td>';
+						echo '<td><a href="activate.php?id=' . $row['projectNR'] . '">' ?><button class="edit-btn">Activate</button></a></td>
+					<?php
+=======
 						echo '<td>' . $row['companyName'] . '</td>';
 						echo '<td>' . $row['bankNumber'] . '</td>';
 						echo '<td>' . $row['credit'] . '</td>';
@@ -73,9 +86,12 @@
 						echo '<td>' . $row['largeReservationNumber'] . '</td>';
 						echo '<td>' . $row['bkr_control'] . '</td>';
 						echo '<td><a href="deactivate.php?activate.php">Activate</a></td>';
+>>>>>>> origin/master
 						echo '</tr>';
-						}
+				}
+			}
+						
 					?>
 			</tbody>
 		</table>
-	</div>
+	

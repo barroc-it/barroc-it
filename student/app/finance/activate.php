@@ -5,12 +5,7 @@
 
 
 
-	if ( isset($_GET['id']) ) {
-		$id = $_GET['id'];
-		$sql = "SELECT * FROM invoices WHERE projectsNR = '$id' ";
-		$query = mysqli_query($con, $sql);
-
-	}
+	
 		
 			/*echo '<a href="index.php"><button>Kan selectie niet uitvoeren, Klik hier om terug te gaan.</button></a>';
 			die();*/
@@ -35,6 +30,13 @@
 					
 			<tbody class="finance">
 				<?php 
+<<<<<<< HEAD
+
+				if ( isset($_GET['id']) ) {
+				$id = $_GET['id'];
+				$sql = "SELECT * FROM invoices WHERE projectNR = '$id' ";
+				$query = mysqli_query($con, $sql);
+=======
 					$projectNR = $_GET['customerNR'];
 					$sql = "SELECT * FROM invoices WHERE projectNR = '$projectNR' ";
 					$query = mysqli_query($con, $sql);
@@ -49,21 +51,27 @@
 							echo '<td><a href="deactivefinance.php?invoicesNR=' . $row['projectNR'] . '">Deactivate</a>';
 							echo '</tr>';
 						}
+>>>>>>> origin/master
 				while($row = mysqli_fetch_assoc($query))
 				{
 						echo '<tr>';
-						echo '<td>' . $row['datum'] . '</td>';
-						echo '<td>' . $row['hoeveelheid'] . '</td>';
+						echo '<td>' . $row['date'] . '</td>';
+						echo '<td>' . $row['quintity'] . '</td>';
 						echo '<td>' . $row['description'] . '</td>';
-						echo '<td>' . $row['bedrag'] . '</td>';
+						echo '<td>' . $row['price'] . '</td>';
 						echo '<td>' . $row['btw'] . '</td>';
 						echo '<td>' . $row['amount'] . '</td>';
 						echo '<td><a href="activateEdit.php">Edit</a></td>';
+<<<<<<< HEAD
+						echo '<td><a href="deactivefinance.php?invoicesNR=' . $row['projectNR'] . '">Deactivate</a>';
+					
+=======
 						echo '<td><a href="deactivefinance.php?invoicesNR=' . $row['projectsNR'] .  '&delete=true">Deactivate</a>';
+>>>>>>> origin/master
 						echo '</tr>';
 				}
 
-	
+	}
 
 
 
