@@ -1,10 +1,12 @@
-<?php 
+<<?php 
 	include '../templates/header.php';
 	require '../../config/config.php';
 ?>
 
 <style>
-
+	* {
+		margin-top: -12px;
+	}
 	body {
 		min-width: 900px;
 	}
@@ -53,7 +55,7 @@
 					<th>BTW</th>
 					<th>Amount</th>
 					<th>Edit</th>
-					<th>Activate</th>
+					<th>Deactivate</th>
 				</tr>
 			</thead>
 					
@@ -67,7 +69,6 @@
 					while ($row = mysqli_fetch_assoc($query)) {
 
 						echo '<tr>';
-<<<<<<< HEAD
 						echo '<td>' . $row['date'] . '</td>';
 						echo '<td>' . $row['quintity'] . '</td>';
 						echo '<td>' . $row['description'] . '</td>';
@@ -77,16 +78,6 @@
 						echo '<td><a href="activateEdit.php">Edit</a></td>';
 						echo '<td><a href="activate.php?id=' . $row['projectNR'] . '">' ?><button class="edit-btn">Activate</button></a></td>
 					<?php
-=======
-						echo '<td>' . $row['companyName'] . '</td>';
-						echo '<td>' . $row['bankNumber'] . '</td>';
-						echo '<td>' . $row['credit'] . '</td>';
-						echo '<td>' . $row['salesAmount'] . '</td>';
-						echo '<td>' . $row['limit'] . '</td>';
-						echo '<td>' . $row['largeReservationNumber'] . '</td>';
-						echo '<td>' . $row['bkr_control'] . '</td>';
-						echo '<td><a href="deactivate.php?activate.php">Activate</a></td>';
->>>>>>> origin/master
 						echo '</tr>';
 				}
 			}

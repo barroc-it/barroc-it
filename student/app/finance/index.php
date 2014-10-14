@@ -46,30 +46,16 @@ header("location:../login.php");
 
 						echo '<tr>';
 						echo '<td>' . $row['companyName'] . '</td>';
-<<<<<<< HEAD
 						echo '<td>' . $row['description'] . '</td>';
-=======
->>>>>>> origin/master
 						echo '<td>' . $row['bankNumber'] . '</td>';
 						echo '<td>' . $row['credit'] . '</td>';
 						echo '<td>' . $row['salesAmount'] . '</td>';
 						echo '<td>' . $row['limit'] . '</td>';
 						echo '<td>' . $row['largeReservationNumber'] . '</td>';
 						echo '<td>' . $row['bkr_control'] . '</td>';
-<<<<<<< HEAD
-=======
-						echo '<td><a href="activate.php?customerNR='. $row['customerNR'] . '">View</a></td>';
-						echo '<td><a href="deactivate.php?invoicesNR=' . $row['customerNR'] . '">Deactivate</a></td>';
-						echo '<td>' . $row['omschrijving'] . '</td>';
-						echo '<td>' . $row['banknumber'] . '</td>';
-						echo '<td>' . $row['krediet'] . '</td>';
-						echo '<td>' . $row['omzetbedrag'] . '</td>';
-						echo '<td>' . $row['limiet'] . '</td>';
-						echo '<td>' . $row['grootboekingsnummer'] . '</td>';
-						echo '<td>' . $row['bkr_controle'] . '</td>';
->>>>>>> origin/master
 						echo '<td><a href="activate.php?id='.$row['customerNR']. '">View</a></td>';
 						echo '<td><a href="editFinance.php?customerNR='.$row['customerNR'] . '">Edit</a></td>';
+
 						echo '</tr>';
 						}
 					?>
