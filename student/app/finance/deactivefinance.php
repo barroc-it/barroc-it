@@ -4,9 +4,7 @@
 ?>
 
 <style>
-	* {
-		margin-top: -12px;
-	}
+
 	body {
 		min-width: 900px;
 	}
@@ -55,7 +53,7 @@
 					<th>BTW</th>
 					<th>Amount</th>
 					<th>Edit</th>
-					<th>Deactivate</th>
+					<th>Activate</th>
 				</tr>
 			</thead>
 					
@@ -68,16 +66,13 @@
 
 						echo '<tr>';
 						echo '<td>' . $row['companyName'] . '</td>';
-						echo '<td>' . $row['banknumber'] . '</td>';
-						echo '<td>' . $row['krediet'] . '</td>';
-						echo '<td>' . $row['omzetbedrag'] . '</td>';
-						echo '<td>' . $row['limiet'] . '</td>';
-						echo '<td>' . $row['grootboekingsnummer'] . '</td>';
-						echo '<td>' . $row['bkr_controle'] . '</td>';
-						echo '<td><a href="activate.php?id='.$row['customerNR']. '">View</a></td>';
-						echo '<td><a href="deactivate.php?deactivate.php">Deactivated</a></td>';
-						echo '<td><a href="editFinance.php?customerNR='.$row['customerNR'] . '">Edit</a></td>';
-
+						echo '<td>' . $row['bankNumber'] . '</td>';
+						echo '<td>' . $row['credit'] . '</td>';
+						echo '<td>' . $row['salesAmount'] . '</td>';
+						echo '<td>' . $row['limit'] . '</td>';
+						echo '<td>' . $row['largeReservationNumber'] . '</td>';
+						echo '<td>' . $row['bkr_control'] . '</td>';
+						echo '<td><a href="deactivate.php?activate.php">Activate</a></td>';
 						echo '</tr>';
 						}
 					?>
