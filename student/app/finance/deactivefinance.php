@@ -28,21 +28,7 @@
 	</div>
 </header>
 
-<?php
 
-	if ( isset($_GET['invoicesNR']) ) {
-		
-		$projectsNR = $_GET['invoicesNR'];
-		$sql = "SELECT * FROM invoices";
-
-		if (!$query = mysqli_query($con, $sql)) {
-			echo '<a href="index.php"><button class="blue-btn2" style="font-size: 20px; height: 100px; width: 350px; float: left; margin-top: 10px; margin-left: 35%;">Kan selectie niet uitvoeren,<br>Klik hier om terug te gaan.</button></a>';
-			die();
-			}
-		$row = mysqli_fetch_assoc($query);
-		}
-
-?>
 <div class="container">
 		<h1>Finance panel Activate</h1>
 		<table class="table table-striped sortable">
@@ -61,9 +47,9 @@
 					
 				<tbody class="finance">
 				<?php 
-					if ( isset($_GET['id']) ) {
-					$id= $_GET['id'];
-					$sql = "SELECT * FROM invoices WHERE projectNR = '$id'";
+					if ( isset($_GET['invoicesNR']) ) {
+					$invoicesNR= $_GET['invoicesNR'];
+					$sql = "SELECT * FROM invoices WHERE invoicesNR = '$invoicesNR'";
 					$query = mysqli_query($con, $sql);
 
 					while ($row = mysqli_fetch_assoc($query)) {
@@ -76,7 +62,7 @@
 						echo '<td>' . $row['btw'] . '</td>';
 						echo '<td>' . $row['amount'] . '</td>';
 						echo '<td><a href="activateEdit.php">Edit</a></td>';
-						echo '<td><a href="activate.php?id=' . $row['projectNR'] . '">' ?><button class="edit-btn">Activate</button></a></td>
+						echo '<td><a href="activate.php?invoicesNR=' . $row['invoicesNR'] . '">' ?><button class="edit-btn">Activate</button></a></td>
 					<?php
 						echo '</tr>';
 				}

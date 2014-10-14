@@ -8,9 +8,9 @@
 			die();
 		}
 
-			if ( isset($_GET['id']) ) {
-				$id = $_GET['id'];
-				$sql = "UPDATE invoices SET active = 0 WHERE projectNR = '$id'";
+			if ( isset($_GET['invoicesNR']) ) {
+				$invoicesNR = $_GET['invoicesNR'];
+				$sql = "UPDATE invoices SET active = 0 WHERE invoicesNR = '$invoicesNR'";
 
 				if (!$query = mysqli_query($con, $sql)) {
 					echo 'Kan helaas niet updaten...';

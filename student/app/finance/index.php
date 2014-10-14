@@ -39,7 +39,7 @@ header("location:../login.php");
 			<tbody class="finance">
 				<?php 
 					
-					$sql = "SELECT * FROM customers";;
+					$sql = "SELECT * FROM customers";
 					$query = mysqli_query($con, $sql);
 
 					while ($row = mysqli_fetch_assoc($query)) {
@@ -59,6 +59,8 @@ header("location:../login.php");
 						echo '</tr>';
 						}
 					?>
+				</tbody>
+			</table>
 	
 <?php 
 	include '../templates/footer.php'; 
