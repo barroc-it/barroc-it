@@ -1,21 +1,19 @@
 .login-form {
 	margin-top: 150px;
 	}
-body	{
+/*	body {
 	background: url(hoofdafbeelding.jpg) no-repeat center center fixed; 
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
-
+    }*/
 	span.glyphicon {
 		padding-right: 5px;
 	}
-
 	button.btn {
 		margin-bottom: 20px;
 	}
-	
 	.form-group {
 		color: #444444;
 	}
@@ -26,7 +24,7 @@ body	{
 	.projects {
 		cursor: pointer;
 	}
-		.loginbackground {
+	.loginbackground {
 		background-color: black;
 		position: absolute;
 		margin-left: -20px;
@@ -48,4 +46,10 @@ body	{
 	}
 	.form-control {
 		color: #444444;
+	}
+	.commentfieldhead {
+		width: 100px;
+		height: 100px;
+		background-color: green;
+
 	}

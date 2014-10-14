@@ -18,7 +18,7 @@ header("location:../login.php");
 </style>
 <header>
 	<div class="navibar">
-		<button class="btn btn-primary btn-sm"><a href="logout.php">Log out</a></button>
+		<button class="btn btn-primary btn-sm btn-primary2"><a href="logout.php">Log out</a></button>
 		<ul class="navibarbutton">
 			<li><a class="active" href="index.php">Home</a></li>
 			<li><a class="menutext" href="deactivatedproject.php">Deactivated projects</a></li>		
