@@ -35,7 +35,6 @@
 					
 			<tbody class="finance">
 				<?php 
-<<<<<<< HEAD
 					$projectNR = $_GET['customerNR'];
 					$sql = "SELECT * FROM invoices WHERE projectNR = '$projectNR' ";
 					$query = mysqli_query($con, $sql);
@@ -50,7 +49,6 @@
 							echo '<td><a href="deactivefinance.php?invoicesNR=' . $row['projectNR'] . '">Deactivate</a>';
 							echo '</tr>';
 						}
-=======
 				while($row = mysqli_fetch_assoc($query))
 				{
 						echo '<tr>';
@@ -62,7 +60,6 @@
 						echo '<td>' . $row['amount'] . '</td>';
 						echo '<td><a href="activateEdit.php">Edit</a></td>';
 						echo '<td><a href="deactivefinance.php?invoicesNR=' . $row['projectsNR'] .  '&delete=true">Deactivate</a>';
-					
 						echo '</tr>';
 				}
 
@@ -86,7 +83,6 @@
 					
 						echo '</tr>';
 						}*/
->>>>>>> origin/master
 					?>
 
 <?php 
