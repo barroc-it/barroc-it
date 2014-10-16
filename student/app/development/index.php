@@ -53,7 +53,7 @@ header("location:../login.php");
 					
 			<tbody class="projects">
 				<?php 
-					$sql = "SELECT * FROM customers ORDER BY balance ASC";
+					$sql = "SELECT * FROM customers WHERE bkr_control = 1 ORDER BY balance ASC ";
 					$query = mysqli_query($con, $sql);
 					
 

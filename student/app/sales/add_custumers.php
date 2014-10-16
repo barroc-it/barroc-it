@@ -15,32 +15,32 @@
 		<form method="post" action="../controllers/usersController.php" role="form" class="col-md-6">
 		    <div class="form-group">
 		        <label class="col-md-4" for="companyName">companyName</label>
-		        <input class="col-md-8" type="text" id="companyName" name="companyName">
+		        <input class="col-md-2" type="text" id="companyName" name="companyName">
 		    </div>
 <br>
 		    <div class="form-group">
 		        <label class="col-md-4"for="address">address</label>
-		        <input class="col-md-8" type="text" id="address" name="address">
+		        <input class="col-md-2" type="text" id="address" name="address">
 		    </div>
 <br>
 		    <div class="form-group">
 		        <label class="col-md-4" for="postcode">postcode</label>
-		        <input class="col-md-8" type="text" id="postcode" name="postcode">
+		        <input class="col-md-2" type="text" id="postcode" name="postcode">
 		    </div>
 <br>
 		    <div class="form-group">
 		        <label class="col-md-4" for="residence">residence</label>
-		        <input class="col-md-8" type="text" id="residence" name="residence">
+		        <input class="col-md-2" type="text" id="residence" name="residence">
 		    </div>
 <br>
 		    <div class="form-group">
 		        <label class="col-md-4" for="telephoneNumber">telephoneNumber</label>
-		        <input class="col-md-8" type="text" id="telephoneNumber" name="telephoneNumber">
+		        <input class="col-md-2" type="text" id="telephoneNumber" name="telephoneNumber">
 		    </div>
 <br>	
 		    <div class="form-group">
 		        <label class="col-md-4"for="email">email</label>
-		        <input class="col-md-8" type="email" id="email" name="email">
+		        <input class="col-md-2" type="email" id="email" name="email">
 		    </div>
 <br>
 <br>
