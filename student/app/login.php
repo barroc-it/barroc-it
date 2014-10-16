@@ -1,5 +1,12 @@
 <?php require 'templates/header.php'; ?>
 <style>
+	body {
+		background: url(assets/images/hoofdafbeelding.jpg) no-repeat center center fixed; 
+	  	-webkit-background-size: cover;
+	  	-moz-background-size: cover;
+	  	-o-background-size: cover;
+	  	background-size: cover;
+    }
 	h1 {
 		display: none;
 	}
@@ -26,6 +33,7 @@
 	.form-control {
 		color: #444444;
 	}
+
 </style>
 <div class="login">
 	<div class="container">
