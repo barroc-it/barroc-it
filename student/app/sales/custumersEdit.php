@@ -52,7 +52,11 @@ while ($row = mysqli_fetch_assoc($query)){
         <label class="col-md-4"for="email">email</label>
         <input value="<?php echo $row['email'] ?>"class="col-md-8" type="email" id="email" name="email">
     </div>
-    
+
+    <div class="form-group">
+        <label class="col-md-4"for="bkr_control">bkr_control</label>
+        <input value="<?php echo $row['bkr_control'] ?>"class="col-md-8" type="text" id="bkr_control" name="bkr_control">
+    </div>
     <div>
         <input type="submit" value="edit" name="edit_customer" class="btn btn-primary col-md-4">
     </div>
@@ -69,6 +73,7 @@ if (isset($_POST['edit_customer'])){
     $residence = mysqli_real_escape_string($con,$_POST['residence']);
     $telephoneNumber = mysqli_real_escape_string($con,$_POST['telephoneNumber']);
     $email = mysqli_real_escape_string($con,$_POST['email']);
+    $bkr_control = mysqli_real_escape_string($con,$_POST['bkr_control']);
 
     
 
@@ -77,7 +82,8 @@ if (isset($_POST['edit_customer'])){
 									postcode = '$postcode',
 									residence = '$residence',
 									telephoneNumber = '$telephoneNumber',
-									email = '$email'
+									email = '$email',
+                                    bkr_control = '$bkr_control'
 
                                WHERE customerNR = $customerNR";
     if(!$query = mysqli_query($con, $sql)){
@@ -97,4 +103,5 @@ if (isset($_POST['edit_customer'])){
 	</div>
  </div>
 
-<?php include '../templates/footer.php' ?>
+</body>
+</html>

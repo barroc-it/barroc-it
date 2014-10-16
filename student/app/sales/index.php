@@ -22,10 +22,12 @@ header("location:../login.php");
 
 		<form class="col-md-4 col-md-offset-2" method="GET" action="indexsearch.php" id="searchform" name="search"> 
 		    <input id="search-bar" type="text" class="form-control inputsearch" placeholder="Search..." name="search"> 
-		    <input type="submit" class="search-btn"> 
+	
 		</form> 
 
 	<a class="btn btn-info col-md-2 col-md-offset-2" href="logout.php">logout</a>
+	<br>
+	<br>
 
 
 	<div class="customers">
@@ -37,11 +39,12 @@ header("location:../login.php");
 				<th>residence</th>
 				<th>telephonenumber</th>
 				<th>email</th>
+				<th>BRK</th>
 				<th>edit</th>
 				<th>appointments</th>
 			</tr>
 			<?php 
-			$sql = "SELECT * FROM customers";
+			$sql = "SELECT * FROM customers";	
 			$query = mysqli_query($con, $sql);
 
 			while ($row = mysqli_fetch_assoc($query)) {
@@ -52,6 +55,12 @@ header("location:../login.php");
 					echo '<td>' . $row['residence'] . '</td>';
 					echo '<td>' . $row['telephoneNumber'] . '</td>';
 					echo '<td>' . $row['email'] . '</td>';
+					echo '<td>';
+					if( $row['bkr_control'] == 1){
+						echo "yes";
+					}elseif ($row['bkr_control'] == 0) {
+						echo "no";					}
+					echo  '</td>';
 					echo '<td> <a href="custumersEdit.php?customerNR=' . $row['customerNR'] . '">edit</td>';
 					echo '<td> <a href="appointments.php">Appointments</td>';
 					
