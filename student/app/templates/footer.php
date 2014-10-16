@@ -40,7 +40,7 @@
 			$sql = "INSERT INTO comments (name, department, comment, datetime ) VALUES ('$name', '$department', '$comment', '$datetime')";
 			
 			if( $query = mysqli_query($con, $sql)) {
-				
+				header('location: #');
 			} else {
 				echo "kan de query niet uitvoeren";
 			}
