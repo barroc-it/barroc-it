@@ -18,17 +18,18 @@ if ( isset($_GET['customerNR']) ) {
 		header('location: index.php');
 	}
 
-	if ( isset($_POST['edit_finance']) ) {
+	if ( isset($_POST['submit']) ) {
 		$companyName = mysqli_real_escape_string($con, $_POST['companyName']);
+		$description = mysqli_real_escape_string($con, $_POST['description']);
 		$bankNumber = mysqli_real_escape_string($con, $_POST['bankNumber']);
 		$credit = mysqli_real_escape_string($con, $_POST['credit']);
 		$salesAmount = mysqli_real_escape_string($con, $_POST['salesAmount']);
-		$limit = mysqli_real_escape_string($con, $_POST['limit']);
+		$limiet = mysqli_real_escape_string($con, $_POST['limiet']);
 		$largeReservationNumber = mysqli_real_escape_string($con, $_POST['largeReservationNumber']);
 		$bkr_control = mysqli_real_escape_string($con, $_POST['bkr_control']);
 	
-		$sql = "UPDATE customers SET companyName = '$companyName',  bankNumber = '$bankNumber', credit = '$credit',  	
-		salesAmount = '$salesAmount', limit = '$limit', largeReservationNumber = '$largeReservationNumber', bkr_control = '$bkr_control' WHERE customerNR = '$customerNR'";
+		$sql = "UPDATE customers SET companyName = '$companyName',  description = '$description', bankNumber = '$bankNumber', credit = '$credit',  	
+		salesAmount = '$salesAmount', limiet = '$limiet', largeReservationNumber = '$largeReservationNumber', bkr_control = '$bkr_control' WHERE customerNR = '$customerNR'";
 
 		if (!$query = mysqli_query($con, $sql)) {
 			echo 'Kan helaas niet updaten...';
@@ -41,7 +42,7 @@ if ( isset($_GET['customerNR']) ) {
 ?>
 
 <style>
-	.editf0orm {
+	.editform {
 		margin: 0 auto;
 		width: 500px;
 	}
@@ -57,6 +58,10 @@ if ( isset($_GET['customerNR']) ) {
 		<input type="text" value='<?php echo $row['companyName']; ?>' class="form-control" name="companyName" customerNR="companyName">
 	</div>
 	<div class="form-group col-sm-12">
+		<label for="description">Omschrijving</label>
+		<input type="text" value='<?php echo $row['description']; ?>' class="form-control" name="description" customerNR="description">
+	</div>
+	<div class="form-group col-sm-12">
 		<label for="bankNumber">Bank account number</label>
 		<input type="text" value='<?php echo $row['bankNumber']; ?>' class="form-control" name="bankNumber" customerNR="bankNumber">
 	</div>
@@ -70,8 +75,8 @@ if ( isset($_GET['customerNR']) ) {
 		<input type="text" value='<?php echo $row['salesAmount']; ?>' class="form-control" name="salesAmount" customerNR="salesAmount">
 	</div>
 		<div class="form-group col-sm-12">
-		<label for="limit">limit</label>
-		<input type="text" value='<?php echo $row['limit']; ?>' class="form-control" name="limit" customerNR="limit">
+		<label for="limiet">limit</label>
+		<input type="text" value='<?php echo $row['limiet']; ?>' class="form-control" name="limiet" customerNR="limit">
 	</div>
 		<div class="form-group col-sm-12">
 		<label for="largeReservationNumber">Reservation number</label>
@@ -82,7 +87,7 @@ if ( isset($_GET['customerNR']) ) {
 		<input type="text" value='<?php echo $row['bkr_control']; ?>' class="form-control" name="bkr_control" customerNR="bkr_control">
 	</div>
 	<div class="form-group col-sm-12">
-		<input name="edit_finance" type="submit" value="edit" class="btn btn-default btn-lg btn-block">
+		<input name="submit" type="submit" value="Bewerken" class="btn btn-default btn-lg btn-block">
 	</div>
 
 </body>
