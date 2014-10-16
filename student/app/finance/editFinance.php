@@ -18,18 +18,17 @@ if ( isset($_GET['customerNR']) ) {
 		header('location: index.php');
 	}
 
-	if ( isset($_POST['submit']) ) {
+	if ( isset($_POST['edit_finance']) ) {
 		$companyName = mysqli_real_escape_string($con, $_POST['companyName']);
-		$omschrijving = mysqli_real_escape_string($con, $_POST['omschrijving']);
-		$banknumber = mysqli_real_escape_string($con, $_POST['banknumber']);
-		$krediet = mysqli_real_escape_string($con, $_POST['krediet']);
-		$omzetbedrag = mysqli_real_escape_string($con, $_POST['omzetbedrag']);
-		$limiet = mysqli_real_escape_string($con, $_POST['limiet']);
-		$grootboekingsnummer = mysqli_real_escape_string($con, $_POST['grootboekingsnummer']);
-		$bkr_controle = mysqli_real_escape_string($con, $_POST['bkr_controle']);
+		$bankNumber = mysqli_real_escape_string($con, $_POST['bankNumber']);
+		$credit = mysqli_real_escape_string($con, $_POST['credit']);
+		$salesAmount = mysqli_real_escape_string($con, $_POST['salesAmount']);
+		$limit = mysqli_real_escape_string($con, $_POST['limit']);
+		$largeReservationNumber = mysqli_real_escape_string($con, $_POST['largeReservationNumber']);
+		$bkr_control = mysqli_real_escape_string($con, $_POST['bkr_control']);
 	
-		$sql = "UPDATE customers SET companyName = '$companyName', banknumber = '$banknumber', krediet = '$krediet', omzetbedrag = '$omzetbedrag', 
-		limiet = '$limiet', grootboekingsnummer = '$grootboekingsnummer', bkr_controle = '$bkr_controle' WHERE customerNR = '$customerNR'";
+		$sql = "UPDATE customers SET companyName = '$companyName',  bankNumber = '$bankNumber', credit = '$credit',  	
+		salesAmount = '$salesAmount', limit = '$limit', largeReservationNumber = '$largeReservationNumber', bkr_control = '$bkr_control' WHERE customerNR = '$customerNR'";
 
 		if (!$query = mysqli_query($con, $sql)) {
 			echo 'Kan helaas niet updaten...';
@@ -42,7 +41,7 @@ if ( isset($_GET['customerNR']) ) {
 ?>
 
 <style>
-	.editform {
+	.editf0orm {
 		margin: 0 auto;
 		width: 500px;
 	}
@@ -58,31 +57,32 @@ if ( isset($_GET['customerNR']) ) {
 		<input type="text" value='<?php echo $row['companyName']; ?>' class="form-control" name="companyName" customerNR="companyName">
 	</div>
 	<div class="form-group col-sm-12">
-		<label for="banknumber">Bank account number</label>
-		<input type="text" value='<?php echo $row['banknumber']; ?>' class="form-control" name="banknumber" customerNR="banknumber">
+		<label for="bankNumber">Bank account number</label>
+		<input type="text" value='<?php echo $row['bankNumber']; ?>' class="form-control" name="bankNumber" customerNR="bankNumber">
+	</div>
+	
+	<div class="form-group col-sm-12">
+		<label for="credit">Credit</label>
+		<input type="text" value='<?php echo $row['credit']; ?>' class="form-control" name="credit" customerNR="credit">
 	</div>
 	<div class="form-group col-sm-12">
-		<label for="krediet">Credit</label>
-		<input type="text" value='<?php echo $row['krediet']; ?>' class="form-control" name="krediet" customerNR="krediet">
+		<label for="salesAmount">Revenue ammount</label>
+		<input type="text" value='<?php echo $row['salesAmount']; ?>' class="form-control" name="salesAmount" customerNR="salesAmount">
+	</div>
+		<div class="form-group col-sm-12">
+		<label for="limit">limit</label>
+		<input type="text" value='<?php echo $row['limit']; ?>' class="form-control" name="limit" customerNR="limit">
+	</div>
+		<div class="form-group col-sm-12">
+		<label for="largeReservationNumber">Reservation number</label>
+		<input type="text" value='<?php echo $row['largeReservationNumber']; ?>' class="form-control" name="largeReservationNumber" customerNR="largeReservationNumber">
+	</div>
+		<div class="form-group col-sm-12">
+		<label for="bkr_control">BKR</label>
+		<input type="text" value='<?php echo $row['bkr_control']; ?>' class="form-control" name="bkr_control" customerNR="bkr_control">
 	</div>
 	<div class="form-group col-sm-12">
-		<label for="omzetbedrag">Revenue ammount</label>
-		<input type="text" value='<?php echo $row['omzetbedrag']; ?>' class="form-control" name="omzetbedrag" customerNR="omzetbedrag">
-	</div>
-		<div class="form-group col-sm-12">
-		<label for="limiet">limit</label>
-		<input type="text" value='<?php echo $row['limiet']; ?>' class="form-control" name="limiet" customerNR="limiet">
-	</div>
-		<div class="form-group col-sm-12">
-		<label for="grootboekingsnummer">Reservation number</label>
-		<input type="text" value='<?php echo $row['grootboekingsnummer']; ?>' class="form-control" name="grootboekingsnummer" customerNR="grootboekeingsnummer">
-	</div>
-		<div class="form-group col-sm-12">
-		<label for="bkr_controle">BKR</label>
-		<input type="text" value='<?php echo $row['bkr_controle']; ?>' class="form-control" name="bkr_controle" customerNR="bkr_controle">
-	</div>
-	<div class="form-group col-sm-12">
-		<input name="submit" type="submit" value="Bewerken" class="btn btn-default btn-lg btn-block">
+		<input name="edit_finance" type="submit" value="edit" class="btn btn-default btn-lg btn-block">
 	</div>
 
 </body>
