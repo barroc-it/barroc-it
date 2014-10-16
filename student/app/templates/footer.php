@@ -6,7 +6,7 @@
 
 <div class="footerclass">
 
-	<form action="footer.php" method="POST" class="commentForm">
+	<form action="" method="POST" class="commentForm">
 		<div class="form-group col-sm-12">
 			<label for="name">Name</label>
 			<input type="text" value='' class="form-control" name="name" id="name">
@@ -14,14 +14,14 @@
 		<div class="form-group col-sm-12">
 			<label for="department">Department</label>
 				<select name="departmentchoice" class="form-control">
-					<option value="sales" name="sales" id="sales">Sales</option>
-					<option value="finance" name="finance" id="finance">Finance</option>
-					<option value="development" name="development" id="development">Development</option>
+					<option value="Sales">Sales</option>
+					<option value="Finance">Finance</option>
+					<option value="Development">Development</option>
 				</select>
 		</div>
 		<div class="form-group col-sm-12">
 			<label for="comment">comment</label>
-			<textarea rows="4" cols="50" value='' class="form-control" name="comment" id="comment"></textarea>
+			<textarea rows="2" cols="50" value='' class="form-control" name="comment" id="comment"></textarea>
 		</div>
 		<div class="form-group col-sm-12">
 			<input name="submit" type="submit" value="Place comment" class="btn btn-primary">
@@ -36,11 +36,11 @@
 			$name = $_POST['name'];
 			$department = $_POST['departmentchoice'];
 			$comment = $_POST['comment'];
-			$datetime = Datetime('Y-m-d');
+			$datetime = date('Y-m-d');
 			$sql = "INSERT INTO comments (name, department, comment, datetime ) VALUES ('$name', '$department', '$comment', '$datetime')";
 			
 			if( $query = mysqli_query($con, $sql)) {
-				header('location: footer.php');
+				
 			} else {
 				echo "kan de query niet uitvoeren";
 			}
