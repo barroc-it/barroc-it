@@ -17,9 +17,10 @@
 					echo 'Kan helaas niet updaten...';
 					die();
 				} else {
-					$sql2 = $_GET['invoicesNR'];
+					$id = $_GET['invoicesNR'];
+					$sql2 = $con->query("SELECT customerNR FROM customers LIMIT 1");
 					$row2 = mysqli_fetch_assoc($sql2);
-					header('location: activate.php?id=' . $row2['id'] );
+					header('location: activate.php?customerNR=' . $row2['customerNR'] );
 				}
 			}
 ?>

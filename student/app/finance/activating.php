@@ -10,16 +10,18 @@
 
 			if ( isset($_GET['invoicesNR']) ) {
 				$invoicesNR = $_GET['invoicesNR'];
-				$sql = "UPDATE invoices SET active = 0 WHERE invoicesNR = '$invoicesNR'";
+				$sql = "UPDATE invoices SET active = 0 WHERE invoicesNR = '$invoicesNR' ";
+
 
 				if (!$query = mysqli_query($con, $sql)) {
 					echo 'Kan helaas niet updaten...';
 					die();
 				} else {
-					header('location: activate.php');
+					
+					header('location: deactivefinance.php');
 				}
 			}
 ?>
 
 </body>
-</html>
+</html

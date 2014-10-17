@@ -20,11 +20,11 @@
 			</thead>
 					
 			<tbody class="finance">
-				<?php 
+				<?php
 
-				if ( isset($_GET['id']) ) {
-				$id = $_GET['id'];
-				$sql = "SELECT * FROM invoices WHERE projectNR = '$id' ";
+				if ( isset($_GET['invoicesNR']) ) {
+				$invoicesNR = $_GET['invoicesNR'];
+				$sql = "SELECT * FROM invoices WHERE active = 0 AND invoicesNR = '$invoicesNR' ";
 				$query = mysqli_query($con, $sql);
 				while($row = mysqli_fetch_assoc($query))
 				{

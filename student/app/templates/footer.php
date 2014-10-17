@@ -36,7 +36,7 @@
 			$name = $_POST['name'];
 			$department = $_POST['departmentchoice'];
 			$comment = $_POST['comment'];
-			$datetime = date('Y-m-d');
+			$datetime = date('Y-m-d-h-s');
 			$sql = "INSERT INTO comments (name, department, comment, datetime ) VALUES ('$name', '$department', '$comment', '$datetime')";
 			
 			if( $query = mysqli_query($con, $sql)) {
