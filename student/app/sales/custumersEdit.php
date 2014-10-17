@@ -55,9 +55,11 @@ while ($row = mysqli_fetch_assoc($query)){
 
     <div class="form-group">
         <label class="col-md-4"for="bkr_control">bkr_control</label>
-        <input value="<?php echo $row['bkr_control'] ?>"class="col-md-8" type="text" id="bkr_control" name="bkr_control">
+        <input value="<?php echo $row['bkr_control'] ?>"class="col-md-3" type="text" id="bkr_control" name="bkr_control"> <p>0 for no and 1 for yes</p>
     </div>
     <div>
+        <br>
+        <br>
         <input type="submit" value="edit" name="edit_customer" class="btn btn-primary col-md-4">
     </div>
 </form>
