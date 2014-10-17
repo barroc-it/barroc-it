@@ -9,7 +9,7 @@
 		}
 
 			if ( isset($_GET['invoicesNR']) ) {
-				$id= $_GET['invoicesNR'];
+				$invoicesNR = $_GET['invoicesNR'];
 				$sql = "UPDATE invoices SET active = 1 WHERE invoicesNR = '$invoicesNR' ";
 
 
@@ -17,9 +17,9 @@
 					echo 'Kan helaas niet updaten...';
 					die();
 				} else {
-					$sql2 = $con->query("SELECT invoicesNR FROM invoices WHERE invoicesNR = '$invoicesNR' LIMIT 1");
+					$sql2 = $_GET['invoicesNR'];
 					$row2 = mysqli_fetch_assoc($sql2);
-					header('location: activate.php?invoicesNR=' . $row2['invoicesNR'] . '');
+					header('location: activate.php?id=' . $row2['id'] );
 				}
 			}
 ?>

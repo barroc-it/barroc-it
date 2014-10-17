@@ -62,7 +62,7 @@
 						echo '<td>' . $row['btw'] . '</td>';
 						echo '<td>' . $row['amount'] . '</td>';
 						echo '<td><a href="activateEdit.php">Edit</a></td>';
-						echo '<td><a href="activate.php?invoicesNR=' . $row['invoicesNR'] . '">' ?><button class="edit-btn">Activate</button></a></td>
+						echo '<td><a href="deactivate.php?invoicesNR=' . $row['invoicesNR'] . '">' ?><button class="edit-btn">Activate</button></a></td>
 					<?php
 						echo '</tr>';
 				}
