@@ -35,7 +35,7 @@ header("location:../login.php");
 
 		<form class="col-md-4 col-md-offset-2" method="GET" action="indexsearch.php" id="searchform" name="search"> 
 		    <input id="search-bar" type="text" class="form-control inputsearch" placeholder="Search..." name="search"> 
-		    <input type="submit" class="search-btn"> 
+		    
 		</form> 
 
 		<a class="btn btn-info col-md-2 col-md-offset-2" href="logout.php">logout</a>

@@ -18,7 +18,24 @@ header("location:../login.php");
 		</ul>
 	
 	<div class="container">
-		<h1>Finance</h1>
+		<h1>Finance</h1>				<a class="btn btn-primary col-md-2" href="add_custumers.php">toevoegen</a>
+
+		<form class="col-md-4 col-md-offset-2" method="GET" action="indexsearch.php" id="searchform" name="search"> 
+		    <input id="search-bar" type="text" class="form-control inputsearch" placeholder="Search..." name="search"> 
+		    
+		</form> 
+
+		<a class="btn btn-info col-md-2 col-md-offset-2" href="logout.php">logout</a>
+
+				<a class="btn btn-primary col-md-2" href="add_custumers.php">toevoegen</a>
+
+		<form class="col-md-4 col-md-offset-2" method="GET" action="indexsearch.php" id="searchform" name="search"> 
+		    <input id="search-bar" type="text" class="form-control inputsearch" placeholder="Search..." name="search"> 
+		    
+		</form> 
+
+		<a class="btn btn-info col-md-2 col-md-offset-2" href="logout.php">logout</a>
+
 		<table class="table table-striped sortable">
 			<thead>
 				<tr>
