@@ -1,16 +1,6 @@
 <?php 
 	include '../templates/header.php'; 
-	require '../../config/config.php';
-
-
-
-
-	
-		
-			/*echo '<a href="index.php"><button>Kan selectie niet uitvoeren, Klik hier om terug te gaan.</button></a>';
-			die();*/
-		
-	
+	require '../../config/config.php';	
 ?>
 	
 	<div class="container">
@@ -30,11 +20,11 @@
 			</thead>
 					
 			<tbody class="finance">
-				<?php 
+				<?php
 
-				if ( isset($_GET['id']) ) {
-				$id = $_GET['id'];
-				$sql = "SELECT * FROM invoices WHERE projectNR = '$id' ";
+				if ( isset($_GET['invoicesNR']) ) {
+				$invoicesNR = $_GET['invoicesNR'];
+				$sql = "SELECT * FROM invoices WHERE active = 0 AND invoicesNR = '$invoicesNR' ";
 				$query = mysqli_query($con, $sql);
 				while($row = mysqli_fetch_assoc($query))
 				{
@@ -46,8 +36,7 @@
 						echo '<td>' . $row['btw'] . '</td>';
 						echo '<td>' . $row['amount'] . '</td>';
 						echo '<td><a href="activateEdit.php">Edit</a></td>';
-						echo '<td><a href="deactivefinance.php?invoicesNR=' . $row['invoicesNR'] . '">Deactivate</a>';
-					
+						echo '<td><a href="deactivate.php?invoicesNR=' . $row['invoicesNR'] . '">Deactivate</a>';
 						echo '</tr>';
 				}
 
@@ -74,7 +63,7 @@
 					?>
 </tbody>
 </table>
-<?php 
-	include '../templates/footer.php'; 
-	?>
-	<a href="index.php">Back</a>
+
+	<a href="index.php" class="btn btn-primary">Back</a>
+	</body>
+	</html>

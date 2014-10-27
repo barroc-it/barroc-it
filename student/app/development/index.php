@@ -24,12 +24,19 @@ header("location:../login.php");
 			<li><a class="menutext" href="deactivatedproject.php">Deactivated projects</a></li>		
 		</ul>
 
+		<form class="col-md-4 col-md-offset-2" method="GET" action="indexsearch.php" id="searchform" name="search"> 
+		    <input id="search-bar" type="text" class="form-control inputsearch" placeholder="Search..." name="search"> 
+		    
+		</form> 
+
+		<a class="btn btn-info col-md-2 col-md-offset-2" href="logout.php">logout</a>
 		
 	</div>
 </header>
 
 	<div class="container">
 		<h1>Customers</h1>
+<<<<<<< HEAD
 		<br><br>
 		<a class="btn btn-primary col-md-2" href="addcustomer.php">toevoegen</a>
 
@@ -39,6 +46,9 @@ header("location:../login.php");
 		</form> 
 
 		<a class="btn btn-info col-md-2 col-md-offset-2" href="logout.php">logout</a>
+=======
+		
+>>>>>>> origin/master
 		<table class="table table-striped sortable">
 			<thead>
 				<tr>

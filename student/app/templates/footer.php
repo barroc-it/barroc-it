@@ -36,7 +36,7 @@
 			$name = $_POST['name'];
 			$department = $_POST['departmentchoice'];
 			$comment = $_POST['comment'];
-			$datetime = date('Y-m-d');
+			$datetime = date('Y-m-d-h-s');
 			$sql = "INSERT INTO comments (name, department, comment, datetime ) VALUES ('$name', '$department', '$comment', '$datetime')";
 			
 			if( $query = mysqli_query($con, $sql)) {
@@ -55,7 +55,10 @@
 
 			echo '<thead><tr><th><h3>' . $row['name'] . ' has a comment:<span class="text-muted commentdate">' . $row['datetime'] . '</span></h3></th></tr></thead>';				
 	?>
-				<tr><td><b>Department:</b>
+
+				<tr><td><b class ='col-md-2'>Department:</b><p class='col-md-2 col-md-offset-8'>delete</p>
+
+
 				<?php echo $row['department'] . '</td></tr>'; ?>
 				<tr><td><b>Comment:</b><br>
 				<?php echo $row['comment'] . '</td></tr>';
