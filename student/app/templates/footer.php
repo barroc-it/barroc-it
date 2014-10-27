@@ -36,7 +36,7 @@
 			$name = $_POST['name'];
 			$department = $_POST['departmentchoice'];
 			$comment = $_POST['comment'];
-			$datetime = date('Y-m-d-h-s');
+			$datetime = date('Y-m-d-');
 			$sql = "INSERT INTO comments (name, department, comment, datetime ) VALUES ('$name', '$department', '$comment', '$datetime')";
 			
 			if( $query = mysqli_query($con, $sql)) {
@@ -53,12 +53,10 @@
 			echo '<div class="container">';
 			echo '<table class="table tablewidth tablebottom">';
 
-			echo '<thead><tr><th><h3>' . $row['name'] . ' has a comment:<span class="text-muted commentdate">' . $row['datetime'] . '</span></h3></th></tr></thead>';				
+			echo '<thead><tr><th><h3>' . $row['name'] . ' has a comment:' . '<a href="deletecomment.php?id=' . $row['id'] . '">' ?><button class='del-btn' onclick="return confirm('Are you sure you want to delete this comment?');"></button></a> <?php echo '<span class="text-muted commentdate">' . $row['datetime'] . '</span></h3></th></tr></thead>';				
 	?>
 
-				<tr><td><b class ='col-md-2'>Department:</b><p class='col-md-2 col-md-offset-8'>delete</p>
-
-
+				<tr><td><b>Department:</b>
 				<?php echo $row['department'] . '</td></tr>'; ?>
 				<tr><td><b>Comment:</b><br>
 				<?php echo $row['comment'] . '</td></tr>';

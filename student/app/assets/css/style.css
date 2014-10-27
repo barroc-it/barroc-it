@@ -61,3 +61,16 @@
 		padding-top: 40px;
 		box-shadow: 5px 5px 20px 1px #999999;
 	}
+	.del-btn {
+		background-image: url(../images/delete.png);
+		background-size: 14px 14px;
+		background-repeat: no-repeat;
+		background-position: center;
+		color: red;
+		float: right;
+		height: 20px;
+		width: 20px;
+		border-radius: 5px;
+		border: 1px solid #C6C6C6;
+		background-color: #F0F0F0;
+	}

@@ -36,7 +36,7 @@ header("location:../login.php");
 
 		<a class="btn btn-info col-md-2 col-md-offset-2" href="logout.php">logout</a>
 
-		<table class="table table-striped sortable">
+		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th>Companyname</th>
