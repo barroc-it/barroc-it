@@ -14,9 +14,9 @@
 			<br>
 			<br>
 		<tr>
-			<th>Bedrijfsnaam</th>
-			<th>Datum</th>
-			<th>Beschrijving</th>
+			<th>Companyname</th>
+			<th>Date</th>
+			<th>Description</th>
 			<th>Edit</th>
 		</tr>
 			<?php 
@@ -26,8 +26,8 @@
 			while ($row = mysqli_fetch_assoc($query)) {
 				echo "<tr>";
 					echo "<td>" . $row['name'] . "</td>";
-					echo '<td>' . $row['datum'] . '</td>';
-					echo '<td>' . $row['beschrijving'] . '</td>';
+					echo '<td>' . $row['date'] . '</td>';
+					echo '<td>' . $row['description'] . '</td>';
 					echo '<td> <a href="editappointments.php?appointmentsNR=' . $row['appointmentsNR'] . '">edit</td>';
 					
 				echo "</tr>";
@@ -40,4 +40,4 @@
 	</div>
 </div>
 
-<?php include '../templates/footer.php'; ?>
+
