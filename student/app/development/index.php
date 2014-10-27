@@ -31,10 +31,7 @@ header("location:../login.php");
 <br>
 <br>
 	<div class="container">
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 		<form class="col-md-4 col-md-offset-4" method="GET" action="indexsearch.php" id="searchform" name="search"> 
 		    <input id="search-bar" type="text" class="form-control inputsearch" placeholder="Search..." name="search">    
 		</form> 
@@ -43,19 +40,19 @@ header("location:../login.php");
 
 <br>
 <br>		
-<<<<<<< HEAD
+
 
 
 
 		<table class="table table-striped sortable">
 
-=======
+
 		<h1>Customers</h1>
 		<br><br>
-		<a class="btn btn-primary col-md-2" href="addcustomer.php">toevoegen</a>
+		
 
 		
->>>>>>> origin/master
+
 
 		<table class="table table-striped">
 			<thead>
