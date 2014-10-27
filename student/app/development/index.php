@@ -31,6 +31,7 @@ header("location:../login.php");
 <br>
 <br>
 	<div class="container">
+<<<<<<< HEAD
 
 		<form class="col-md-4 col-md-offset-4" method="GET" action="indexsearch.php" id="searchform" name="search"> 
 		    <input id="search-bar" type="text" class="form-control inputsearch" placeholder="Search..." name="search">    
@@ -40,7 +41,22 @@ header("location:../login.php");
 
 <br>
 <br>		
+=======
+		<h1>Customers</h1>
+<<<<<<< HEAD
+		<br><br>
+		<a class="btn btn-primary col-md-2" href="addcustomer.php">toevoegen</a>
+
+		<form class="col-md-4 col-md-offset-2" method="GET" action="indexsearch.php" id="searchform" name="search"> 
+		    <input id="search-bar" type="text" class="form-control inputsearch" placeholder="Search..." name="search"> 
+		    <input type="submit" class="search-btn"> 
+		</form> 
+
+		<a class="btn btn-info col-md-2 col-md-offset-2" href="logout.php">logout</a>
+=======
+>>>>>>> origin/master
 		
+>>>>>>> origin/master
 		<table class="table table-striped sortable">
 
 
@@ -68,7 +84,7 @@ header("location:../login.php");
 						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['openProjects'] . '</a></td>';
 						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['lastcontactDate'] . '</a></td>';
 						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['balance'] . '</a></td>';
-						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['limit'] . '</a></td>';
+						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['limiet'] . '</a></td>';
 						echo '</tr>';
 						}
 					?>

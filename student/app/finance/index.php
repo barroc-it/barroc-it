@@ -34,7 +34,9 @@ header("location:../login.php");
 			<thead>
 				<tr>
 					<th>Companyname</th>
-					<th>Omschrijving</th>
+					<th>Description</th>
+					<th>Startdate</th>
+					<th>Enddate</th>
 					<th>bank account number</th>
 					<th>Credit</th>
 					<th>Revenue ammount</th>
@@ -58,10 +60,12 @@ header("location:../login.php");
 						echo '<tr>';
 						echo '<td>' . $row['companyName'] . '</td>';
 						echo '<td>' . $row['description'] . '</td>';
+						echo '<td>' . $row['start_date'] . '</td>';
+						echo '<td>' . $row['end_date'] . '</td>';
 						echo '<td>' . $row['bankNumber'] . '</td>';
 						echo '<td>' . $row['credit'] . '</td>';
 						echo '<td>' . $row['salesAmount'] . '</td>';
-						echo '<td>' . $row['limit'] . '</td>';
+						echo '<td>' . $row['limiet'] . '</td>';
 						echo '<td>' . $row['largeReservationNumber'] . '</td>';
 						echo '<td>' . $row['bkr_control'] . '</td>';
 						echo '<td><a href="activate.php?invoicesNR='.$row['customerNR']. '">View</a></td>';
