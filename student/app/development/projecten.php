@@ -10,6 +10,7 @@
 </style>
 
 <header>
+	<a class="btn btn-primary col-md-2" href="addcustomer.php">toevoegen</a>
 	<div class="navibar">
 		<button class="btn btn-primary btn-sm btn-primary2"><a href="logout.php">Log out</a></button>
 		<ul class="navibarbutton">
