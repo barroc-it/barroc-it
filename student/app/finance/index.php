@@ -30,10 +30,16 @@ header("location:../login.php");
 	
 		</form> 
 
+<<<<<<< HEAD
+		<a class="btn btn-info col-md-2 col-md-offset-2" href="logout.php">logout</a>
+
+		<table class="table table-striped">
+=======
 	<a class="btn btn-info col-md-2 col-md-offset-2" href="logout.php">logout</a>
 <br>
 <br>
 		<table class="table table-striped sortable">
+>>>>>>> origin/master
 			<thead>
 				<tr>
 					<th>Companyname</th>
