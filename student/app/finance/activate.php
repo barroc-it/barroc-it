@@ -22,9 +22,9 @@
 			<tbody class="finance">
 				<?php
 
-				if ( isset($_GET['invoicesNR']) ) {
-				$invoicesNR = $_GET['invoicesNR'];
-				$sql = "SELECT * FROM invoices WHERE active = 0 AND invoicesNR = '$invoicesNR' ";
+				if ( isset($_GET['projectNR']) ) {
+				$projectNR = $_GET['projectNR'];
+				$sql = "SELECT * FROM invoices WHERE active = 0 AND projectNR = '$projectNR' ";
 				$query = mysqli_query($con, $sql);
 				while($row = mysqli_fetch_assoc($query))
 				{
@@ -36,7 +36,7 @@
 						echo '<td>' . $row['btw'] . '</td>';
 						echo '<td>' . $row['amount'] . '</td>';
 						echo '<td><a href="activateEdit.php">Edit</a></td>';
-						echo '<td><a href="deactivate.php?invoicesNR=' . $row['invoicesNR'] . '">Deactivate</a>';
+						echo '<td><a href="deactivate.php?projectNR=' . $row['projectNR'] . '">Deactivate</a>';
 						echo '</tr>';
 				}
 
