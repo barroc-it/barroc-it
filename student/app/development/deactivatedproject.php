@@ -3,42 +3,33 @@
 	require '../../config/config.php';
 ?>
 
-<style>
-	body {
-		min-width: 900px;
-	}
-</style>
-
 <header>
 	<div class="navibar">
-		<button class="btn btn-primary btn-sm btn-primary2"><a href="logout.php">Log out</a></button>
-		<ul class="navibarbutton">
-			<li><a class="menutext" href="index.php">Home</a></li>
-			<li><a class="active" href="deactivatedproject.php">Deactivated projects</a></li>		
+		<ul>
+			<li><a class="active" href="index.php">Home</a></li>
+			<li><a class="menutext" href="deactivatedproject.php">Deactivated projects</a></li>		
 		</ul>
-		<div class="searchitem">
-			<form  method="GET" action="indexsearch.php" id="searchform" name="search"> 
-			    <input id="search-bar" type="text" class="form-control inputsearch" placeholder="Search..." name="search"> 
-			    <input type="submit" class="search-btn"> 
-			</form> 
+		<div class="searchform">
+			<form method="GET" action="indexsearch.php" name="search"> 
+			    <input type="text" class="form-control" placeholder="Search..." name="search">    
+			</form>
 		</div>
+		<input type="submit" class="searchbtn">
+		<a class="btn btn-info col-md-2 col-md-offset-2 btn-sm" href="logout.php">logout</a>
 	</div>
 </header>
 
 <?php
-
 	if ( isset($_GET['projectNR']) ) {
-		
 		$projectNR = $_GET['projectNR'];
 		$sql = "SELECT * FROM projects";
 
 		if (!$query = mysqli_query($con, $sql)) {
-			echo '<a href="index.php"><button class="blue-btn2" style="font-size: 20px; height: 100px; width: 350px; float: left; margin-top: 10px; margin-left: 35%;">Kan selectie niet uitvoeren,<br>Klik hier om terug te gaan.</button></a>';
+			echo '<a href="index.php">Kan selectie niet uitvoeren, Klik hier om terug te gaan.</a>';
 			die();
 			}
 		$row = mysqli_fetch_assoc($query);
 		}
-
 ?>
 
 <div class="container">
@@ -55,11 +46,8 @@
 			</thead>
 			<tbody>
 				<?php
-				
 					$sql = "SELECT * FROM projects WHERE active = 1";
-
 					$query = mysqli_query($con, $sql);
-
 
 						while ($row = mysqli_fetch_assoc($query)) {
 							echo '<tr>';
@@ -71,7 +59,6 @@
 					 	<?php 						
 							echo '</tr>';
 						} 
-					
 				?>
 			</tbody>
 		</table>
