@@ -29,27 +29,27 @@ $customerNR = $_GET['customerNR'];
 ?>
 
 <form action="" method="POST" class="editform"> 
-	<div class="form-group col-md-12">
-		<label for="maintenance_contract">maintenance_contract</label>
-		<input type="text"  class="form-control" name="maintenance_contract" id="maintenance_contract">
+
+<br>
+<br>
+	<div class="form-group col-md-8">
+		<label class="col-md-3" for="maintenance_contract">maintenance_contract</label>
+		<input class="col-md-6" type="text"  class="form-control" name="maintenance_contract" id="maintenance_contract">
+	</div>
+	<div class="form-group col-md-8">
+		<label class="col-md-3" for="software">software</label>
+		<input class="col-md-6" type="text"  class="form-control" name="software" id="software">
+	</div>
+	<div class="form-group col-md-8">
+		<label class="col-md-3" for="hardware">hardware</label>
+		<input class="col-md-6" type="text"  class="form-control" name="hardware" id="hardware">
+	</div>
+	<div class="form-group col-md-8">
+		<label class="col-md-3" for="description">Description</label>
+		<input class="col-md-6" type="text"  class="form-control" name="description" id="description">
 	</div>
 
-
-
-	<div class="form-group col-md-12">
-		<label for="software">software</label>
-		<input type="text"  class="form-control" name="software" id="software">
-	</div>
-	<div class="form-group col-md-12">
-		<label for="hardware">hardware</label>
-		<input type="text"  class="form-control" name="hardware" id="hardware">
-	</div>
-	<div class="form-group col-md-12">
-		<label for="description">Description</label>
-		<input type="text"  class="form-control" name="description" id="description">
-	</div>
-
-	<div class="form-group col-md-12">
+	<div class="form-group col-md-8">
 		<input name="submit" type="submit" value="addProject" class="btn btn-default">
 	</div>
 </form>

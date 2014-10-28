@@ -33,13 +33,13 @@
 ?>
 
 <div class="container">
-<<<<<<< HEAD
+
 	<br>
 	<br>
-	<a class="btn btn-primary col-md-2" href="addProject.php?customerNR=<?php echo $customerNR ?>">toevoegen</a>
-=======
-		<h1>Projects</h1> 
->>>>>>> origin/master
+	<h3>Projects</h3> 
+	<a class="btn btn-primary " href="addProject.php?customerNR=<?php echo $customerNR ?>">Project toevoegen</a>
+
+
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -68,7 +68,6 @@
 				?>
 			</tbody>
 		</table>
-		<a class="btn btn-primary col-md-2" href="addProject.php">toevoegen</a>
+
 	</div>
-</body>
-</html>
+<?php include '../templates/footer.php'; ?>
