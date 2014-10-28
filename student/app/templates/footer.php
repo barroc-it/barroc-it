@@ -9,7 +9,7 @@
 	<form action="" method="POST" class="commentForm">
 		<div class="form-group col-sm-12">
 			<label for="name">Name</label>
-			<input type="text" value='' class="form-control" name="name" id="name" maxlength="40">
+			<input type="text" value='' class="form-control" name="name" id="name" maxlength="37">
 		</div>
 		<div class="form-group col-sm-12">
 			<label for="department">Department</label>
@@ -28,14 +28,13 @@
 		</div>
 	</form>
 
-
 	<?php
 
 	if (isset($_POST['submit'] ) ) {		
 		$name = $_POST['name'];
 		$department = $_POST['departmentchoice'];
 		$comment = $_POST['comment'];
-		$datetime = date('Y-m-d H:i:s');
+		$datetime = date("Y-m-d H:i:s");
 		$sql = "INSERT INTO comments (name, department, comment, datetime ) VALUES ('$name', '$department', '$comment', '$datetime')";
 		
 		if( $query = mysqli_query($con, $sql)) {

@@ -3,13 +3,6 @@
 	require '../../config/config.php';
 ?>
 
-<style>
-	.searchcontrol {
-		margin-top: 6px;
-		float: left;
-		width: 300px !important;
-	}
-</style>
 <header>
 	<div class="navibar">
 		<ul>
@@ -18,7 +11,8 @@
 		</ul>
 		<div class="searchform">
 			<form method="GET" action="indexsearch.php" name="search"> 
-			    <input type="text" class="form-control searchcontrol" placeholder="Search..." name="search">
+			    <input type="text" class="form-control" placeholder="Search..." name="search">
+			    <input type="submit" class="searchbtn">
 			</form>
 		</div>
 		<a class="btn btn-info col-md-2 col-md-offset-2 btn-sm" href="logout.php">logout</a>

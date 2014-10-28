@@ -18,8 +18,9 @@ header("location:../login.php");
 			<li><a class="menutext" href="deactivatedproject.php">Deactivated projects</a></li>		
 		</ul>
 		<div class="searchform">
-			<form method="GET" action="indexsearch.php" name="search"> 
+			<form method="GET" action="indexsearch.php" name="search" class="searchinput"> 
 			    <input type="text" class="form-control" placeholder="Search..." name="search">
+			    <input type="submit" class="searchbtn">
 			</form>
 		</div>
 		<a class="btn btn-info col-md-2 col-md-offset-2 btn-sm" href="logout.php">logout</a>
