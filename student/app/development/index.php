@@ -11,49 +11,22 @@ header("location:../login.php");
 	require '../../config/config.php';
 ?>
 
-<style>
-	body {
-		min-width: 900px;
-	}
-</style>
 <header>
 	<div class="navibar">
-		
-		<ul class="navibarbutton">
+		<ul>
 			<li><a class="active" href="index.php">Home</a></li>
 			<li><a class="menutext" href="deactivatedproject.php">Deactivated projects</a></li>		
 		</ul>
-
-
-		
+		<div class="searchform">
+			<form method="GET" action="indexsearch.php" name="search"> 
+			    <input type="text" class="form-control" placeholder="Search..." name="search">
+			</form>
+		</div>
+		<a class="btn btn-info col-md-2 col-md-offset-2 btn-sm" href="logout.php">logout</a>
 	</div>
 </header>
-<br>
-<br>
 	<div class="container">
-
-		<form class="col-md-4 col-md-offset-4" method="GET" action="indexsearch.php" id="searchform" name="search"> 
-		    <input id="search-bar" type="text" class="form-control inputsearch" placeholder="Search..." name="search">    
-		</form> 
-
-		<a class="btn btn-info col-md-2 col-md-offset-2" href="logout.php">logout</a>
-
-<br>
-<br>		
-
-
-
-
-		<table class="table table-striped sortable">
-
-
 		<h1>Customers</h1>
-		<br><br>
-		
-
-		
-
-
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -67,7 +40,7 @@ header("location:../login.php");
 			</thead>			
 			<tbody class="projects">
 				<?php 
-					$sql = "SELECT * FROM customers WHERE bkr_control = 1 ORDER BY balance ASC ";
+					$sql = "SELECT * FROM customers ORDER BY balance ASC ";
 					$query = mysqli_query($con, $sql);
 					
 
@@ -78,12 +51,13 @@ header("location:../login.php");
 						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['openProjects'] . '</a></td>';
 						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['lastcontactDate'] . '</a></td>';
 						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['balance'] . '</a></td>';
-						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['limiet'] . '</a></td>';
+						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['limit'] . '</a></td>';
 						echo '</tr>';
 						}
 					?>
 			</tbody>		
 		</table>
+		<a class="btn btn-primary col-md-2" href="addcustomer.php">toevoegen</a>
 	</div>
 		
 <?php 
