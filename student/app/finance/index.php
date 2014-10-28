@@ -63,7 +63,7 @@ header("location:../login.php");
 						echo '<td>' . $row['limit'] . '</td>';
 						echo '<td>' . $row['largeReservationNumber'] . '</td>';
 						echo '<td>' . $row['bkr_control'] . '</td>';
-						echo '<td><a href="activate.php?invoicesNR='.$row['customerNR']. '">View</a></td>';
+						echo '<td><a href="activate.php?projectNR='.$row['customerNR']. '">View</a></td>';
 						echo '<td><a href="editFinance.php?customerNR='.$row['customerNR'] . '">Edit</a></td>';
 
 						echo '</tr>';
