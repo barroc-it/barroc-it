@@ -3,6 +3,13 @@
 	require '../../config/config.php';
 ?>
 
+<style>
+	.searchcontrol {
+		margin-top: 6px;
+		float: left;
+		width: 300px !important;
+	}
+</style>
 <header>
 	<div class="navibar">
 		<ul>
@@ -11,8 +18,7 @@
 		</ul>
 		<div class="searchform">
 			<form method="GET" action="indexsearch.php" name="search"> 
-			    <input type="text" class="form-control" placeholder="Search..." name="search">    
-				<input type="submit" class="search-btn">
+			    <input type="text" class="form-control searchcontrol" placeholder="Search..." name="search">
 			</form>
 		</div>
 		<a class="btn btn-info col-md-2 col-md-offset-2 btn-sm" href="logout.php">logout</a>
@@ -36,6 +42,7 @@
 
 	<div class="container">
 		<h1>Projects</h1> 
+<div class="container">
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -64,6 +71,7 @@
 				?>
 			</tbody>
 		</table>
+		<a class="btn btn-primary col-md-2" href="addProject.php">toevoegen</a>
 	</div>
 </body>
 </html>
