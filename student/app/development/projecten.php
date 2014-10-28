@@ -44,14 +44,14 @@
 <div class="container">
 	<br>
 	<br>
-	<a class="btn btn-primary col-md-2" href="addProject.php">toevoegen</a>
+	<a class="btn btn-primary col-md-2" href="addProject.php?customerNR=<?php echo $customerNR ?>">toevoegen</a>
 		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th>Maintenance contract</th>
 					<th>Software</th>
 					<th>Hardware</th>
-					<th>Prospect</th>
+					<th>Discription</th>
 					<th>Deactivate</th>
 				</tr>
 			</thead>
