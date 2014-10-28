@@ -3,25 +3,19 @@
 	require '../../config/config.php';
 ?>
 
-<style>
-	body {
-		min-width: 900px;
-	}
-</style>
-
 <header>
 	<div class="navibar">
-		<button class="btn btn-primary btn-sm btn-primary2"><a href="logout.php">Log out</a></button>
-		<ul class="navibarbutton">
-			<li><a class="menutext" href="index.php">Home</a></li>
+		<ul>
+			<li><a class="active" href="index.php">Home</a></li>
 			<li><a class="menutext" href="deactivatedproject.php">Deactivated projects</a></li>		
 		</ul>
-		<div class="searchitem">
-			<form  method="post" action="projectsearch.php" id="searchform" name="search"> 
-			    <input  type="text" class="form-control inputsearch" placeholder="Search..." name="search"> 
-			    <input  type="submit" class="search-btn" name="submit" value""> 
-			</form> 
+		<div class="searchform">
+			<form method="GET" action="indexsearch.php" name="search"> 
+			    <input type="text" class="form-control" placeholder="Search..." name="search">    
+				<input type="submit" class="search-btn">
+			</form>
 		</div>
+		<a class="btn btn-info col-md-2 col-md-offset-2 btn-sm" href="logout.php">logout</a>
 	</div>
 </header>
 
@@ -40,8 +34,8 @@
 
 ?>
 
-<div class="container">
-	<h1>Projects</h1> 
+	<div class="container">
+		<h1>Projects</h1> 
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -71,3 +65,5 @@
 			</tbody>
 		</table>
 	</div>
+</body>
+</html>

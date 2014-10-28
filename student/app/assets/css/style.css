@@ -1,21 +1,8 @@
-.login-form {
-	margin-top: 150px;
+	body {
+		min-width: 900px;
 	}
-	span.glyphicon {
-		padding-right: 5px;
-	}
-	button.btn {
-		margin-bottom: 20px;
-	}
-	.form-group {
-		color: #444444;
-	}
-	.editform {
-		margin: 0 auto;
-		width: 500px;
-	}
-	.projects {
-		cursor: pointer;
+	.login-form {
+		margin-top: 150px;
 	}
 	.loginbackground {
 		background-color: black;
@@ -29,22 +16,8 @@
 		opacity: 0.4;
     	filter: alpha(opacity=40);
 	}
-	.borderline {
-		border-bottom: 0px solid #444444;
-		text-align: center;
-		color: #000000;
-	}
-	.form-group {
-		color: #444444;
-	}
-	.form-control {
-		color: #444444;
-	}
 	.commentform {
-		width: 500px;
-	}
-	.tablewidth {
-		width: 500px;
+		width: 700px;
 	}
 	.commentdate {
 		float: right;
@@ -56,12 +29,14 @@
 	}
 	.footerclass {
 		margin: 0 auto;
-		width: 1200px;
+		width: 90%;
 		margin-top: 50px;
 		padding-top: 40px;
 		box-shadow: 5px 5px 20px 1px #999999;
 	}
 	.del-btn {
+		margin-top: 30px;
+		margin-left: 5px;
 		background-image: url(../images/delete.png);
 		background-size: 14px 14px;
 		background-repeat: no-repeat;
@@ -73,4 +48,36 @@
 		border-radius: 5px;
 		border: 1px solid #C6C6C6;
 		background-color: #F0F0F0;
+	}
+	.searchform {
+		margin-left: 50px;
+		float: left;
+		width: 350px;
+	}
+	.search-btn img{
+		height: 35px;
+		width: 35px;
+	}
+	.search-btn {
+		margin-top: 10px;
+		background-image: url(../images/search.png);
+		background-size: 30px 30px;
+		background-repeat: no-repeat;
+		background-position: center;
+		width: 35px;
+		height: 35px;
+		border: none;
+		background-color: transparent;
+		color: transparent;
+		border: 1px solid #DDDDDD;
+		border-bottom: none;
+	}
+	.search-btn:hover {
+		border: 2px solid #2196F3;
+	}
+	.btn-info {
+		float: right !important;
+		width: 80px !important;
+		margin-right: 7px;
+		margin-top: 9px;
 	}

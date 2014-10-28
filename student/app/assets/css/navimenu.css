@@ -1,3 +1,7 @@
+	* {
+		margin: 0px;
+		padding: 0px;
+	}
 	.bannerimg {
 		background-image: url(../images/banner.png);
 		height: 300px;
@@ -15,50 +19,44 @@
 	.text_1 {
 		margin-top: 120px;
 	}
+
 	.navibar {
-		height: 36px;
+		margin-top: -13px;
+		height: 46px;
 		width: 100%;
-		border-bottom: 1px solid #e7e7e7;
+		border-bottom: 1px solid #DDDDDD;
 	}
 	.navibar li {
 		float: left;
 		list-style: none;
 	}
-	.navibarbutton {
-		margin-top: 20px;
-	}
 	.btn a {
 		color: white;
 		text-decoration: none;
-	}
-	.menutext {
-		list-style: none;
-		padding: 11px 20px 5px 20px;
-		text-shadow: 0.5px 0.5px 1px black;
-		color: gray;
-		text-decoration: none;
-		font-size: 26px;
+		padding: 10px 10px 10px 10px;
 	}
 	.active {
-		list-style: none;
-		padding: 11px 20px 5px 20px;
-		border-bottom: 3px solid #2196F3;
+		padding: 5px 15px 5px 15px;
+		text-transform: uppercase;
+		text-shadow: 0.5px 0.5px 1px black;
+		color: #555;
+		background: #CFC1B5;
+		font-size: 26px;
+	}
+	.active:hover {
+		padding: 5px 15px 5px 15px;
+		text-decoration: none;
+		color: #8C3333;
+	}
+	.menutext {
+		padding: 5px 15px 5px 15px;
+		text-transform: uppercase;
 		text-shadow: 0.5px 0.5px 1px black;
 		color: gray;
-		text-decoration: none;
 		font-size: 26px;
 	}
 	.menutext:hover {
-		list-style: none;
-		padding: 11px 20px 5px 20px;
-		border-bottom: 3px solid #2196F3;
-		text-shadow: 0.5px 0.5px 1px black;
-		color: gray;
-		text-decoration: none;
-	}
-	.active:hover {
-		list-style: none;
-		padding: 11px 20px 5px 20px;
-		color: gray;
+		padding: 5px 15px 5px 15px;
+		color: #8C3333;
 		text-decoration: none;
 	}

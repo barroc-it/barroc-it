@@ -33,7 +33,14 @@
 	.form-control {
 		color: #444444;
 	}
-
+	.btn {
+		margin-top: 5px;
+	}
+	li {
+		color: #444444;
+		margin-top: -5px;
+		margin-bottom: -5px;
+	}
 </style>
 <div class="login">
 	<div class="container">
@@ -41,17 +48,15 @@
 			<fieldset>
 				<div class="loginbackground">
 				</div>
-				<legend class="borderline"><h2>Login</h2></legend>
-
 					<ul>
 						<?php  
 						// succes of fail message
 						if (isset($_GET['msg'])) {
-							echo '<li>' .  htmlspecialchars($_GET['msg']) . '</li>';
+							echo '<li><b>' .  htmlspecialchars($_GET['msg']) . '</b></li>';
 						}
 						?>
 					</ul>
-
+				<legend class="borderline"><h2>Login</h2></legend>
 						<div class="form-group">
 							<label for="name">Username</label>
 							<input type="text" name="name" id="name" class="form-control">	
@@ -61,7 +66,7 @@
 							<input type="password" name="password" id="password" class="form-control">
 						</div>
 						<div class="form-group">
-							<input type="submit" name="authUser" value="Login" class="btn btn-large">
+							<input type="submit" name="authUser" value="Login" class="btn btn-sm">
 						</div>
 			</fieldset>
 		</form>
