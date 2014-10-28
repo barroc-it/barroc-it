@@ -25,6 +25,7 @@ header("location:../login.php");
 </div>
 	<div class="container">
 		<table class="table table-striped">
+			<a class="btn btn-primary col-md-2" href="add_custumers.php">toevoegen</a>
 			<thead>
 				<tr>
 					<th>Companyname</th>
@@ -39,7 +40,7 @@ header("location:../login.php");
 					<th>BKR</th>
 					<th>Activated invoices</th>
 					<th>edit</th>
-					<th>invoice number</th>
+			
 				</tr>
 			</thead>
 					
@@ -70,7 +71,8 @@ header("location:../login.php");
 					?>
 				</tbody>
 			</table>
-			<a class="btn btn-primary col-md-2" href="add_custumers.php">toevoegen</a>
+		</div>
+			
 	
 <?php 
 	include '../templates/footer.php'; 

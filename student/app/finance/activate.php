@@ -21,7 +21,7 @@
 			<thead>
 				<tr>
 					<th>Invoice duration</th>
-					<th>Quintity</th>
+					<th>Quantity</th>
 					<th>Description</th>
 					<th>Price</th>
 					<th>BTW</th>
@@ -48,8 +48,8 @@
 						echo '<td>' . $row['btw'] . '</td>';
 						echo '<td>' . $row['amount'] . '</td>';
 						echo '<td><a href="activateEdit.php">Edit</a></td>';
-						echo '<td><a href="deactivate.php?invoicesNR=' . $row['invoicesNR'] . '">Deactivate</a>';
-						echo '</tr>';
+						echo '<td><a href="deactivate.php?invoicesNR=' . $row['invoicesNR'] . '">' ?><button class="warning-btn">Deactivate</button></a></td>
+			<?php 	echo '</tr>';
 				}
 
 	}
