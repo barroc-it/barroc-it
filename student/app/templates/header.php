@@ -13,7 +13,7 @@
 	</div>
 
 	<link rel="stylesheet" type="text/css" href="http://bootswatch.com/paper/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="../assets/css/style.css">
 	<link rel="stylesheet" href="../assets/css/navimenu.css">
 	<link rel="stylesheet" href="../assets/css/buttons.css">
 

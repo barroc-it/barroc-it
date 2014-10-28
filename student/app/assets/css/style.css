@@ -50,15 +50,20 @@
 		background-color: #F0F0F0;
 	}
 	.searchform {
+		margin-top: 9px;
 		margin-left: 50px;
 		float: left;
-		width: 350px;
+		width: 300px !important;
 	}
-	.search-btn img{
+	.searchinput {
+		width: 300px !important;
+	}
+	.searchbtn img{
 		height: 35px;
 		width: 35px;
 	}
-	.search-btn {
+	.searchbtn {
+		float: left;
 		margin-top: 10px;
 		background-image: url(../images/search.png);
 		background-size: 30px 30px;
@@ -72,7 +77,7 @@
 		border: 1px solid #DDDDDD;
 		border-bottom: none;
 	}
-	.search-btn:hover {
+	.searchbtn:hover {
 		border: 2px solid #2196F3;
 	}
 	.btn-info {

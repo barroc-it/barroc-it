@@ -3,13 +3,6 @@
 	require '../../config/config.php';
 ?>
 
-<style>
-	.searchcontrol {
-		margin-top: 6px;
-		float: left;
-		width: 300px !important;
-	}
-</style>
 <header>
 	<div class="navibar">
 		<ul>
@@ -18,15 +11,15 @@
 		</ul>
 		<div class="searchform">
 			<form method="GET" action="indexsearch.php" name="search"> 
-			    <input type="text" class="form-control searchcontrol" placeholder="Search..." name="search">
+			    <input type="text" class="form-control" placeholder="Search..." name="search">
 			</form>
 		</div>
+		<input type="submit" class="searchbtn">
 		<a class="btn btn-info col-md-2 col-md-offset-2 btn-sm" href="logout.php">logout</a>
 	</div>
 </header>
 
 <?php
-
 	if ( isset($_GET['customerNR']) ) {
 		$customerNR = $_GET['customerNR'];
 		$sql = "SELECT * FROM customers WHERE customerNR = '$customerNR' ";
@@ -37,19 +30,23 @@
 			}
 		$row = mysqli_fetch_assoc($query);
 		}
-
 ?>
 
-	<div class="container">
-		<h1>Projects</h1> 
 <div class="container">
+
+	<br>
+	<br>
+	<h3>Projects</h3> 
+	<a class="btn btn-primary " href="addProject.php?customerNR=<?php echo $customerNR ?>">Project toevoegen</a>
+
+
 		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th>Maintenance contract</th>
 					<th>Software</th>
 					<th>Hardware</th>
-					<th>Prospect</th>
+					<th>Discription</th>
 					<th>Deactivate</th>
 				</tr>
 			</thead>
@@ -71,7 +68,6 @@
 				?>
 			</tbody>
 		</table>
-		<a class="btn btn-primary col-md-2" href="addProject.php">toevoegen</a>
+
 	</div>
-</body>
-</html>
+<?php include '../templates/footer.php'; ?>

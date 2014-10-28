@@ -18,15 +18,18 @@ header("location:../login.php");
 			<li><a class="menutext" href="deactivatedproject.php">Deactivated projects</a></li>		
 		</ul>
 		<div class="searchform">
-			<form method="GET" action="indexsearch.php" name="search"> 
-			    <input type="text" class="form-control" placeholder="Search..." name="search">
+			<form method="GET" action="indexsearch.php" name="search" class="searchinput"> 
+			    <input type="text" class="form-control searchinput" placeholder="Search..." name="search">
 			</form>
 		</div>
+		<input type="submit" class="searchbtn">
 		<a class="btn btn-info col-md-2 col-md-offset-2 btn-sm" href="logout.php">logout</a>
 	</div>
 </header>
 	<div class="container">
-		<h1>Customers</h1>
+		<div class="page-header">
+			<h1>Development Cusomers</h1>
+		</div>
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -57,7 +60,6 @@ header("location:../login.php");
 					?>
 			</tbody>		
 		</table>
-		<a class="btn btn-primary col-md-2" href="addcustomer.php">toevoegen</a>
 	</div>
 		
 <?php 
