@@ -34,13 +34,6 @@ if ( isset($_GET['appointmentsNR']) ) {
 
 ?>
 
-<style>
-	.editform {
-		margin: 0 auto;
-		width: 500px;
-	}
-</style>
-
 <div class="editform">
 	<h1>Edit Appointments</h1>
 </div>
@@ -55,8 +48,8 @@ if ( isset($_GET['appointmentsNR']) ) {
 		<input type="text" value='<?php echo $row['datum']; ?>' class="form-control" name="datum" appointmentsNR="banknumber">
 	</div>
 	<div class="form-group col-sm-12">
-		<label for="beschrijving">Beschrijving</label>
-		<input type="text" value='<?php echo $row['beschrijving']; ?>' class="form-control" name="beschrijving" appointmentsNR="beschrijving">
+		<label for="description">Beschrijving</label>
+		<input type="text" value='<?php echo $row['description']; ?>' class="form-control" name="description" appointmentsNR="description">
 	</div>
 
 	<div class="form-group col-sm-12">

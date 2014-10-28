@@ -27,7 +27,9 @@ header("location:../login.php");
 	</div>
 </header>
 	<div class="container">
-		<h1>Customers</h1>
+		<div class="page-header">
+			<h1>Development Cusomers</h1>
+		</div>
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -58,7 +60,6 @@ header("location:../login.php");
 					?>
 			</tbody>		
 		</table>
-		<a class="btn btn-primary col-md-2" href="addcustomer.php">toevoegen</a>
 	</div>
 		
 <?php 

@@ -11,25 +11,24 @@ header("location:../login.php");
 	include '../templates/header.php'; 
 	require '../../config/config.php'; 
 ?>
+<div class="navibar">
+		<ul class="navibarbutton">
+			<li><a class="active" href="index.php">Home</a></li>		
+		</ul>
+	<div class="searchform">
+		<form method="GET" action="indexsearch.php" name="search"> 
+			   <input type="text" class="form-control" placeholder="Search..." name="search">
+		</form>
+	</div>
+		<input type="submit" class="searchbtn">
+		<a class="btn btn-info col-md-2 col-md-offset-2 btn-sm" href="logout.php">logout</a>
+</div>
+
 <div class="container">
 	<div class="page-header">
 		<h2>sales</h2>
 		<h3>customers</h3>
 	</div>
-	<br>
-	<br>
-	<a class="btn btn-primary col-md-2" href="add_custumers.php">toevoegen</a>
-
-		<form class="col-md-4 col-md-offset-2" method="GET" action="indexsearch.php" id="searchform" name="search"> 
-		    <input id="search-bar" type="text" class="form-control inputsearch" placeholder="Search..." name="search"> 
-	
-		</form> 
-
-	<a class="btn btn-info col-md-2 col-md-offset-2" href="logout.php">logout</a>
-	<br>
-	<br>
-
-
 	<div class="customers">
 		<table class="table table-striped">
 			<tr>
@@ -63,12 +62,13 @@ header("location:../login.php");
 					echo  '</td>';
 					echo '<td> <a href="custumersEdit.php?customerNR=' . $row['customerNR'] . '">edit</td>';
 					echo '<td> <a href="appointments.php">Appointments</td>';
-					
-				echo "</tr>";
+					echo "</tr>";
 			}
 		?>
 	</table>
+	<a class="btn btn-primary col-md-2" href="add_custumers.php">toevoegen</a>
 	</div>
 </div>
+
 
 <?php include '../templates/footer.php'; ?>

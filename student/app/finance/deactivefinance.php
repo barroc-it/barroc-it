@@ -1,16 +1,7 @@
-<<?php 
+<?php 
 	include '../templates/header.php';
 	require '../../config/config.php';
 ?>
-
-<style>
-	* {
-		margin-top: -12px;
-	}
-	body {
-		min-width: 900px;
-	}
-</style>
 
 <header>
 	<div class="navibar">
@@ -18,15 +9,15 @@
 			<li><a class="menutext" href="index.php">Home</a></li>
 			<li><a class="menutext" href="deactivefinance.php">Deactivated invoices</a></li>		
 		</ul>
-		<div class="searchitem">
-			<form  method="post" action="search.php?go" id="searchform" name="search"> 
-			    <input  type="text" class="form-control inputsearch" value="Search..." name="search"> 
-			    <input  type="submit" class="search-btn" name="submit" value""> 
-			</form> 
+		<div class="searchform">
+			<form method="GET" action="indexsearch.php" name="search"> 
+			    <input type="text" class="form-control" placeholder="Search..." name="search">
+			</form>
 		</div>
+		<input type="submit" class="searchbtn">
+		<a class="btn btn-info col-md-2 col-md-offset-2 btn-sm" href="logout.php">logout</a>
 	</div>
 </header>
-
 
 <div class="container">
 		<h1>Finance Deactivated invoices</h1>

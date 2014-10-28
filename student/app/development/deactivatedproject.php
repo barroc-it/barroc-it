@@ -33,7 +33,9 @@
 ?>
 
 <div class="container">
-	<h1>Deactivated projects</h1> 
+	<div class="page-header">
+		<h2>Development Deactivated Projects</h2>
+	</div> 
 		<table class="table table-striped">
 			<thead>
 				<tr>
