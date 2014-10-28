@@ -12,15 +12,14 @@
 		<div class="searchform">
 			<form method="GET" action="indexsearch.php" name="search"> 
 			    <input type="text" class="form-control" placeholder="Search..." name="search">
-			    <input type="submit" class="searchbtn">
 			</form>
 		</div>
+		<input type="submit" class="searchbtn">
 		<a class="btn btn-info col-md-2 col-md-offset-2 btn-sm" href="logout.php">logout</a>
 	</div>
 </header>
 
 <?php
-
 	if ( isset($_GET['customerNR']) ) {
 		$customerNR = $_GET['customerNR'];
 		$sql = "SELECT * FROM customers WHERE customerNR = '$customerNR' ";
@@ -31,12 +30,10 @@
 			}
 		$row = mysqli_fetch_assoc($query);
 		}
-
 ?>
 
-	<div class="container">
-		<h1>Projects</h1> 
 <div class="container">
+		<h1>Projects</h1> 
 		<table class="table table-striped">
 			<thead>
 				<tr>

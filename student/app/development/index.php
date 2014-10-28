@@ -19,10 +19,10 @@ header("location:../login.php");
 		</ul>
 		<div class="searchform">
 			<form method="GET" action="indexsearch.php" name="search" class="searchinput"> 
-			    <input type="text" class="form-control" placeholder="Search..." name="search">
-			    <input type="submit" class="searchbtn">
+			    <input type="text" class="form-control searchinput" placeholder="Search..." name="search">
 			</form>
 		</div>
+		<input type="submit" class="searchbtn">
 		<a class="btn btn-info col-md-2 col-md-offset-2 btn-sm" href="logout.php">logout</a>
 	</div>
 </header>

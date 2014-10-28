@@ -55,12 +55,16 @@
 		float: left;
 		width: 300px !important;
 	}
+	.searchinput {
+		width: 300px !important;
+	}
 	.searchbtn img{
 		height: 35px;
 		width: 35px;
 	}
 	.searchbtn {
 		float: left;
+		margin-top: 10px;
 		background-image: url(../images/search.png);
 		background-size: 30px 30px;
 		background-repeat: no-repeat;
