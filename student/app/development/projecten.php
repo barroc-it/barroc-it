@@ -65,6 +65,6 @@
 				?>
 			</tbody>
 		</table>
-		<a class="btn btn-primary " href="addProject.php?customerNR=<?php echo $customerNR ?>">Project toevoegen</a>
+		<a class="btn btn-primary " href="addProject.php?customerNR=<?php echo $customerNR ?>">Add Project</a>
 	</div>
 <?php include '../templates/footer.php'; ?>

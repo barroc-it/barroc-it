@@ -61,9 +61,7 @@
     } else {
     	echo '<p class="nocomments">There are no comments</p>';
     }
-
-	?>
+?>
 </div>
-
 </body>
 </html>
