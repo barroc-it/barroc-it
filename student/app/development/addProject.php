@@ -22,7 +22,7 @@ $customerNR = $_GET['customerNR'];
 			header('location:index.php?msg='.$msg);
 		}
 		$msg = urlencode('project is succesvol toegevoegd');
-		header ('location:index.php?msg='.$msg);
+		header ('location:projecten.php?customerNR='.$customerNR);
 		}
 	
 

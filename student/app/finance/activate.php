@@ -21,7 +21,7 @@
 			<thead>
 				<tr>
 					<th>Invoice duration</th>
-					<th>Quintity</th>
+					<th>Quantity</th>
 					<th>Description</th>
 					<th>Price</th>
 					<th>BTW</th>
@@ -62,8 +62,17 @@
 
 						
 						echo '<td><a href="activateEdit.php">Edit</a></td>';
+<<<<<<< HEAD
 						echo '<td><a href="deactivate.php?invoicesNR=' . $row['invoicesNR'] . '">Deactivate</a>';
+=======
+<<<<<<< HEAD
+						echo '<td><a href="deactivate.php?invoicesNR=' . $row['invoicesNR'] . '">' ?><button class="warning-btn">Deactivate</button></a></td>
+			<?php 	echo '</tr>';
+=======
+						echo '<td><a href="deactivate.php?projectNR=' . $row['projectNR'] . '">Deactivate</a>';
+>>>>>>> origin/master
 						echo '</tr>';
+>>>>>>> origin/master
 				}
 			}
 	}
