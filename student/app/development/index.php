@@ -2,9 +2,7 @@
 session_start();
 if($_SESSION['login'] == 3) {  
 
-}
-else
-{
+} else {
 header("location:../login.php");
 }
 	include '../templates/header.php';
@@ -28,7 +26,7 @@ header("location:../login.php");
 </header>
 	<div class="container">
 		<div class="page-header">
-			<h1>Development Cusomers</h1>
+			<h2>Development Cusomers</h2>
 		</div>
 		<table class="table table-striped">
 			<thead>
