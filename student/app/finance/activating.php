@@ -8,9 +8,9 @@
 			die();
 		}
 
-			if ( isset($_GET['projectNR']) ) {
-				$invoicesNR = $_GET['projectNR'];
-				$sql = "UPDATE invoices SET active = 0 WHERE projectNR = '$projectNR' ";
+			if ( isset($_GET['invoicesNR']) ) {
+				$invoicesNR = $_GET['invoicesNR'];
+				$sql = "UPDATE invoices SET active = 0 WHERE invoicesNR = '$invoicesNR' ";
 
 
 				if (!$query = mysqli_query($con, $sql)) {

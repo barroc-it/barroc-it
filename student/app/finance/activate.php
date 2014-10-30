@@ -38,23 +38,35 @@
 				$projectNR = $_GET['projectNR'];
 				$sql = "SELECT * FROM invoices WHERE active = 0 AND projectNR = '$projectNR' ";
 				$query = mysqli_query($con, $sql);
-				while($row = mysqli_fetch_assoc($query))
-				{
+				while($row = mysqli_fetch_assoc($query)){
+
+			  $id = $row['invoicesNR'];
+				
 						echo '<tr>';
 						echo '<td>' . $row['date'] . '</td>';
 						echo '<td>' . $row['quintity'] . '</td>';
 						echo '<td>' . $row['description'] . '</td>';
 						echo '<td>' . $row['price'] . '</td>';
 						echo '<td>' . $row['btw'] . '</td>';
-						echo '<td>' . $row['amount'] . '</td>';
+						//berekening amount
+					$amount = "SELECT SUM((quintity * price) / 100 * (btw + 100)) AS amount FROM invoices WHERE invoicesNR = '$id'";
+					$r_amount = mysqli_query($con, $amount);
+
+					while($rows3 = mysqli_fetch_assoc($r_amount))
+            {
+                $amount1 = implode("", $rows3);
+                echo '<td>' . $amount1 . '</td>';
+
+                  $insert = "UPDATE invoices SET amount = '$amount1' WHERE invoicesNR = '$id' LIMIT 1";
+                $result = mysqli_query($con, $insert);
+
+						
 						echo '<td><a href="activateEdit.php">Edit</a></td>';
-						echo '<td><a href="deactivate.php?projectNR=' . $row['projectNR'] . '">Deactivate</a>';
+						echo '<td><a href="deactivate.php?invoicesNR=' . $row['invoicesNR'] . '">Deactivate</a>';
 						echo '</tr>';
 				}
-
+			}
 	}
-
-
 
 /*
 	$sql = "SELECT * FROM invoices";
