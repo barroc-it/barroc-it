@@ -44,19 +44,24 @@
 		}
 	}
 
-		$sql = "SELECT * FROM comments ORDER BY datetime DESC ";
-		$query = mysqli_query($con, $sql);
+	$sql = "SELECT * FROM comments ORDER BY datetime DESC ";
+	$query = mysqli_query($con, $sql);
 
-		while ($row = mysqli_fetch_assoc($query)) {
-			echo '<div class="container">';
+    if (mysqli_num_rows($query) > 0 ){
+        while ($row = mysqli_fetch_assoc($query)){
+           	echo '<div class="container">';
 			echo '<table class="table tablewidth tablebottom">';
 			echo '<thead><tr><th><h3>' . $row['name'] . ' has a comment:' . '<a href="deletecomment.php?id=' . $row['id'] . '">' ?><button class='del-btn' onclick="return confirm('Are you sure you want to delete this comment?');"></button></a> <?php echo '<span class="text-muted commentdate">' . $row['datetime'] . '</span></h3></th></tr></thead>';				
-	?>
+		?>
 			<tr><td><b>Department:</b>
 			<?php echo $row['department'] . '</td></tr>'; ?>
 			<tr><td><b>Comment:</b><br>
 			<?php echo $row['comment'] . '</td></tr>';
 		}
+    } else {
+    	echo '<p class="nocomments">There are no comments</p>';
+    }
+
 	?>
 </div>
 

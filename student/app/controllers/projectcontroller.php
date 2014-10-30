@@ -84,13 +84,6 @@ if ( isset($_GET['id']) ) {
 
 ?>
 
-<style>
-	.editform {
-		margin: 0 auto;
-		width: 500px;
-	}
-</style>
-
 <div class="editform">
 	<h1>Edit project</h1>
 </div>
