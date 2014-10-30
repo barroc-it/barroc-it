@@ -46,33 +46,24 @@
 						echo '<td>' . $row['date'] . '</td>';
 						echo '<td>' . $row['quintity'] . '</td>';
 						echo '<td>' . $row['description'] . '</td>';
-						echo '<td>' . $row['price'] . '</td>';
-						echo '<td>' . $row['btw'] . '</td>';
+						echo '<td>€' . $row['price'] . ',-</td>';
+						echo '<td>' . $row['btw'] . '%</td>';
 						//berekening amount
 					$amount = "SELECT SUM((quintity * price) / 100 * (btw + 100)) AS amount FROM invoices WHERE invoicesNR = '$id'";
 					$r_amount = mysqli_query($con, $amount);
 
-					while($rows3 = mysqli_fetch_assoc($r_amount))
-            {
+			while($rows3 = mysqli_fetch_assoc($r_amount)) {
                 $amount1 = implode("", $rows3);
-                echo '<td>' . $amount1 . '</td>';
+                $amount2 = number_format($amount1, 2, '.', '' . '');
+                echo '<td>€' . $amount2 . ',-</td>';
 
                   $insert = "UPDATE invoices SET amount = '$amount1' WHERE invoicesNR = '$id' LIMIT 1";
                 $result = mysqli_query($con, $insert);
 
 						
 						echo '<td><a href="activateEdit.php">Edit</a></td>';
-<<<<<<< HEAD
-						echo '<td><a href="deactivate.php?invoicesNR=' . $row['invoicesNR'] . '">Deactivate</a>';
-=======
-<<<<<<< HEAD
 						echo '<td><a href="deactivate.php?invoicesNR=' . $row['invoicesNR'] . '">' ?><button class="warning-btn">Deactivate</button></a></td>
 			<?php 	echo '</tr>';
-=======
-						echo '<td><a href="deactivate.php?projectNR=' . $row['projectNR'] . '">Deactivate</a>';
->>>>>>> origin/master
-						echo '</tr>';
->>>>>>> origin/master
 				}
 			}
 	}
@@ -96,7 +87,9 @@
 					?>
 </tbody>
 </table>
+<?php
 
+?>
 	<a href="index.php" class="btn btn-primary">Back</a>
 	</body>
 	</html>
