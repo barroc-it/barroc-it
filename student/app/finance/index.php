@@ -25,7 +25,6 @@ header("location:../login.php");
 </div>
 	<div class="container">
 		<table class="table table-striped">
-			<a class="btn btn-primary col-md-2" href="add_custumers.php">toevoegen</a>
 			<thead>
 				<tr>
 					<th>Companyname</th>
@@ -40,7 +39,7 @@ header("location:../login.php");
 					<th>BKR</th>
 					<th>Activated invoices</th>
 					<th>edit</th>
-			
+					<th>invoice number</th>
 				</tr>
 			</thead>
 					
@@ -48,18 +47,40 @@ header("location:../login.php");
 				<?php 
 					
 					$sql = "SELECT * FROM customers";
+				
+
 					$query = mysqli_query($con, $sql);
 
 					while ($row = mysqli_fetch_assoc($query)) {
 
+				
+					
 						echo '<tr>';
 						echo '<td>' . $row['companyName'] . '</td>';
 						echo '<td>' . $row['description'] . '</td>';
 						echo '<td>' . $row['start_date'] . '</td>';
 						echo '<td>' . $row['end_date'] . '</td>';
 						echo '<td>' . $row['bankNumber'] . '</td>';
-						echo '<td>' . $row['credit'] . '</td>';
-						echo '<td>' . $row['salesAmount'] . '</td>';
+					
+						
+						// $id = $row['projectNR'];
+
+						// $sql1 = "SELECT SUM(amount) FROM invoices WHERE projectNR = '$id'";
+
+						
+
+						// $r_query = mysqli_query($con, $sql1);
+						// while ($row1 = mysqli_fetch_assoc($r_query)) 
+						// {
+									
+						// $implode = implode("", $row1);
+						// echo $implode;	
+
+						//  $insert = "UPDATE invoices SET amount  WHERE projectNR = '$id' LIMIT 1";
+      //          			 $result = mysqli_query($con, $insert);
+
+						// }
+					
 						echo '<td>' . $row['limit'] . '</td>';
 						echo '<td>' . $row['largeReservationNumber'] . '</td>';
 						echo '<td>' . $row['bkr_control'] . '</td>';
@@ -71,8 +92,7 @@ header("location:../login.php");
 					?>
 				</tbody>
 			</table>
-		</div>
-			
+			<a class="btn btn-primary col-md-2" href="add_custumers.php">toevoegen</a>
 	
 <?php 
 	include '../templates/footer.php'; 

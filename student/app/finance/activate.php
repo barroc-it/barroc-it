@@ -60,20 +60,22 @@
                   $insert = "UPDATE invoices SET amount = '$amount1' WHERE invoicesNR = '$id' LIMIT 1";
                 $result = mysqli_query($con, $insert);
 
-						
+						}
+
+
 						echo '<td><a href="activateEdit.php">Edit</a></td>';
-<<<<<<< HEAD
-						echo '<td><a href="deactivate.php?invoicesNR=' . $row['invoicesNR'] . '">Deactivate</a>';
-=======
-<<<<<<< HEAD
+
+			
+
+
 						echo '<td><a href="deactivate.php?invoicesNR=' . $row['invoicesNR'] . '">' ?><button class="warning-btn">Deactivate</button></a></td>
 			<?php 	echo '</tr>';
-=======
-						echo '<td><a href="deactivate.php?projectNR=' . $row['projectNR'] . '">Deactivate</a>';
->>>>>>> origin/master
+
+					
+
 						echo '</tr>';
->>>>>>> origin/master
-				}
+
+				
 			}
 	}
 
