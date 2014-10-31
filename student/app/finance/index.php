@@ -29,17 +29,13 @@ header("location:../login.php");
 				<tr>
 					<th>Companyname</th>
 					<th>Description</th>
-					<th>Startdate</th>
-					<th>Enddate</th>
-					<th>bank account number</th>
-					<th>Credit</th>
 					<th>Revenue ammount</th>
 					<th>Limit</th>
-					<th>Reservation number</th>
+					<th>Credit</th>
 					<th>BKR</th>
-					<th>Activated invoices</th>
-					<th>edit</th>
-					<th>invoice number</th>
+					<th>View Activated Invoices</th>
+					<th>Edit</th>
+					<th>..</th>
 				</tr>
 			</thead>
 					
@@ -47,28 +43,59 @@ header("location:../login.php");
 				<?php 
 					
 					$sql = "SELECT * FROM customers";
-				
-
 					$query = mysqli_query($con, $sql);
 
 					while ($row = mysqli_fetch_assoc($query)) {
-
-				
-					
+						$id = $row['customerNR'];
 						echo '<tr>';
 						echo '<td>' . $row['companyName'] . '</td>';
 						echo '<td>' . $row['description'] . '</td>';
-						echo '<td>' . $row['start_date'] . '</td>';
-						echo '<td>' . $row['end_date'] . '</td>';
-						echo '<td>' . $row['bankNumber'] . '</td>';
+						
+						$revenueamount = "SELECT SUM(Amount) FROM invoices WHERE customerNR = $id" ;
+						$revenue_amount = mysqli_query($con, $revenueamount);
+
+						while($rows1 = mysqli_fetch_assoc($revenue_amount)) {
+			                $revenueamount1 = implode("", $rows1);
+			                echo '<td>€' . $revenueamount1 . ',-</td>';
+			   				$uptdRev = "UPDATE customers SET salesAmount = $revenueamount1 WHERE customerNR = $id";
+			   				mysqli_query($con, $uptdRev);
+						}	
+						echo '<td>'  . $row['maxAmount'] . '</td>';
+						echo '<td>'  . $row['credit'] . '</td>';
+						echo '<td>' . $row['bkr_control'] . '</td>';
+		
+						echo '<td><a href="activate.php?projectNR='.$row['customerNR']. '">View</a></td>';
+						echo '<td><a href="editFinance.php?customerNR='.$row['customerNR'] . '">Edit</a></td>';	
+					
+					
+					$amount = "SELECT SUM((salesAmount / maxAmount) * 100) AS amount FROM customers WHERE customerNR = '$id'";
+					$r_amount = mysqli_query($con, $amount);
+
+					while($rows3 = mysqli_fetch_assoc($r_amount)) {
+			            $amount1 = implode("", $rows3);
+			            $amount2 = number_format($amount1, 0, '.', '' . '');
+			            $totalamount = 100 - $amount2;
+			            if ($amount2 > 100) {
+			               	echo '<td><span class"text-danger">Yes </span><button class="warning-btn">Deactivate</button></td>';
+			            } else {
+			               	echo '<td>€' . $row['maxAmount'] . ',-</td>';
+			            }
+			        }
+			        	echo '<td><progress value="' . $amount2 . '" max="100"></progress>  ' . $totalamount .  '% left';
+						echo '</tr>';
 					
 						
-						// $id = $row['projectNR'];
-
-						// $sql1 = "SELECT SUM(amount) FROM invoices WHERE projectNR = '$id'";
-
+					
+						}
 						
 
+
+
+
+
+
+						// $id = $row['projectNR'];
+						// $sql1 = "SELECT SUM(amount) FROM invoices WHERE projectNR = '$id'";
 						// $r_query = mysqli_query($con, $sql1);
 						// while ($row1 = mysqli_fetch_assoc($r_query)) 
 						// {
@@ -79,21 +106,11 @@ header("location:../login.php");
 						//  $insert = "UPDATE invoices SET amount  WHERE projectNR = '$id' LIMIT 1";
       //          			 $result = mysqli_query($con, $insert);
 
-						// }
-					
-						echo '<td>' . $row['limit'] . '</td>';
-						echo '<td>' . $row['largeReservationNumber'] . '</td>';
-						echo '<td>' . $row['bkr_control'] . '</td>';
-						echo '<td><a href="activate.php?projectNR='.$row['customerNR']. '">View</a></td>';
-						echo '<td><a href="editFinance.php?customerNR='.$row['customerNR'] . '">Edit</a></td>';
-
-						echo '</tr>';
-						}
-					?>
-				</tbody>
-			</table>
-			<a class="btn btn-primary col-md-2" href="add_custumers.php">toevoegen</a>
-	
+						// }				
+			?>
+		</tbody>
+	</table>
+		<a class="btn btn-primary col-md-2" href="add_custumers.php">toevoegen</a>
 <?php 
 	include '../templates/footer.php'; 
 	?>

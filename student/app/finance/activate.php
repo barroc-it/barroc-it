@@ -61,29 +61,13 @@
                 $result = mysqli_query($con, $insert);
 
 						}
-
-
 						echo '<td><a href="activateEdit.php">Edit</a></td>';
-<<<<<<< HEAD
-
-			
-
-
 						echo '<td><a href="deactivate.php?invoicesNR=' . $row['invoicesNR'] . '">' ?><button class="warning-btn">Deactivate</button></a></td>
-			<?php 	echo '</tr>';
-
-					
-
+			<?php 		echo '</tr>';
 						echo '</tr>';
-
-				
-=======
-						echo '<td><a href="deactivate.php?invoicesNR=' . $row['invoicesNR'] . '">' ?><button class="warning-btn">Deactivate</button></a></td>
-			<?php 	echo '</tr>';
 				}
->>>>>>> origin/master
 			}
-	}
+	
 
 /*
 	$sql = "SELECT * FROM invoices";
