@@ -51,8 +51,26 @@ header("location:../login.php");
 						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['contactPerson'] . '</a></td>';
 						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['openProjects'] . '</a></td>';
 						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['lastcontactDate'] . '</a></td>';
-						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['balance'] . '</a></td>';
-						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['limit'] . '</a></td>';
+						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['balance'] . '</a>';
+					
+
+					$id = $row['customerNR'];
+					$amount = "SELECT SUM((balance / limiet) * 100) AS amount FROM customers WHERE customerNR = '$id'";
+					$r_amount = mysqli_query($con, $amount);
+
+					while($rows3 = mysqli_fetch_assoc($r_amount)) {
+		                $amount1 = implode("", $rows3);
+		                $amount2 = number_format($amount1, 0, '.', '' . '');
+		                
+		               	if ($amount2 > 100) {
+		               		echo '<span class"text-danger"> over limit</span><button class="warning-btn">Deactivate</button></td>';
+		               	} else {
+		               		echo ' - ' . $amount2 . '%</td>';
+		               	}
+
+		                
+		            }
+						echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['limiet'] . '</a></td>';
 						echo '</tr>';
 						}
 					?>
