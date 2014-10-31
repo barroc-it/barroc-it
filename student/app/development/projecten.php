@@ -33,13 +33,9 @@
 ?>
 
 <div class="container">
-
-	<br>
-	<br>
-	<h3>Projects</h3> 
-	<a class="btn btn-primary " href="addProject.php?customerNR=<?php echo $customerNR ?>">Project toevoegen</a>
-
-
+	<div class="page-header">
+		<h2>Projects</h2>
+	</div> 
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -54,10 +50,11 @@
 				<?php
 					$sql = "SELECT * FROM projects WHERE active = 0 AND customerNR = '$customerNR' " ;
 					$query = mysqli_query($con, $sql);
+					$maintenance_contract = "SELECT maintenance_contract FROM projects";
 
 						while ($row = mysqli_fetch_assoc($query)) {
 							echo '<tr>';
-							echo '<td>' . $row['maintenance_contract'] . '</td>' ;
+							echo "<td>" . ( $row['maintenance_contract'] == 1 ? 'yes' : 'no' ). "</td>";
 							echo '<td>' . $row['software'] . '</td>' ;
 							echo '<td>' . $row['hardware'] . '</td>' ;
 							echo '<td>' . $row['description'] . '</td>' ;
@@ -68,6 +65,6 @@
 				?>
 			</tbody>
 		</table>
-
+		<a class="btn btn-primary " href="addProject.php?customerNR=<?php echo $customerNR ?>">Add Project</a>
 	</div>
 <?php include '../templates/footer.php'; ?>
