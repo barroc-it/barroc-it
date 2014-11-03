@@ -17,10 +17,10 @@ header("location:../login.php");
 		</ul>
 	<div class="searchform">
 		<form method="GET" action="indexsearch.php" name="search"> 
-			   <input type="text" class="form-control" placeholder="Search..." name="search">
-		</form>
+			<input type="text" class="form-control" placeholder="Search..." name="search">
 	</div>
-		<input type="submit" class="searchbtn">
+			<input type="submit" class="searchbtn">
+		</form>
 		<a class="btn btn-info col-md-2 col-md-offset-2 btn-sm" href="logout.php">logout</a>
 </div>
 	<div class="container">
@@ -35,13 +35,13 @@ header("location:../login.php");
 					<th>BKR</th>
 					<th>View Activated Invoices</th>
 					<th>Edit</th>
-					<th>..</th>
+					<th>Past limit?</th>
 				</tr>
 			</thead>
 					
 			<tbody class="finance">
 				<?php 
-					
+
 					$sql = "SELECT * FROM customers";
 					$query = mysqli_query($con, $sql);
 
@@ -55,44 +55,45 @@ header("location:../login.php");
 						$revenue_amount = mysqli_query($con, $revenueamount);
 
 						while($rows1 = mysqli_fetch_assoc($revenue_amount)) {
-			                $revenueamount1 = implode("", $rows1);
+			                $revenueamount1 = implode("", $rows1);   
 			                echo '<td>€' . $revenueamount1 . ',-</td>';
 			   				$uptdRev = "UPDATE customers SET salesAmount = $revenueamount1 WHERE customerNR = $id";
 			   				mysqli_query($con, $uptdRev);
 						}	
-						echo '<td>'  . $row['maxAmount'] . '</td>';
-						echo '<td>'  . $row['credit'] . '</td>';
+						echo '<td>€'  . $row['maxAmount'] . ',-</td>';
+
+					$limiet = $row['maxAmount'];
+					$totaalbedrag = $row['salesAmount'];
+					$credit1 = $limiet - $totaalbedrag;
+
+					if ($credit1 < 0) {
+						echo '<td class="textdanger">'  . $credit1 . ',-</td>';
+					} else {
+						echo '<td>€'  . $credit1 . ',-</td>'; 
+					}
 						echo '<td>' . $row['bkr_control'] . '</td>';
-		
 						echo '<td><a href="activate.php?projectNR='.$row['customerNR']. '">View</a></td>';
 						echo '<td><a href="editFinance.php?customerNR='.$row['customerNR'] . '">Edit</a></td>';	
-					
 					
 					$amount = "SELECT SUM((salesAmount / maxAmount) * 100) AS amount FROM customers WHERE customerNR = '$id'";
 					$r_amount = mysqli_query($con, $amount);
 
 					while($rows3 = mysqli_fetch_assoc($r_amount)) {
 			            $amount1 = implode("", $rows3);
-			            $amount2 = number_format($amount1, 0, '.', '' . '');
+			            $amount2 = number_format($amount1, 0);
 			            $totalamount = 100 - $amount2;
+			            $maxAmount = $row['maxAmount'];
+
 			            if ($amount2 > 100) {
 			               	echo '<td><span class"text-danger">Yes </span><button class="warning-btn">Deactivate</button></td>';
+			            } elseif ($maxAmount == 0 ) {
+			            	echo '<td>No project</td>';
 			            } else {
-			               	echo '<td>€' . $row['maxAmount'] . ',-</td>';
+			               	echo '<td><progress value="' . $amount2 . '" max="100"></progress>  ' . $totalamount .  '% left</td>';
 			            }
-			        }
-			        	echo '<td><progress value="' . $amount2 . '" max="100"></progress>  ' . $totalamount .  '% left';
-						echo '</tr>';
-					
-						
-					
-						}
-						
-
-
-
-
-
+			            echo '</tr>';
+			        }						
+				}
 
 						// $id = $row['projectNR'];
 						// $sql1 = "SELECT SUM(amount) FROM invoices WHERE projectNR = '$id'";

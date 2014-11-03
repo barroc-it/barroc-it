@@ -1,13 +1,9 @@
 <?php 
 session_start();
 if($_SESSION['login'] == 1) {  
-
-} 
-else
-{
-header("location:../login.php");
+} else {
+	header("location:../login.php");
 }
-
 	include '../templates/header.php'; 
 	require '../../config/config.php'; 
 ?>
@@ -69,6 +65,5 @@ header("location:../login.php");
 	<a class="btn btn-primary col-md-2" href="add_custumers.php">toevoegen</a>
 	</div>
 </div>
-
 
 <?php include '../templates/footer.php'; ?>

@@ -33,7 +33,7 @@ $search = mysqli_real_escape_string($con, $_GET['search']);
 							echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['openProjects'] . '</a></td>';
 							echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['lastcontactDate'] . '</a></td>';
 							echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['balance'] . '</a></td>';
-							echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['limit'] . '</a></td>';
+							echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['maxAmount'] . '</a></td>';
 							echo '</tr>';
 						}
 	}

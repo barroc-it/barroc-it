@@ -2,18 +2,10 @@
 	include '../templates/header.php'; 
 	require '../../config/config.php'; 
 
-
-
-
-
 	if ( isset($_GET['customerNR']) ) {
 	$customerNR = $_GET['customerNR'];
 	$sql = "SELECT * FROM customers WHERE customerNR = '$customerNR'";
-
-
-	$query = mysqli_query($con, $sql);
-
-			
+	$query = mysqli_query($con, $sql);		
 			
 while ($row = mysqli_fetch_assoc($query)){
 ?>
@@ -25,8 +17,6 @@ while ($row = mysqli_fetch_assoc($query)){
         <label class="col-md-4"for for="companyName">companyName</label>
         <input value="<?php echo $row['companyName'] ?>" class="col-md-8" type="text" customerNR="companyName" name="companyName">
     </div>
-
-
 
 	<div class="form-group">
 	    <label class="col-md-4"for="address">address</label>
@@ -77,8 +67,6 @@ if (isset($_POST['edit_customer'])){
     $email = mysqli_real_escape_string($con,$_POST['email']);
     $bkr_control = mysqli_real_escape_string($con,$_POST['bkr_control']);
 
-    
-
     $sql  = "UPDATE customers SET 	companyName = '$companyName',
 									address = '$address',
 									postcode = '$postcode',
@@ -90,17 +78,12 @@ if (isset($_POST['edit_customer'])){
                                WHERE customerNR = $customerNR";
     if(!$query = mysqli_query($con, $sql)){
         echo "update is niet goed gegaan";
-    }else{
+    } else {
         header('location:index.php');
     }
-
-
 }
 ?>
-</div>
-
-
-			
+</div>		
 		</form>
 	</div>
  </div>

@@ -1,11 +1,8 @@
 <?php
 	require '../../config/config.php';
 ?>
-<link rel="stylesheet" href="../assets/css/style.css">
-<link rel="stylesheet" type="text/css" href="http://bootswatch.com/paper/bootstrap.min.css">
 
 <div class="footerclass">
-
 	<form action="" method="POST" class="commentForm">
 		<div class="form-group col-sm-12">
 			<label for="name">Name</label>
@@ -38,7 +35,7 @@
 		$sql = "INSERT INTO comments (name, department, comment, datetime ) VALUES ('$name', '$department', '$comment', '$datetime')";
 		
 		if( $query = mysqli_query($con, $sql)) {
-			header('location: #');
+			header("location: ../sales/index.php"); 
 		} else {
 			echo "kan de query niet uitvoeren";
 		}

@@ -15,16 +15,8 @@
 		$query = mysqli_query($con, $sql);
 
 		if(!$query) {
-<<<<<<< HEAD
 			$msg = urlencode(trigger_error('Project toevoegen is mislukt' . $sql));
 			header('location: projecten.php?customerNR=' . $customerNR . '&' . $msg);
-=======
-			$msg = urlencode(trigger_error('query niet gelukt' .$sql));
-			header('location:index.php?msg='.$msg);
-		}
-		$msg = urlencode('project is succesvol toegevoegd');
-		header ('location:projecten.php?customerNR='.$customerNR);
->>>>>>> f0f1e934ed35218a77c35563cbf87df78ecd5127
 		}
 			$msg = urlencode('project is succesvol toegevoegd');
 			header('location: projecten.php?customerNR=' . $customerNR . '&' . $msg);

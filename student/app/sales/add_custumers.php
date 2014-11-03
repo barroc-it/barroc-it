@@ -1,10 +1,7 @@
 <?php 
 	include '../templates/header.php'; 
 	require '../../config/config.php'; 
-
 ?>	
-
-
 
 <div class="container">
 	<div class="header">
@@ -43,11 +40,6 @@
 		        <input class="col-md-6" type="email" id="email" name="email">
 		    </div>
 <br>
-<br>
-
-
-
-
 			<input type="submit" value="toevoegen" name="input_customer" class="btn btn-primary col-md-4">
 			<br>
 			<br>

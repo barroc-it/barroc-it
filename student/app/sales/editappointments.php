@@ -31,7 +31,6 @@ if ( isset($_GET['appointmentsNR']) ) {
 		$msg = urlencode('Appointments changed!');
 		header('location: appointments.php?msg=' . $msg );
 	}
-
 ?>
 
 <div class="editform">
@@ -58,3 +57,6 @@ if ( isset($_GET['appointmentsNR']) ) {
 	<div class="form-group col-sm-12">
 		<input name="submit" type="submit" value="Bewerken" class="btn btn-default btn-lg btn-block">
 	</div>
+</form>
+</body>
+</html>
