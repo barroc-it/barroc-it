@@ -37,6 +37,7 @@
 		<h2>Projects</h2>
 	</div> 
 		<table class="table table-striped">
+			<a class="btn btn-primary " href="addProject.php?customerNR=<?php echo $customerNR ?>">Add Project</a>
 			<thead>
 				<tr>
 					<th>Maintenance contract</th>
@@ -58,13 +59,13 @@
 							echo '<td>' . $row['software'] . '</td>' ;
 							echo '<td>' . $row['hardware'] . '</td>' ;
 							echo '<td>' . $row['description'] . '</td>' ;
-					 		echo '<td><a href="deactivate.php?projectNR=' . $row['projectNR'] . '">' ?><button class="warning-btn">Deactivate</button></a></td>
-					 	<?php 						
+					 		echo '<td><a href="deactivate.php?projectNR=' . $row['projectNR'] . '">' ?><button class="warning-btn">Deactivate</button></a></td> <?php
+					 		echo '<td> <a class="btn btn-info" href="projectEdit.php?customerNR=' . $row['customerNR'] . '">edit</td>'; 						
 							echo '</tr>';
 						} 	
 				?>
 			</tbody>
 		</table>
-		<a class="btn btn-primary " href="addProject.php?customerNR=<?php echo $customerNR ?>">Add Project</a>
+		
 	</div>
 <?php include '../templates/footer.php'; ?>

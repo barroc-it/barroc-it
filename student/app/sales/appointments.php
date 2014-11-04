@@ -17,9 +17,14 @@
 
 <div class="container">
 	<div class="page-header">
-		<h2>Appointments</h2>
+		<h2 class="col-md-12">Appointments</h2>
 	</div>
+	
 	<div class="customers">
+
+		<?php echo '<a class="btn btn-primary col-md-2" href="add_appointments.php?customerNR=' . $_GET['customerNR'] . '">toevoegen</a>'; ?>
+<br>
+
 		<table class="table table-striped">
 			<tr>
 			<th>Companyname</th>
@@ -28,7 +33,8 @@
 			<th>Edit</th>
 			</tr>
 		<?php 
-				$sql = "SELECT * FROM appointments";
+				$customerNR = $_GET['customerNR'];
+				$sql = "SELECT * FROM appointments WHERE customerNR = $customerNR";
 				$query = mysqli_query($con, $sql);
 
 				while ($row = mysqli_fetch_assoc($query)) {
@@ -36,11 +42,14 @@
 					echo "<td>" . $row['name'] . "</td>";
 					echo '<td>' . $row['datum'] . '</td>';
 					echo '<td>' . $row['description'] . '</td>';
-					echo '<td> <a href="editappointments.php?appointmentsNR=' . $row['appointmentsNR'] . '">edit</td>';	
+					echo '<td> <a href="editappointments.php?appointmentNR=' . $row['appointmentNR'] . '">edit</td>';	
 					echo "</tr>";
 				}
 		?>
+		</table>
+
 	</div>
+
 </div>
 
 

@@ -30,6 +30,7 @@ header("location:../login.php");
 		<h3>customers</h3>
 	</div>
 	<div class="customers">
+		<a class="btn btn-primary col-md-2" href="add_custumers.php">toevoegen</a>
 		<table class="table table-striped">
 			<tr>
 				<th>companyName</th>
@@ -61,12 +62,12 @@ header("location:../login.php");
 						echo "no";					}
 					echo  '</td>';
 					echo '<td> <a href="custumersEdit.php?customerNR=' . $row['customerNR'] . '">edit</td>';
-					echo '<td> <a href="appointments.php">Appointments</td>';
+					echo '<td> <a href="appointments.php?customerNR=' . $row['customerNR'] . '">Appointments</td>';
 					echo "</tr>";
 			}
 		?>
 	</table>
-	<a class="btn btn-primary col-md-2" href="add_custumers.php">toevoegen</a>
+	
 	</div>
 </div>
 
