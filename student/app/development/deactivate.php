@@ -7,11 +7,9 @@
 			echo 'Kan geen connectie maken met de database';
 			die();
 		}
-
 			if ( isset($_GET['projectNR']) ) {
 				$projectNR = $_GET['projectNR'];
 				$sql = "UPDATE projects SET active = 1 WHERE projectNR = '$projectNR' ";
-
 
 				if (!$query = mysqli_query($con, $sql)) {
 					echo 'Kan helaas niet updaten...';

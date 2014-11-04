@@ -9,10 +9,10 @@
 	</ul>
 <div class="searchform">
 	<form method="GET" action="indexsearch.php" name="search"> 
-		   <input type="text" class="form-control" placeholder="Search..." name="search">
-	</form>
+		<input type="text" class="form-control" placeholder="Search..." name="search">
 </div>
-	<input type="submit" class="searchbtn">
+		<input type="submit" class="searchbtn">
+	</form>
 	<a class="btn btn-info col-md-2 col-md-offset-2 btn-sm" href="logout.php">logout</a>
 </div>
 	<div class="container">
@@ -61,29 +61,13 @@
                 $result = mysqli_query($con, $insert);
 
 						}
-
-
 						echo '<td><a href="activateEdit.php">Edit</a></td>';
-<<<<<<< HEAD
-
-			
-
-
 						echo '<td><a href="deactivate.php?invoicesNR=' . $row['invoicesNR'] . '">' ?><button class="warning-btn">Deactivate</button></a></td>
-			<?php 	echo '</tr>';
-
-					
-
+			<?php 		echo '</tr>';
 						echo '</tr>';
-
-				
-=======
-						echo '<td><a href="deactivate.php?invoicesNR=' . $row['invoicesNR'] . '">' ?><button class="warning-btn">Deactivate</button></a></td>
-			<?php 	echo '</tr>';
 				}
->>>>>>> origin/master
 			}
-	}
+	
 
 /*
 	$sql = "SELECT * FROM invoices";

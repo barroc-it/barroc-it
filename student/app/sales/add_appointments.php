@@ -4,27 +4,19 @@
 
 ?>	
 <?php
-if ( isset($_POST['input_appointments']) ) 
-
-{
+if ( isset($_POST['input_appointments']) ) {
 	$name     			=mysqli_real_escape_string($con, $_POST['name']);
 	$datum				=mysqli_real_escape_string($con, $_POST['datum']);
 	$description    	=mysqli_real_escape_string($con, $_POST['description']);
 	$customerNR         =mysqli_real_escape_string($con, $_GET['customerNR']);
 
 
-		// var_dump($name);
-	// var_dump($datum);
-	// var_dump($description);
-	// die();
-
 	$sql = "INSERT INTO appointments (name, datum, description, customerNR)
 			VALUES (
 					'$name',
 					'$datum',
 					'$description',
-					'$customerNR'
-					
+					'$customerNR'			
 	)";
 
 	$query = mysqli_query($con, $sql);
@@ -33,12 +25,18 @@ if ( isset($_POST['input_appointments']) )
 		$msg = urlencode(trigger_error('query niet gelukt. geprobeerde query was ' . $sql));
 		header('location: appointments.php?msg='.$msg);	
 	}
+<<<<<<< HEAD
 
 	$msg = urlencode('appointment is succesvol toegevoegd.');
 	header ('location: appointments.php?customerNR='.$customerNR);
 }
 
 
+=======
+		$msg = urlencode('appointment is succesvol toegevoegd.');
+		header ('location: appointments.php?msg='.$msg);
+	}
+>>>>>>> origin/master
 ?>
 
 <div class="container">

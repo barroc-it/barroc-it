@@ -15,6 +15,7 @@
 		$query = mysqli_query($con, $sql);
 
 		if(!$query) {
+<<<<<<< HEAD
 
 
 
@@ -24,6 +25,10 @@
 		$msg = urlencode('project is succesvol toegevoegd');
 		header('location: projecten.php?customerNR=' . $customerNR . '&' . $msg);
 
+=======
+			$msg = urlencode(trigger_error('Project toevoegen is mislukt' . $sql));
+			header('location: projecten.php?customerNR=' . $customerNR . '&' . $msg);
+>>>>>>> origin/master
 		}
 			
 		

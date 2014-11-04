@@ -1,11 +1,7 @@
 <?php 
 session_start();
 if($_SESSION['login'] == 2) {  
-
-
-}
-else
-{
+} else {
 header("location:../login.php");
 }
 	include '../templates/header.php'; 
@@ -16,7 +12,6 @@ header("location:../login.php");
 			<li><a class="active" href="index.php">Home</a></li>
 			<li><a class="menutext" href="deactivefinance.php">Deactivated invoices</a></li>		
 		</ul>
-	
 	<div class="container">
 		<h1>Finance</h1>
 		<table class="table table-striped sortable">
@@ -58,7 +53,6 @@ header("location:../login.php");
 						echo '</tr>';
 						}
 					?>
-	
 <?php 
 	include '../templates/footer.php'; 
-	?>
+?>

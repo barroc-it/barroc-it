@@ -12,9 +12,9 @@
 		<div class="searchform">
 			<form method="GET" action="indexsearch.php" name="search"> 
 			    <input type="text" class="form-control" placeholder="Search..." name="search">
-			</form>
 		</div>
-		<input type="submit" class="searchbtn">
+				<input type="submit" class="searchbtn">
+			</form>
 		<a class="btn btn-info col-md-2 col-md-offset-2 btn-sm" href="logout.php">logout</a>
 	</div>
 </header>
@@ -66,6 +66,11 @@
 				?>
 			</tbody>
 		</table>
+<<<<<<< HEAD
 		
+=======
+		<input Type="button" VALUE="Back" class="btn btn-primary" onClick="history.go(-1);return true;">
+		<a class="btn btn-primary " href="addProject.php?customerNR=<?php echo $customerNR ?>">Add Project</a>
+>>>>>>> origin/master
 	</div>
 <?php include '../templates/footer.php'; ?>

@@ -12,7 +12,6 @@
 				$invoicesNR = $_GET['invoicesNR'];
 				$sql = "UPDATE invoices SET active = 1 WHERE invoicesNR = '$invoicesNR' ";
 
-
 				if (!$query = mysqli_query($con, $sql)) {
 					echo 'Kan helaas niet updaten...';
 					die();

@@ -96,3 +96,13 @@
 		font-family: inherit;
 		font-weight: 400;
 	}
+	.textdanger {
+		color: red;
+		font-weight: bold;
+	}
+	.textdanger a {
+		color: red;
+	}
+	.textdanger:hover a {
+		color: red;
+	}

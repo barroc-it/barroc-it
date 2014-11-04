@@ -12,9 +12,9 @@
 		<div class="searchform">
 			<form method="GET" action="indexsearch.php" name="search"> 
 			    <input type="text" class="form-control" placeholder="Search..." name="search">    
-			</form>
 		</div>
-		<input type="submit" class="searchbtn">
+				<input type="submit" class="searchbtn">
+			</form>
 		<a class="btn btn-info col-md-2 col-md-offset-2 btn-sm" href="logout.php">logout</a>
 	</div>
 </header>
