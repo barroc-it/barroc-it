@@ -65,13 +65,18 @@ header("location:../login.php");
 					$limiet = $row['maxAmount'];
 					$totaalbedrag = $row['salesAmount'];
 					$credit1 = $limiet - $totaalbedrag;
+					$credit2 = 0 - $credit1;
 
 					if ($credit1 < 0) {
-						echo '<td class="textdanger">'  . $credit1 . ',-</td>';
+						echo '<td class="textdanger">-€'  . $credit2 . ',-</td>';
 					} else {
 						echo '<td>€'  . $credit1 . ',-</td>'; 
 					}
-						echo '<td>' . $row['bkr_control'] . '</td>';
+					if ($row['bkr_control'] == 1) {
+						echo '<td>Yes</td>';
+					} else {
+						echo '<td>No</td>';
+					}
 						echo '<td><a href="activate.php?projectNR='.$row['customerNR']. '">View</a></td>';
 						echo '<td><a href="editFinance.php?customerNR='.$row['customerNR'] . '">Edit</a></td>';	
 					
@@ -89,7 +94,7 @@ header("location:../login.php");
 			            } elseif ($maxAmount == 0 ) {
 			            	echo '<td>No project</td>';
 			            } else {
-			               	echo '<td><progress value="' . $amount2 . '" max="100"></progress>  ' . $totalamount .  '% left</td>';
+			               	echo '<td><span><progress value="' . $amount2 . '" max="100"></progress></span> ' . $totalamount .  '% left</td>';
 			            }
 			            echo '</tr>';
 			        }						

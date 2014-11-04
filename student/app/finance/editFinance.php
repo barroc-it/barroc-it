@@ -65,15 +65,6 @@ if ( isset($_GET['customerNR']) ) {
 		<label for="bankNumber">Bank account number</label>
 		<input type="text" value='<?php echo $row['bankNumber']; ?>' class="form-control" name="bankNumber" customerNR="bankNumber">
 	</div>
-	
-	<div class="form-group col-sm-12">
-		<label for="credit">Credit</label>
-		<input type="text" value='<?php echo $row['credit']; ?>' class="form-control" name="credit" customerNR="credit">
-	</div>
-	<div class="form-group col-sm-12">
-		<label for="salesAmount">Revenue ammount</label>
-		<input type="text" value='<?php echo $row['salesAmount']; ?>' class="form-control" name="salesAmount" customerNR="salesAmount">
-	</div>
 		<div class="form-group col-sm-12">
 		<label for="maxAmount">Limit</label>
 		<input type="text" value='<?php echo $row['maxAmount']; ?>' class="form-control" name="maxAmount" customerNR="limit">
@@ -82,9 +73,19 @@ if ( isset($_GET['customerNR']) ) {
 		<label for="largeReservationNumber">Reservation number</label>
 		<input type="text" value='<?php echo $row['largeReservationNumber']; ?>' class="form-control" name="largeReservationNumber" customerNR="largeReservationNumber">
 	</div>
-		<div class="form-group col-sm-12">
-		<label for="bkr_control">BKR</label>
-		<input type="text" value='<?php echo $row['bkr_control']; ?>' class="form-control" name="bkr_control" customerNR="bkr_control">
+		<div class="form-group col-md-8">
+			<label class="col-md-3" for="bkr_control">BKR</label>
+				<select name="bkr_control" class="form-control" name="bkr_control" customerNR="bkr_control">
+	<?php 
+	if ($row['bkr_control'] == 0) {
+		echo '<option value="0">No</option>';
+		echo '<option value="1">Yes</option>';
+	} else {
+		echo '<option value="1">Yes</option>';
+		echo '<option value="0">No</option>';
+	}
+	?>
+		</select>
 	</div>
 	<div class="form-group col-sm-12">
 		<input Type="button" VALUE="Cancel" onClick="history.go(-1);return true;" class="btn btn-primary btn-lg btn-block">
