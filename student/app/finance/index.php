@@ -90,7 +90,7 @@ header("location:../login.php");
 			            $maxAmount = $row['maxAmount'];
 
 			            if ($amount2 > 100) {
-			               	echo '<td><span class"text-danger">Yes </span><button class="warning-btn">Deactivate</button></td>';
+			               	echo '<td><span class"text-danger">Yes </span><a href="deactivate.php"><button class="warning-btn">Deactivate</button></a></td>';
 			            } elseif ($maxAmount == 0 ) {
 			            	echo '<td>No project</td>';
 			            } else {
@@ -116,7 +116,7 @@ header("location:../login.php");
 			?>
 		</tbody>
 	</table>
-		<a class="btn btn-primary col-md-2" href="add_custumers.php">toevoegen</a>
+		<a class="btn btn-primary col-md-2" href="add_custumers.php">toevoegen</a><br>
 <?php 
 	include '../templates/footer.php'; 
 	?>
