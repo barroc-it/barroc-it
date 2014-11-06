@@ -65,14 +65,9 @@ if ( isset($_GET['customerNR']) ) {
 		<label for="bankNumber">Bank account number</label>
 		<input type="text" value='<?php echo $row['bankNumber']; ?>' class="form-control" name="bankNumber" customerNR="bankNumber">
 	</div>
-		<div class="form-group col-sm-12">
-<<<<<<< HEAD
+	<div class="form-group col-sm-12">
 		<label for="maxAmount">limit</label>
 		<input type="text" value='<?php echo $row['maxAmount']; ?>' class="form-control" name="maxAmount" customerNR="maxAmount">
-=======
-		<label for="maxAmount">Limit</label>
-		<input type="text" value='<?php echo $row['maxAmount']; ?>' class="form-control" name="maxAmount" customerNR="limit">
->>>>>>> origin/master
 	</div>
 		<div class="form-group col-sm-12">
 		<label for="largeReservationNumber">Reservation number</label>

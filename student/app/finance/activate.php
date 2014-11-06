@@ -63,7 +63,6 @@
 						echo '<td><a href="activateEdit.php?invoicesNR=' . $id . '">Edit</a></td>';
 						echo '<td><a href="deactivate.php?invoicesNR=' . $id . '">' ?><button class="warning-btn">Deactivate</button></a></td>
 			<?php 		echo '</tr>';
-						echo '</tr>';
 	}
 }
 /*
@@ -85,7 +84,7 @@
 					?>
 </tbody>
 </table>
-	<a href="index.php" class="btn btn-primary">Back</a>
+	<INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;" class="btn btn-primary">
 	<a class="btn btn-primary " href="addinvoices.php?projectNR=<?php echo $projectNR ?>">Add Invoices</a>
 </body>
 </html>

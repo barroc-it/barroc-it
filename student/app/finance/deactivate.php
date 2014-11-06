@@ -16,10 +16,9 @@
 					echo 'Kan helaas niet updaten...';
 					die();
 				} else {
-					$id = $_GET['invoicesNR'];
-					$sql2 = $con->query("SELECT customerNR FROM customers LIMIT 1");
+					$sql2 = $con->query("SELECT * FROM invoices LIMIT 1");
 					$row2 = mysqli_fetch_assoc($sql2);
-					header('location: activate.php?invoicesNR=' . $row2['invoicesNR'] );
+					header('location: activate.php?projectNR=' . $row2['projectNR'] );
 				}
 			}
 ?>
