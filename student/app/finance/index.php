@@ -86,7 +86,7 @@ header("location:../login.php");
 					$r_amount = mysqli_query($con, $amount);
 					while($rows3 = mysqli_fetch_assoc($r_amount)) {
 			            $amount1 = implode(" ", $rows3);
-			            var_dump($amount1);
+			            
 			            $amount2 = number_format($amount1, 0);
 			            $totalamount = 100 - $amount2;
 			            $maxAmount = $row['maxAmount'];
