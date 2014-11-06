@@ -13,8 +13,8 @@
 		$btw = mysqli_real_escape_string($con, $_POST['btw']);
 		$description = mysqli_real_escape_string($con, $_POST['description']);
 		
-		$sql = "INSERT INTO invoices (projectNR, datum, amount, paid, quintity, price, btw, description)
-		VALUES ('$projectNR','$datum', '$amount', '$paid', '$quintity', '$price', '$btw', '$description')";
+		$sql = "INSERT INTO invoices (invoicesNR, datum, amount, paid, quintity, price, btw, description)
+		VALUES ('$invoicesNR','$datum', '$amount', '$paid', '$quintity', '$price', '$btw', '$description')";
 		$query = mysqli_query($con, $sql);
 
 		if(!$query) {

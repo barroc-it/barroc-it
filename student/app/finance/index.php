@@ -54,6 +54,8 @@ header("location:../login.php");
 						$revenueamount = "SELECT SUM(Amount) FROM invoices WHERE customerNR = $id" ;
 						$revenue_amount = mysqli_query($con, $revenueamount);
 
+						
+
 						while($rows1 = mysqli_fetch_assoc($revenue_amount)) {
 			                $revenueamount1 = implode("", $rows1);   
 			                echo '<td>€' . $revenueamount1 . ',-</td>';
@@ -96,8 +98,9 @@ header("location:../login.php");
 			            } else {
 			               	echo '<td><span><progress value="' . $amount2 . '" max="100"></progress></span> ' . $totalamount .  '% left</td>';
 			            }
-			            echo '</tr>';
-			        }						
+			            
+			        }	
+			        echo '</tr>';					
 				}
 
 						// $id = $row['projectNR'];
