@@ -38,7 +38,7 @@
 				$projectNR = $_GET['projectNR'];
 				$sql = "SELECT * FROM invoices WHERE active = 0 AND projectNR = '$projectNR' ";
 				$query = mysqli_query($con, $sql);
-				while($row = mysqli_fetch_assoc($query)){
+				while($row = mysqli_fetch_assoc($query)) {
 
 			  $id = $row['invoicesNR'];
 				
@@ -59,22 +59,18 @@
 
                   $insert = "UPDATE invoices SET amount = '$amount1' WHERE invoicesNR = '$id' LIMIT 1";
                 $result = mysqli_query($con, $insert);
-
 						}
-
-						echo '<td><a href="activateEdit.php">Edit</a></td>';
+						echo '<td><a href="activateEdit.php?invoicesNR="' . $row['invoicesNR'] . '>Edit</a></td>';
 						echo '<td><a href="deactivate.php?invoicesNR=' . $row['invoicesNR'] . '">' ?><button class="warning-btn">Deactivate</button></a></td>
-					<a class="btn btn-primary " href="addinvoices.php?projectNR=<?php echo $projectNR ?>">Add Invoices</a>
 			<?php 		echo '</tr>';
 						echo '</tr>';
 				}
-			}
+			
 	
-
 /*
 	$sql = "SELECT * FROM invoices";
 		$query = mysqli_query($con, $sql);
-					{
+	{
 						echo '<tr>';
 						echo '<td>' . $row['datum'] . '</td>';
 						echo '<td>' . $row['hoeveelheid'] . '</td>';
@@ -90,9 +86,11 @@
 					?>
 </tbody>
 </table>
-<?php
-
-?>
 	<a href="index.php" class="btn btn-primary">Back</a>
+	<a class="btn btn-primary " href="addinvoices.php?invoicesNR=<?php echo $row['projectNR'] ?>">Add Invoices</a>
 	</body>
 	</html>
+
+<?php
+}
+?>

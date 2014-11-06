@@ -15,35 +15,12 @@
 		$query = mysqli_query($con, $sql);
 
 		if(!$query) {
-<<<<<<< HEAD
-
 			$msg = urlencode(trigger_error('Project toevoegen is mislukt' . $sql));
 			header('location: projecten.php?customerNR=' . $customerNR . '&' . $msg);
-=======
-<<<<<<< HEAD
-
-
->>>>>>> origin/master
-
-			$msg = urlencode(trigger_error('query niet gelukt' .$sql));
-			header('location:index.php?msg='.$msg);
 		}
 		$msg = urlencode('project is succesvol toegevoegd');
-<<<<<<< HEAD
 		header ('location:projecten.php?customerNR='.$customerNR);
-	
-			$msg = urlencode('project is succesvol toegevoegd');
-=======
-		header('location: projecten.php?customerNR=' . $customerNR . '&' . $msg);
-
-=======
-			$msg = urlencode(trigger_error('Project toevoegen is mislukt' . $sql));
->>>>>>> origin/master
-			header('location: projecten.php?customerNR=' . $customerNR . '&' . $msg);
->>>>>>> origin/master
 		}
-			
-		
 ?>
 
 	<div class="container">
@@ -71,7 +48,8 @@
 				<input class="col-md-6" type="text"  class="form-control" name="description" id="description">
 			</div>
 			<div class="form-group col-md-8">	
+				<INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;">
 				<input name="submit" type="submit" value="Add Project" class="btn btn-primary">
 			</div>
-		</div>
-	</form>
+		</form>
+	</div>
