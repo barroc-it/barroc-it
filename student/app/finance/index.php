@@ -77,7 +77,7 @@ header("location:../login.php");
 					} else {
 						echo '<td>No</td>';
 					}
-						echo '<td><a href="activate.php?projectNR='.$row['customerNR']. '">View</a></td>';
+						echo '<td><a href="activate.php?customerNR='.$row['customerNR']. '">View</a></td>';
 						echo '<td><a href="editFinance.php?customerNR='.$row['customerNR'] . '">Edit</a></td>';	
 					
 					$amount = "SELECT SUM((salesAmount / maxAmount) * 100) AS amount FROM customers WHERE customerNR = '$id'";
