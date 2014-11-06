@@ -84,8 +84,16 @@
 					?>
 </tbody>
 </table>
-	<INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;" class="btn btn-primary">
-	<a class="btn btn-primary " href="addinvoices.php?projectNR=<?php echo $projectNR ?>">Add Invoices</a>
+<?php
+	$sql = "SELECT * FROM invoices WHERE customerNR = '$customerNR'";
+	$query = mysqli_query($con, $sql);
+	
+	while($row = mysqli_fetch_assoc($query)) {
+?>
 	<a href="index.php" class="btn btn-primary">Back</a> 
+	<a class="btn btn-primary " href="addinvoices.php?invoicesNR=<?php echo $row['invoicesNR'] ?>">Add Invoices</a>
+<?php
+	}
+?>
 </body>
 </html>
