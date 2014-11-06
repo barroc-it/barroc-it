@@ -43,7 +43,7 @@
 			  $id = $row['invoicesNR'];
 				
 						echo '<tr>';
-						echo '<td>' . $row['date'] . '</td>';
+						echo '<td>' . $row['datum'] . '</td>';
 						echo '<td>' . $row['quintity'] . '</td>';
 						echo '<td>' . $row['description'] . '</td>';
 						echo '<td>€' . $row['price'] . ',-</td>';
@@ -61,8 +61,10 @@
                 $result = mysqli_query($con, $insert);
 
 						}
+
 						echo '<td><a href="activateEdit.php">Edit</a></td>';
 						echo '<td><a href="deactivate.php?invoicesNR=' . $row['invoicesNR'] . '">' ?><button class="warning-btn">Deactivate</button></a></td>
+					<a class="btn btn-primary " href="addinvoices.php?projectNR=<?php echo $projectNR ?>">Add Invoices</a>
 			<?php 		echo '</tr>';
 						echo '</tr>';
 				}

@@ -24,12 +24,12 @@ if ( isset($_GET['customerNR']) ) {
 		$bankNumber = mysqli_real_escape_string($con, $_POST['bankNumber']);
 		$credit = mysqli_real_escape_string($con, $_POST['credit']);
 		$salesAmount = mysqli_real_escape_string($con, $_POST['salesAmount']);
-		$limiet = mysqli_real_escape_string($con, $_POST['limiet']);
+		$maxAmount = mysqli_real_escape_string($con, $_POST['maxAmount']);
 		$largeReservationNumber = mysqli_real_escape_string($con, $_POST['largeReservationNumber']);
 		$bkr_control = mysqli_real_escape_string($con, $_POST['bkr_control']);
 	
 		$sql = "UPDATE customers SET companyName = '$companyName',  description = '$description', bankNumber = '$bankNumber', credit = '$credit',  	
-		salesAmount = '$salesAmount', limiet = '$limiet', largeReservationNumber = '$largeReservationNumber', bkr_control = '$bkr_control' WHERE customerNR = '$customerNR'";
+		salesAmount = '$salesAmount', maxAmount = '$maxAmount', largeReservationNumber = '$largeReservationNumber', bkr_control = '$bkr_control' WHERE customerNR = '$customerNR'";
 
 		if (!$query = mysqli_query($con, $sql)) {
 			echo 'Kan helaas niet updaten...';
@@ -75,8 +75,8 @@ if ( isset($_GET['customerNR']) ) {
 		<input type="text" value='<?php echo $row['salesAmount']; ?>' class="form-control" name="salesAmount" customerNR="salesAmount">
 	</div>
 		<div class="form-group col-sm-12">
-		<label for="limiet">limit</label>
-		<input type="text" value='<?php echo $row['limiet']; ?>' class="form-control" name="limiet" customerNR="limit">
+		<label for="maxAmount">limit</label>
+		<input type="text" value='<?php echo $row['maxAmount']; ?>' class="form-control" name="maxAmount" customerNR="maxAmount">
 	</div>
 		<div class="form-group col-sm-12">
 		<label for="largeReservationNumber">Reservation number</label>

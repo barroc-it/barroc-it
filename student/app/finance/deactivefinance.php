@@ -43,7 +43,7 @@
 
 						while ($row = mysqli_fetch_assoc($query)) {
 							echo '<tr>';
-							echo '<td>' . $row['date'] . '</td>';
+							echo '<td>' . $row['datum'] . '</td>';
 							echo '<td>' . $row['amount'] . '</td>';
 							echo '<td>' . $row['paid'] . '</td>';
 							echo '<td>' . $row['quintity'] . '</td>';
