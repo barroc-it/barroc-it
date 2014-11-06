@@ -45,6 +45,7 @@
 					<th>Hardware</th>
 					<th>Discription</th>
 					<th>Deactivate</th>
+					<th>Edit</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -66,11 +67,9 @@
 				?>
 			</tbody>
 		</table>
-<<<<<<< HEAD
+
 		
-=======
-		<input Type="button" VALUE="Back" class="btn btn-primary" onClick="history.go(-1);return true;">
-		<a class="btn btn-primary " href="addProject.php?customerNR=<?php echo $customerNR ?>">Add Project</a>
->>>>>>> origin/master
+		
+
 	</div>
 <?php include '../templates/footer.php'; ?>
