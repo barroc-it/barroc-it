@@ -11,10 +11,12 @@
 
 <div class="bannerimg">
 </div>
-	
 	<link rel="stylesheet" href="../assets/css/bootstrap.css">
 	<link rel="stylesheet" href="../assets/css/style.css">
 	<link rel="stylesheet" href="../assets/css/navimenu.css">
 	<link rel="stylesheet" href="../assets/css/buttons.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/navimenu.css">
 </head>
 <body>
