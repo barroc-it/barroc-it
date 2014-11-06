@@ -19,13 +19,13 @@
 
 		if(!$query) {
 			$msg = urlencode(trigger_error('Project toevoegen is mislukt' . $sql));
-			header('location: activate.php?projectNR=' . $projectNR . '&' . $msg);
+			header('location: activate.php?customerNR=' . $customerNR  . $msg);
 		}
 		$msg = urlencode('project is succesvol toegevoegd');
-		header ('location:activate.php?projectNR='.$projectNR);
+		header ('location:activate.php?customerNR='.$customerNR);
 		}
 
-	$sql = "SELECT * FROM invoices WHERE invoicesNR = '$invoicesNR'";
+	$sql = "SELECT * FROM invoices WHERE invoicesNR = '$invoicesNR' ";
 	$query = mysqli_query($con, $sql);
 		
 while ($row = mysqli_fetch_assoc($query)) {

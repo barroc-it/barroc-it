@@ -90,7 +90,7 @@ header("location:../login.php");
 			            $amount2 = number_format($amount1, 0);
 			            $totalamount = 100 - $amount2;
 			            $maxAmount = $row['maxAmount'];
-
+			          
 			            if ($amount2 > 100) {
 			               	echo '<td><span class"text-danger">Yes </span><a href="deactivate.php"><button class="warning-btn">Deactivate</button></a></td>';
 			            } elseif ($maxAmount == 0 ) {

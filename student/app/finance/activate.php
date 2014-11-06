@@ -85,7 +85,7 @@
 					?>
 </tbody>
 </table>
-	<a href="index.php" class="btn btn-primary">Back</a>
-	<a class="btn btn-primary " href="addinvoices.php?customerNR=">Add Invoices</a>
+	<a href="index.php" class="btn btn-primary">Back</a> 
+	<a class="btn btn-primary " href="addinvoices.php?invoicesNR= ">Add Invoices</a>
 </body>
 </html>
