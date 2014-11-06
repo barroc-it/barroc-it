@@ -34,9 +34,9 @@
 			<tbody class="finance">
 				<?php
 
-				if ( isset($_GET['projectNR']) ) {
-				$projectNR = $_GET['projectNR'];
-				$sql = "SELECT * FROM invoices WHERE active = 0 AND projectNR = '$projectNR' ";
+				if ( isset($_GET['customerNR']) ) {
+				$customerNR = $_GET['customerNR'];
+				$sql = "SELECT * FROM invoices WHERE active = 0 AND customerNR = '$customerNR' ";
 				$query = mysqli_query($con, $sql);
 				while($row = mysqli_fetch_assoc($query)) {
 
@@ -86,5 +86,6 @@
 </table>
 	<INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;" class="btn btn-primary">
 	<a class="btn btn-primary " href="addinvoices.php?projectNR=<?php echo $projectNR ?>">Add Invoices</a>
+	<a href="index.php" class="btn btn-primary">Back</a> 
 </body>
 </html>

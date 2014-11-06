@@ -13,19 +13,19 @@
 		$btw = mysqli_real_escape_string($con, $_POST['btw']);
 		$description = mysqli_real_escape_string($con, $_POST['description']);
 		
-		$sql = "INSERT INTO invoices (projectNR, datum, amount, paid, quintity, price, btw, description)
-		VALUES ('$projectNR','$datum', '$amount', '$paid', '$quintity', '$price', '$btw', '$description')";
+		$sql = "INSERT INTO invoices (invoicesNR, datum, amount, paid, quintity, price, btw, description)
+		VALUES ('$invoicesNR','$datum', '$amount', '$paid', '$quintity', '$price', '$btw', '$description')";
 		$query = mysqli_query($con, $sql);
 
 		if(!$query) {
 			$msg = urlencode(trigger_error('Project toevoegen is mislukt' . $sql));
-			header('location: activate.php?projectNR=' . $projectNR . '&' . $msg);
+			header('location: activate.php?customerNR=' . $customerNR  . $msg);
 		}
 		$msg = urlencode('project is succesvol toegevoegd');
-		header ('location:activate.php?projectNR='.$projectNR);
+		header ('location:activate.php?customerNR='.$customerNR);
 		}
 
-	$sql = "SELECT * FROM invoices WHERE invoicesNR = '$invoicesNR'";
+	$sql = "SELECT * FROM invoices WHERE invoicesNR = '$invoicesNR' ";
 	$query = mysqli_query($con, $sql);
 		
 while ($row = mysqli_fetch_assoc($query)) {

@@ -54,6 +54,8 @@ header("location:../login.php");
 						$revenueamount = "SELECT SUM(Amount) FROM invoices WHERE customerNR = $id" ;
 						$revenue_amount = mysqli_query($con, $revenueamount);
 
+						
+
 						while($rows1 = mysqli_fetch_assoc($revenue_amount)) {
 			                $revenueamount1 = implode("", $rows1);   
 			                echo '<td>€' . $revenueamount1 . ',-</td>';
@@ -77,7 +79,7 @@ header("location:../login.php");
 					} else {
 						echo '<td>No</td>';
 					}
-						echo '<td><a href="activate.php?projectNR='.$row['customerNR']. '">View</a></td>';
+						echo '<td><a href="activate.php?customerNR='.$row['customerNR']. '">View</a></td>';
 						echo '<td><a href="editFinance.php?customerNR='.$row['customerNR'] . '">Edit</a></td>';	
 					
 					$amount = "SELECT SUM((salesAmount / maxAmount) * 100) AS amount FROM customers WHERE customerNR = '$id'";
@@ -88,7 +90,7 @@ header("location:../login.php");
 			            $amount2 = number_format($amount1, 0);
 			            $totalamount = 100 - $amount2;
 			            $maxAmount = $row['maxAmount'];
-
+			          
 			            if ($amount2 > 100) {
 			               	echo '<td><span class"text-danger">Yes </span><a href="deactivate.php"><button class="warning-btn">Deactivate</button></a></td>';
 			            } elseif ($maxAmount == 0 ) {
@@ -96,8 +98,9 @@ header("location:../login.php");
 			            } else {
 			               	echo '<td><span><progress value="' . $amount2 . '" max="100"></progress></span> ' . $totalamount .  '% left</td>';
 			            }
-			            echo '</tr>';
-			        }						
+			            
+			        }	
+			        echo '</tr>';					
 				}
 
 						// $id = $row['projectNR'];

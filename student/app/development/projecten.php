@@ -60,8 +60,8 @@
 							echo '<td>' . $row['software'] . '</td>' ;
 							echo '<td>' . $row['hardware'] . '</td>' ;
 							echo '<td>' . $row['description'] . '</td>' ;
-					 		echo '<td><a href="deactivate.php?projectNR=' . $row['projectNR'] . '">' ?><button class="warning-btn">Deactivate</button></a></td> <?php
-					 		echo '<td> <a class="btn btn-info" href="projectEdit.php?customerNR=' . $row['customerNR'] . '">edit</td>'; 						
+					 		echo '<td><a class=" btn btn-danger" href="deactivate.php?projectNR=' . $row['projectNR'] . '">deactivate</td>';
+					 		echo '<td><a class="btn btn-primary" href="projectEdit.php?customerNR=' . $row['customerNR'] . '">edit</td>'; 						
 							echo '</tr>';
 						} 	
 				?>

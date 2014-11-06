@@ -4,13 +4,13 @@
 
 if (isset($_POST['editProject'])){
 
-<<<<<<< HEAD
+
     $maintenance_contract = mysqli_real_escape_string($con,$_POST['maintenance_contract']);
     $software = mysqli_real_escape_string($con,$_POST['software']);
     $hardware = mysqli_real_escape_string($con,$_POST['hardware']);
     $description = mysqli_real_escape_string($con,$_POST['description']);
     $customerNR = mysqli_real_escape_string($con,$_GET['customerNR']);
-=======
+
 
 
 
