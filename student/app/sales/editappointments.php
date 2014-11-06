@@ -5,9 +5,9 @@
 ?>
 <?php
 
-if ( isset($_GET['appointmentsNR']) ) {
-	$appointmentsNR = $_GET['appointmentsNR'];
-	$sql = "SELECT * FROM appointments WHERE appointmentsNR = '$appointmentsNR'";
+if ( isset($_GET['appointmentNR']) ) {
+	$appointmentsNR = $_GET['appointmentNR'];
+	$sql = "SELECT * FROM appointments WHERE appointmentNR = '$appointmentNR'";
 
 	if (!$query = mysqli_query($con, $sql)) {
 		echo 'Kan selectie niet uitvoeren';
@@ -22,7 +22,7 @@ if ( isset($_GET['appointmentsNR']) ) {
 		$name = mysqli_real_escape_string($con, $_POST['name']);
 		$datum = mysqli_real_escape_string($con, $_POST['datum']);
 		$description = mysqli_real_escape_string($con, $_POST['description']);
-		$sql = "UPDATE appointments SET name = '$name', datum = '$datum', description = '$description' WHERE appointmentsNR = '$appointmentsNR'";
+		$sql = "UPDATE appointments SET name = '$name', datum = '$datum', description = '$description' WHERE appointmentNR = '$appointmentNR'";
 
 		if (!$query = mysqli_query($con, $sql)) {
 			echo 'Kan helaas niet updaten...';
@@ -31,7 +31,6 @@ if ( isset($_GET['appointmentsNR']) ) {
 		$msg = urlencode('Appointments changed!');
 		header('location: appointments.php?msg=' . $msg );
 	}
-
 ?>
 
 <div class="editform">
@@ -41,20 +40,23 @@ if ( isset($_GET['appointmentsNR']) ) {
 <form action="" method="POST" class="editform">
 	<div class="form-group col-sm-12">
 		<label for="name">Bedrijfsnaam</label>
-		<input type="text" value='<?php echo $row['name']; ?>' class="form-control" name="name" appointmentsNR="companyName">
+		<input type="text" value='<?php echo $row['name']; ?>' class="form-control" name="name" appointmentNR="companyName">
 	</div>
 	<div class="form-group col-sm-12">
 		<label for="datum">Datum</label>
-		<input type="text" value='<?php echo $row['datum']; ?>' class="form-control" name="datum" appointmentsNR="banknumber">
+		<input type="text" value='<?php echo $row['datum']; ?>' class="form-control" name="datum" appointmentNR="banknumber">
 	</div>
 	<div class="form-group col-sm-12">
 
 		<label for="description">Description</label>
 
 		<label for="description">Beschrijving</label>
-		<input type="text" value='<?php echo $row['description']; ?>' class="form-control" name="description" appointmentsNR="description">
+		<input type="text" value='<?php echo $row['description']; ?>' class="form-control" name="description" appointmentNR="description">
 	</div>
 
 	<div class="form-group col-sm-12">
 		<input name="submit" type="submit" value="Bewerken" class="btn btn-default btn-lg btn-block">
 	</div>
+</form>
+</body>
+</html>

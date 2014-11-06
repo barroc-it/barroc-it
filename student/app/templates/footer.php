@@ -1,11 +1,9 @@
 <?php
 	require '../../config/config.php';
+	ob_start();
 ?>
-<link rel="stylesheet" href="../assets/css/style.css">
-<link rel="stylesheet" type="text/css" href="http://bootswatch.com/paper/bootstrap.min.css">
 
 <div class="footerclass">
-
 	<form action="" method="POST" class="commentForm">
 		<div class="form-group col-sm-12">
 			<label for="name">Name</label>
@@ -30,19 +28,36 @@
 
 	<?php
 
-	if (isset($_POST['submit'] ) ) {		
-		$name = $_POST['name'];
-		$department = $_POST['departmentchoice'];
-		$comment = $_POST['comment'];
-		$datetime = date("Y-m-d H:i:s");
-		$sql = "INSERT INTO comments (name, department, comment, datetime ) VALUES ('$name', '$department', '$comment', '$datetime')";
-		
-		if( $query = mysqli_query($con, $sql)) {
-			header('location: #');
-		} else {
-			echo "kan de query niet uitvoeren";
+		if (isset($_POST['submit'] ) ) {
+			$name = trim($_POST['name']);		
+			$textarea = trim($_POST['comment']);
+
+			if ($name == ""){
+				echo "<script type=\"text/javascript\">"; 
+				echo "alert('All fields must be filled in')"; 
+				echo "</script>";
+			} elseif ($textarea == "") {
+			  	echo "<script type=\"text/javascript\">"; 
+				echo "alert('All fields must be filled in')"; 
+				echo "</script>";
+			} else {
+				$name = $_POST['name'];
+				$department = $_POST['departmentchoice'];
+				$comment = $_POST['comment'];
+				$datetime = date("Y-m-d H:i:s");
+				$sql = "INSERT INTO comments (name, department, comment, datetime ) VALUES ('$name', '$department', '$comment', '$datetime')";
+
+				if(!$query = mysqli_query($con, $sql)) {
+					$msg = urlencode(trigger_error('Can´t upload comment'));
+					header('location: index.php?msg=' . $msg); 
+				} else {
+					
+					$msg = urlencode('Comment placed');
+					header('location: index.php?msg=' . $msg);
+				
+				}
+			}
 		}
-	}
 
 	$sql = "SELECT * FROM comments ORDER BY datetime DESC ";
 	$query = mysqli_query($con, $sql);
