@@ -48,8 +48,6 @@ while ($row = mysqli_fetch_assoc($query)) {
         </form>
     </div>
 <?php 
-}
-
 if (isset($_POST['submit'])){
     $datum = mysqli_real_escape_string($con,$_POST['datum']);
     $amount = mysqli_real_escape_string($con,$_POST['amount']);
@@ -59,20 +57,18 @@ if (isset($_POST['submit'])){
     $btw = mysqli_real_escape_string($con,$_POST['btw']);
     $description = mysqli_real_escape_string($con,$_POST['description']);
 
-    $sql  = "UPDATE invoices SET    datum = '$datum',
-                                    amount = '$amount',
-                                    paid = '$paid',
-                                    quintity = '$quintity',
+    $sql  = "UPDATE invoices SET    quintity = '$quintity',
                                     price = '$price',
-                                    btw = '$btw',
                                     description = '$description'
-                             WHERE projectNR = $projectNR";
+                             WHERE invoicesNR = $invoicesNR";
 
     if (!$query = mysqli_query($con, $sql)) {
         echo "update is niet goed gegaan";
-    } else {
         header('location:index.php');
+    } else {
+        header('location:activate.php?projectNR=' . $row['projectNR']);
     }
+}
 }
 ?>
 </div>

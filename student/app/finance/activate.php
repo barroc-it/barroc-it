@@ -60,13 +60,12 @@
                   $insert = "UPDATE invoices SET amount = '$amount1' WHERE invoicesNR = '$id' LIMIT 1";
                 $result = mysqli_query($con, $insert);
 						}
-						echo '<td><a href="activateEdit.php?invoicesNR="' . $row['invoicesNR'] . '>Edit</a></td>';
-						echo '<td><a href="deactivate.php?invoicesNR=' . $row['invoicesNR'] . '">' ?><button class="warning-btn">Deactivate</button></a></td>
+						echo '<td><a href="activateEdit.php?invoicesNR=' . $id . '">Edit</a></td>';
+						echo '<td><a href="deactivate.php?invoicesNR=' . $id . '">' ?><button class="warning-btn">Deactivate</button></a></td>
 			<?php 		echo '</tr>';
 						echo '</tr>';
-				}
-			
-	
+	}
+}
 /*
 	$sql = "SELECT * FROM invoices";
 		$query = mysqli_query($con, $sql);
@@ -87,10 +86,6 @@
 </tbody>
 </table>
 	<a href="index.php" class="btn btn-primary">Back</a>
-	<a class="btn btn-primary " href="addinvoices.php?invoicesNR=<?php echo $row['projectNR'] ?>">Add Invoices</a>
-	</body>
-	</html>
-
-<?php
-}
-?>
+	<a class="btn btn-primary " href="addinvoices.php?projectNR=<?php echo $projectNR ?>">Add Invoices</a>
+</body>
+</html>
