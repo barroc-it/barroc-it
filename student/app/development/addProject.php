@@ -73,7 +73,7 @@
 				<input class="col-md-6" type="text"  class="form-control" name="description" id="description">
 			</div>
 			<div class="form-group col-md-8">	
-				<INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;">
+				
 				<input name="submit" type="submit" value="Add Project" class="btn btn-primary">
 			</div>
 		</form>
