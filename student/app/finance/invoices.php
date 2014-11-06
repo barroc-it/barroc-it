@@ -14,7 +14,7 @@ header("location:../login.php");
 		</ul>
 	<div class="container">
 		<h1>Finance</h1>
-		<table class="table table-striped sortable">
+		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th>Companyname</th>
