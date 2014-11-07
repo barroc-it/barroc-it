@@ -6,7 +6,7 @@
 <?php
 
 if ( isset($_GET['appointmentNR']) ) {
-	$appointmentsNR = $_GET['appointmentNR'];
+	$appointmentNR = $_GET['appointmentNR'];
 	$sql = "SELECT * FROM appointments WHERE appointmentNR = '$appointmentNR'";
 
 	if (!$query = mysqli_query($con, $sql)) {

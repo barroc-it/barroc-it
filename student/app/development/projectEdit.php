@@ -84,7 +84,6 @@ if (isset($_POST['edit_customer'])){
     $email = mysqli_real_escape_string($con,$_POST['email']);
     $bkr_control = mysqli_real_escape_string($con,$_POST['bkr_control']);
 
->>>>>>> origin/master
     
 
     $sql  = "UPDATE projects SET   maintenance_contract = '$maintenance_contract',
@@ -99,6 +98,7 @@ if (isset($_POST['edit_customer'])){
     }else{
         header('location:index.php');
     }
+}
 
 
 }
