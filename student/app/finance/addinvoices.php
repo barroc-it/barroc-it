@@ -4,10 +4,10 @@
 
 	$invoicesNR = $_GET['invoicesNR'];
     $sql = "SELECT * FROM invoices WHERE invoicesNR = '$invoicesNR' ";
+    $customerNR = $row['customerNR'];
     $query = mysqli_query($con, $sql);
 
 while ($row = mysqli_fetch_assoc($query)) {
-    $customerNR = $row['customerNR'];
 	
 	if (isset($_POST['add_invoices'] ) ) {
         $customerNR = mysqli_real_escape_string($con, $_POST['customerNR']);
