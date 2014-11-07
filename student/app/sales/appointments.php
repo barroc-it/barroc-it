@@ -18,13 +18,8 @@
 <div class="container">
 	<div class="page-header">
 		<h2 class="col-md-12">Appointments</h2>
-	</div>
-	
+	</div>	
 	<div class="customers">
-
-		<?php echo '<a class="btn btn-primary col-md-2" href="add_appointments.php?customerNR=' . $_GET['customerNR'] . '">toevoegen</a>'; ?>
-<br>
-
 		<table class="table table-striped">
 			<tr>
 			<th>Companyname</th>
@@ -47,9 +42,8 @@
 				}
 		?>
 		</table>
-
+			<?php echo '<a class="btn btn-primary col-md-2" href="add_appointments.php?customerNR=' . $_GET['customerNR'] . '">Add</a>'; ?>
 	</div>
-
 </div>
 
 

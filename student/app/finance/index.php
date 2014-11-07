@@ -5,11 +5,14 @@ if($_SESSION['login'] == 2) {
 } else {
 header("location:../login.php");
 }
-	
 	include '../templates/header.php'; 
 	require '../../config/config.php';
 ?>
-
+<style>
+.tablewidth {
+	width: 87% !important;
+}
+</style>
 <div class="navibar">
 		<ul class="navibarbutton">
 			<li><a class="active" href="index.php">Home</a></li>
