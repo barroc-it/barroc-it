@@ -85,12 +85,12 @@
 </tbody>
 </table>
 <?php
-	$sql = "SELECT * FROM invoices WHERE customerNR = '$customerNR'";
+	$sql = "SELECT * FROM invoices WHERE customerNR = '$customerNR' LIMIT 1";
 	$query = mysqli_query($con, $sql);
 	
 	while($row = mysqli_fetch_assoc($query)) {
 ?>
-	<a href="index.php" class="btn btn-primary">Back</a> 
+	<a href="index.php" class="btn btn-primary">Back</a>
 	<a class="btn btn-primary " href="addinvoices.php?invoicesNR=<?php echo $row['invoicesNR'] ?>">Add Invoices</a>
 <?php
 	}
