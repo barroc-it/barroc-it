@@ -3,26 +3,17 @@
 	require '../../config/config.php'; 
 
 if (isset($_POST['editProject'])){
-
-
     $maintenance_contract = mysqli_real_escape_string($con,$_POST['maintenance_contract']);
     $software = mysqli_real_escape_string($con,$_POST['software']);
     $hardware = mysqli_real_escape_string($con,$_POST['hardware']);
     $description = mysqli_real_escape_string($con,$_POST['description']);
     $customerNR = mysqli_real_escape_string($con,$_GET['customerNR']);
 
-
-
-
 	if ( isset($_GET['customerNR']) ) {
 	$customerNR = $_GET['customerNR'];
 	$sql = "SELECT * FROM customers WHERE customerNR = '$customerNR'";
-
-
 	$query = mysqli_query($con, $sql);
-
-			
-			
+	
 while ($row = mysqli_fetch_assoc($query)){
 ?>
 
@@ -33,9 +24,6 @@ while ($row = mysqli_fetch_assoc($query)){
         <label class="col-md-4"for for="companyName">companyName</label>
         <input value="<?php echo $row['companyName'] ?>" class="col-md-8" type="text" customerNR="companyName" name="companyName">
     </div>
-
-
-
 	<div class="form-group">
 	    <label class="col-md-4"for="address">address</label>
 	    <input value="<?php echo $row['address'] ?>"class="col-md-8" type="text" id="address" name="address">
@@ -72,7 +60,6 @@ while ($row = mysqli_fetch_assoc($query)){
 </form>
 <?php 
 }
-
 }
 if (isset($_POST['edit_customer'])){
 
@@ -83,8 +70,6 @@ if (isset($_POST['edit_customer'])){
     $telephoneNumber = mysqli_real_escape_string($con,$_POST['telephoneNumber']);
     $email = mysqli_real_escape_string($con,$_POST['email']);
     $bkr_control = mysqli_real_escape_string($con,$_POST['bkr_control']);
-
-    
 
     $sql  = "UPDATE projects SET   maintenance_contract = '$maintenance_contract',
                                     software = '$software',
@@ -99,7 +84,6 @@ if (isset($_POST['edit_customer'])){
         header('location:index.php');
     }
 }
-
 
 }
 ?>
@@ -128,10 +112,5 @@ if (isset($_POST['edit_customer'])){
             </div>
         </div>
     </form>
-
-
-
-
-
 </body>
 </html>
