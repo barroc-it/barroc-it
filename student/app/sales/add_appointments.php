@@ -25,18 +25,18 @@ if ( isset($_POST['input_appointments']) ) {
 		$msg = urlencode(trigger_error('query niet gelukt. geprobeerde query was ' . $sql));
 		header('location: appointments.php?msg='.$msg);	
 	}
-<<<<<<< HEAD
 
+{
 	$msg = urlencode('appointment is succesvol toegevoegd.');
 	header ('location: appointments.php?customerNR='.$customerNR);
+
 }
 
-
-=======
+{
 		$msg = urlencode('appointment is succesvol toegevoegd.');
 		header ('location: appointments.php?msg='.$msg);
-	}
->>>>>>> origin/master
+}
+
 ?>
 
 <div class="container">

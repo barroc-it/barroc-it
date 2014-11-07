@@ -92,7 +92,7 @@ header("location:../login.php");
 			            $maxAmount = $row['maxAmount'];
 			          
 			            if ($amount2 > 100) {
-			               	echo '<td><span class"text-danger">Yes </span><a href="deactivefinance.php"><button class="warning-btn">Deactivate</button></a></td>';
+			               	echo '<td><span class"text-danger">Yes </span><a href="indexdeactivate.php?customerNR='. $row['customerNR'] . '"><button class="warning-btn">Deactivate</button></a></td>';
 			            } elseif ($maxAmount == 0 ) {
 			            	echo '<td>No project</td>';
 			            } else {
