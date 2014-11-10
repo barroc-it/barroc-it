@@ -105,20 +105,6 @@ header("location:../login.php");
 			        }	
 			        echo '</tr>';					
 				}
-
-						// $id = $row['projectNR'];
-						// $sql1 = "SELECT SUM(amount) FROM invoices WHERE projectNR = '$id'";
-						// $r_query = mysqli_query($con, $sql1);
-						// while ($row1 = mysqli_fetch_assoc($r_query)) 
-						// {
-									
-						// $implode = implode("", $row1);
-						// echo $implode;	
-
-						//  $insert = "UPDATE invoices SET amount  WHERE projectNR = '$id' LIMIT 1";
-      //          			 $result = mysqli_query($con, $insert);
-
-						// }				
 			?>
 		</tbody>
 	</table>

@@ -19,16 +19,13 @@ header("location:../login.php");
 		VALUES ('$customerNR','$maintenance_contract', '$software', '$hardware', '$description')";
 		$query = mysqli_query($con, $sql);
 
-		if(!$query) {
+		if($query) {
 
 
 
-			$msg = urlencode(trigger_error('Project toevoegen is mislukt' . $sql));
-			header('location: projecten.php?customerNR=' . $customerNR . '&' . $msg);
+			
+			header('location: projecten.php?customerNR=' . $customerNR);
 
-
-			$msg = urlencode(trigger_error('query niet gelukt' .$sql));
-			header('location:index.php?msg='.$msg);
 		}
 	}
 	?>
