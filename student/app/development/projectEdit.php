@@ -3,23 +3,19 @@
 	require '../../config/config.php'; 
 
 if (isset($_POST['editProject'])){
-
-
     $maintenance_contract = mysqli_real_escape_string($con,$_POST['maintenance_contract']);
     $software = mysqli_real_escape_string($con,$_POST['software']);
     $hardware = mysqli_real_escape_string($con,$_POST['hardware']);
     $description = mysqli_real_escape_string($con,$_POST['description']);
+
+    $projectNR = mysqli_real_escape_string($con,$_GET['projectNR']);
     $customerNR = mysqli_real_escape_string($con,$_GET['customerNR']);
-
-
-
 
 	if ( isset($_GET['customerNR']) ) {
 	$customerNR = $_GET['customerNR'];
 	$sql = "SELECT * FROM customers WHERE customerNR = '$customerNR'";
-
-
 	$query = mysqli_query($con, $sql);
+<<<<<<< HEAD
 
 			
 			
@@ -40,8 +36,11 @@ if (isset($_POST['edit_customer'])){
     $telephoneNumber = mysqli_real_escape_string($con,$_POST['telephoneNumber']);
     $email = mysqli_real_escape_string($con,$_POST['email']);
     $bkr_control = mysqli_real_escape_string($con,$_POST['bkr_control']);
+=======
+	
+while ($row = mysqli_fetch_assoc($query)){
+>>>>>>> origin/master
 
-    
 
     $sql  = "UPDATE projects SET   maintenance_contract = '$maintenance_contract',
                                     software = '$software',
@@ -49,7 +48,7 @@ if (isset($_POST['edit_customer'])){
                                     description = '$description'
 
 
-                               WHERE customerNR = $customerNR";
+                               WHERE projectNR = $projectNR";
     if(!$query = mysqli_query($con, $sql)){
         echo "update is niet goed gegaan".mysqli_error($con);
     }else{
@@ -58,9 +57,9 @@ if (isset($_POST['edit_customer'])){
 }
 
 
-}
+
 ?>
-        <form action="projectEdit.php?customerNR=<?php echo addslashes($_GET['customerNR']); ?>" method="POST" > 
+        <form action="projectEdit.php?customerNR=<?php echo $_GET['customerNR']; ?>" method="POST" > 
             <div class="form-group col-md-8">
                 <label class="col-md-3" for="maintenance_contract">maintenance_contract</label>
                     <select name="maintenance_contract" class="form-control">
@@ -85,11 +84,6 @@ if (isset($_POST['edit_customer'])){
             </div>
         </div>
     </form>
-
-
-
-
-
 </body>
 </html>
 

@@ -46,7 +46,7 @@ if (isset($_POST['submit'])){
         echo "update is niet goed gegaan";
         header('location:index.php');
     } else {
-        header('location:activate.php?projectNR=' . $row['projectNR']);
+        header('location:activate.php?customerNR=' . $row['customerNR']);
     }
 }
 }

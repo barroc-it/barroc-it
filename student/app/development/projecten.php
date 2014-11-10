@@ -61,7 +61,7 @@
 							echo '<td>' . $row['hardware'] . '</td>' ;
 							echo '<td>' . $row['description'] . '</td>' ;
 					 		echo '<td><a class=" btn btn-danger" href="deactivate.php?projectNR=' . $row['projectNR'] . '">deactivate</td>';
-					 		echo '<td><a class="btn btn-primary" href="projectEdit.php?customerNR=' . $row['customerNR'] . '">edit</td>'; 						
+					 		echo '<td><a class="btn btn-primary" href="projectEdit.php?projectNR=' . $row['projectNR'] . '&customerNR=' . $row['customerNR'] .'">edit</td>'; 						
 							echo '</tr>';
 						} 	
 				?>
