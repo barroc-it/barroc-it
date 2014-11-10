@@ -8,26 +8,29 @@ if($_SESSION['login'] == 2) {
 header("location:../login.php");
 }
 
-	$invoicesNR = $_GET['invoicesNR'];
-    $sql = "SELECT * FROM invoices WHERE invoicesNR = '$invoicesNR' ";
+	$customerNR = $_GET['customerNR'];
+    $sql = "SELECT * FROM invoices WHERE customerNR = '$customerNR' ";
     $customerNR = mysqli_query($con, "SELECT customerNR FROM invoices");
     $query = mysqli_query($con, $sql);
 
 while ($row = mysqli_fetch_assoc($query)) {
 	
-	if (isset($_POST['AddInvoice'] ) ) {
+	if (isset($_POST['add_invoices'] ) ) {
 		$datum = mysqli_real_escape_string($con, $_POST['datum']);
+        $projectNR = mysqli_real_escape_string($con, $_POST['projectNR']);
+        $btw = mysqli_real_escape_string($con, $_POST['btw']);
+        $active = mysqli_real_escape_string($con, $_POST['active']);
 		$quintity = mysqli_real_escape_string($con, $_POST['quintity']);
 		$price = mysqli_real_escape_string($con, $_POST['price']);
 		$description = mysqli_real_escape_string($con, $_POST['description']);
 		
-		$sql = "INSERT INTO invoices (datum, quintity, price, description)
-		VALUES ('$datum', $quintity', '$price', '$description')";
+		$sql = "INSERT INTO invoices (datum,  projectNR, btw, active,  quintity, price, description)
+		VALUES ('$datum', '$projectNR', '$btw', '$active', $quintity', '$price', '$description')";
 		$query = mysqli_query($con, $sql);
 
 		if(!$query) {
 			$msg = urlencode(trigger_error('Project toevoegen is mislukt' . $sql));
-			header('location: activate.php?customerNR=' . $customerNR  . $msg);
+			header('location: index.php'. $msg);
 		}
 		$msg = urlencode('project is succesvol toegevoegd');
 		header ('location:activate.php?customerNR='.$customerNR);
@@ -43,13 +46,25 @@ while ($row = mysqli_fetch_assoc($query)) {
                 <label class="col-md-3" for="datum">Datum:</label>
                 <input class="col-md-6" type="text"  class="form-control" name="datum" id="datum" placeholder="0000-00-00">
             </div>
+              <div class="form-group col-md-8">
+                <label class="col-md-3" for="projectNR">ProjectNR:</label>
+                <input class="col-md-6" type="text"  class="form-control" name="projectNR" id="projectNR">
+            </div>
             <div class="form-group col-md-8">
-                <label class="col-md-3" for="quintity">Quintity:</label>
+                <label class="col-md-3" for="quintity">Quantity:</label>
                 <input class="col-md-6" type="text"  class="form-control" name="quintity" id="quintity">
             </div>
             <div class="form-group col-md-8">
                 <label class="col-md-3" for="price">Price:</label>
                 <input class="col-md-6" type="text"  class="form-control" name="price" id="price">
+            </div>
+              <div class="form-group col-md-8">
+                <label class="col-md-3" for="btw">BTW:</label>
+                <input class="col-md-6" type="text"  class="form-control" name="btw" id="btw" >
+            </div>
+              <div class="form-group col-md-8">
+                <label class="col-md-3" for="active">Active:</label>
+                <input class="col-md-6" type="text"  class="form-control" name="active" id="active" >
             </div>
             <div class="form-group col-md-8">
                 <label class="col-md-3" for="description">Description:</label>

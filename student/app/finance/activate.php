@@ -97,7 +97,7 @@ header("location:../login.php");
 	while($row = mysqli_fetch_assoc($query)) {
 ?>
 	<a href="index.php" class="btn btn-primary">Back</a> 
-	<a class="btn btn-primary " href="addinvoices.php?invoicesNR=<?php echo $row['invoicesNR'] ?>">Add Invoices</a>
+	<a class="btn btn-primary " href="addinvoices.php?customerNR=<?php echo $row['customerNR'] ?>">Add Invoices</a>
 <?php
 	}
 ?>
