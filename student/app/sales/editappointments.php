@@ -5,9 +5,9 @@
 ?>
 <?php
 
-if ( isset($_GET['customerNR']) ) {
-	$appointmentNR = $_GET['customerNR'];
-	$sql = "SELECT * FROM appointments WHERE customerNR = '$customerNR'";
+if ( isset($_GET['appointmentNR']) ) {
+	$appointmentNR = $_GET['appointmentNR'];
+	$sql = "SELECT * FROM appointments WHERE appointmentNR = '$appointmentNR'";
 
 	if (!$query = mysqli_query($con, $sql)) {
 		echo 'Kan selectie niet uitvoeren';
@@ -22,14 +22,14 @@ if ( isset($_GET['customerNR']) ) {
 		$name = mysqli_real_escape_string($con, $_POST['name']);
 		$datum = mysqli_real_escape_string($con, $_POST['datum']);
 		$description = mysqli_real_escape_string($con, $_POST['description']);
-		$sql = "UPDATE appointments SET name = '$name', datum = '$datum', description = '$description' WHERE customerNR = '$customerNR'";
+		$sql = "UPDATE appointments SET name = '$name', datum = '$datum', description = '$description' WHERE appointmentNR = '$appointmentNR'";
 
 		if (!$query = mysqli_query($con, $sql)) {
 			echo 'Kan helaas niet updaten...';
 			die();
 		}
 		$msg = urlencode('Appointments changed!');
-		header('location: appointments.php?customerNR=' . $customerNR );
+		header('location: index.php?msg=' . $msg );
 	}
 ?>
 
