@@ -1,6 +1,11 @@
 <?php 
 	include '../templates/header.php'; 
 	require '../../config/config.php'; 
+	session_start();
+if($_SESSION['login'] == 1) {  
+} else {
+	header("location:../login.php");
+}
 
 if ( isset($_POST['input_appointments']) ) {
 	$name     			=mysqli_real_escape_string($con, $_POST['name']);
