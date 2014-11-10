@@ -59,7 +59,7 @@ if ( isset($_GET['appointmentNR']) ) {
 	</div>
 
 	<div class="form-group col-sm-12">
-		<input name="submit" type="submit" value="Edit" class="btn btn-default btn-lg btn-block">
+		<input name="submit" type="submit" value="Edit" class="btn btn-primary btn-lg btn-block">
 	</div>
 </form>
 </body>

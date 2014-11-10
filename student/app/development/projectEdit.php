@@ -65,7 +65,7 @@ while ($row = mysqli_fetch_assoc($query)){
                 <input class="col-md-6" type="text"  class="form-control" name="description" id="description">
             </div>
             <div class="form-group col-md-8">   
-                <input name="editProject" type="submit" value="editProject" class="btn btn-primary">
+                <input name="editProject" type="submit" value="edit Project" class="btn btn-primary">
             </div>
         </div>
     </form>
