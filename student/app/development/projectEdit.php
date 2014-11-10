@@ -11,35 +11,15 @@ if (isset($_POST['editProject'])){
     $projectNR = mysqli_real_escape_string($con,$_GET['projectNR']);
     $customerNR = mysqli_real_escape_string($con,$_GET['customerNR']);
 
+
 	if ( isset($_GET['customerNR']) ) {
 	$customerNR = $_GET['customerNR'];
 	$sql = "SELECT * FROM customers WHERE customerNR = '$customerNR'";
 	$query = mysqli_query($con, $sql);
-<<<<<<< HEAD
 
-			
-			
-while ($row = mysqli_fetch_assoc($query)){
-?>
-
-
-<?php 
-}
-
-}
-if (isset($_POST['edit_customer'])){
-
-    $companyName = mysqli_real_escape_string($con,$_POST['companyName']);
-    $address = mysqli_real_escape_string($con,$_POST['address']);
-    $postcode = mysqli_real_escape_string($con,$_POST['postcode']);
-    $residence = mysqli_real_escape_string($con,$_POST['residence']);
-    $telephoneNumber = mysqli_real_escape_string($con,$_POST['telephoneNumber']);
-    $email = mysqli_real_escape_string($con,$_POST['email']);
-    $bkr_control = mysqli_real_escape_string($con,$_POST['bkr_control']);
-=======
 	
 while ($row = mysqli_fetch_assoc($query)){
->>>>>>> origin/master
+
 
 
     $sql  = "UPDATE projects SET   maintenance_contract = '$maintenance_contract',
@@ -55,11 +35,11 @@ while ($row = mysqli_fetch_assoc($query)){
         header('location:index.php');
     }
 }
-
-
+}
+}
 
 ?>
-        <form action="projectEdit.php?customerNR=<?php echo $_GET['customerNR']; ?>" method="POST" > 
+        <form action="projectEdit.php?customerNR=<?php echo $_GET['customerNR'] . '&projectNR=' . $_GET['projectNR'] ?>" method="POST" > 
             <div class="form-group col-md-8">
                 <label class="col-md-3" for="maintenance_contract">maintenance_contract</label>
                     <select name="maintenance_contract" class="form-control">
@@ -86,4 +66,3 @@ while ($row = mysqli_fetch_assoc($query)){
     </form>
 </body>
 </html>
-
