@@ -1,6 +1,11 @@
 <?php 
 	include '../templates/header.php'; 
 	require '../../config/config.php';
+	session_start();
+if($_SESSION['login'] == 3) {  
+} else {
+header("location:../login.php");
+}
 
 // checkt of hij verbinding heeft met database
 	if (!$con) {

@@ -1,6 +1,11 @@
 <?php 
 	include '../templates/header.php'; 
 	require '../../config/config.php'; 
+    session_start();
+if($_SESSION['login'] == 3) {  
+} else {
+header("location:../login.php");
+}
 
 if (isset($_POST['editProject'])){
     $maintenance_contract = mysqli_real_escape_string($con,$_POST['maintenance_contract']);

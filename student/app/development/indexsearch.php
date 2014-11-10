@@ -1,6 +1,11 @@
 <?php
 	require '../../config/config.php';
 	include '../templates/header.php';
+	session_start();
+if($_SESSION['login'] == 3) {  
+} else {
+header("location:../login.php");
+}
 
 $search = mysqli_real_escape_string($con, $_GET['search']);
 
