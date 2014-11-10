@@ -2,6 +2,12 @@
 <?php 
 	include '../templates/header.php'; 
 	require '../../config/config.php';
+	session_start();
+if($_SESSION['login'] == 2) {  
+
+} else {
+header("location:../login.php");
+}
 ?>
 <?php
 
