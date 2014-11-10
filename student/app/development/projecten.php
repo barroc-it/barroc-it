@@ -43,7 +43,7 @@
 					<th>Maintenance contract</th>
 					<th>Software</th>
 					<th>Hardware</th>
-					<th>Discription</th>
+					<th>Description</th>
 					<th>Deactivate</th>
 					<th>Edit</th>
 				</tr>

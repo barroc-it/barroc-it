@@ -25,7 +25,7 @@ header("location:../login.php");
 </header>
 	<div class="container">
 		<div class="page-header">
-			<h2>Development Cusomers</h2>
+			<h2>Development Customers</h2>
 		</div>
 		<table class="table table-striped">
 			<thead>

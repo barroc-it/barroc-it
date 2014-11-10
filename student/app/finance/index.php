@@ -122,7 +122,7 @@ header("location:../login.php");
 			?>
 		</tbody>
 	</table>
-		<a class="btn btn-primary col-md-2" href="add_custumers.php">toevoegen</a><br>
+	
 <?php 
 	include '../templates/footer.php'; 
 	?>

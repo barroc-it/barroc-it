@@ -21,15 +21,12 @@ if ( isset($_GET['customerNR']) ) {
 	if ( isset($_POST['submit']) ) {
 		$companyName = mysqli_real_escape_string($con, $_POST['companyName']);
 		$description = mysqli_real_escape_string($con, $_POST['description']);
-		$bankNumber = mysqli_real_escape_string($con, $_POST['bankNumber']);
 		$credit = mysqli_real_escape_string($con, $_POST['credit']);
-		$salesAmount = mysqli_real_escape_string($con, $_POST['salesAmount']);
 		$maxAmount = mysqli_real_escape_string($con, $_POST['maxAmount']);
-		$largeReservationNumber = mysqli_real_escape_string($con, $_POST['largeReservationNumber']);
 		$bkr_control = mysqli_real_escape_string($con, $_POST['bkr_control']);
 	
-		$sql = "UPDATE customers SET companyName = '$companyName',  description = '$description', bankNumber = '$bankNumber', credit = '$credit',  	
-		salesAmount = '$salesAmount', maxAmount = '$maxAmount', largeReservationNumber = '$largeReservationNumber', bkr_control = '$bkr_control' WHERE customerNR = '$customerNR'";
+		$sql = "UPDATE customers SET companyName = '$companyName',  description = '$description',  credit = '$credit',  	
+		maxAmount = '$maxAmount',  bkr_control = '$bkr_control' WHERE customerNR = '$customerNR'";
 
 		if (!$query = mysqli_query($con, $sql)) {
 			echo 'Kan helaas niet updaten...';
@@ -58,20 +55,16 @@ if ( isset($_GET['customerNR']) ) {
 		<input type="text" value='<?php echo $row['companyName']; ?>' class="form-control" name="companyName" customerNR="companyName">
 	</div>
 	<div class="form-group col-sm-12">
-		<label for="description">Omschrijving</label>
+		<label for="description">Description</label>
 		<input type="text" value='<?php echo $row['description']; ?>' class="form-control" name="description" customerNR="description">
-	</div>
-	<div class="form-group col-sm-12">
-		<label for="bankNumber">Bank account number</label>
-		<input type="text" value='<?php echo $row['bankNumber']; ?>' class="form-control" name="bankNumber" customerNR="bankNumber">
 	</div>
 	<div class="form-group col-sm-12">
 		<label for="maxAmount">limit</label>
 		<input type="text" value='<?php echo $row['maxAmount']; ?>' class="form-control" name="maxAmount" customerNR="maxAmount">
 	</div>
-		<div class="form-group col-sm-12">
-		<label for="largeReservationNumber">Reservation number</label>
-		<input type="text" value='<?php echo $row['largeReservationNumber']; ?>' class="form-control" name="largeReservationNumber" customerNR="largeReservationNumber">
+	<div class="form-group col-sm-12">
+		<label for="credit">Credit</label>
+		<input type="text" value='<?php echo $row['credit']; ?>' class="form-control" name="credit" customerNR="credit">
 	</div>
 		<div class="form-group col-md-8">
 			<label class="col-md-3" for="bkr_control">BKR</label>
@@ -89,7 +82,7 @@ if ( isset($_GET['customerNR']) ) {
 	</div>
 	<div class="form-group col-sm-12">
 		<input Type="button" VALUE="Cancel" onClick="history.go(-1);return true;" class="btn btn-primary btn-lg btn-block">
-		<input name="submit" type="submit" value="Bewerken" class="btn btn-primary btn-lg btn-block">
+		<input name="submit" type="submit" value="Edit" class="btn btn-primary btn-lg btn-block">
 	</div>
 
 </body>

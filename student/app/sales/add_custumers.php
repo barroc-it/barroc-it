@@ -40,7 +40,7 @@
 		        <input class="col-md-6" type="email" id="email" name="email">
 		    </div>
 <br>
-			<input type="submit" value="toevoegen" name="input_customer" class="btn btn-primary col-md-4">
+			<input type="submit" value="Add" name="input_customer" class="btn btn-primary col-md-4">
 			<br>
 			<br>
 		</form>
