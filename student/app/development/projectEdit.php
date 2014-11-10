@@ -32,7 +32,7 @@ while ($row = mysqli_fetch_assoc($query)){
     if(!$query = mysqli_query($con, $sql)){
         echo "update is niet goed gegaan".mysqli_error($con);
     }else{
-        header('location:index.php');
+        header('location:projecten.php?customerNR='. $customerNR);
     }
 }
 }
