@@ -33,6 +33,7 @@ header("location:../login.php");
 					<th>Company name</th>
 					<th>Contact person</th>
 					<th>Projects</th>
+				
 					<th>Limit</th>
 					<th>Credit</th>
 				</tr>
@@ -49,8 +50,9 @@ header("location:../login.php");
 
 									echo '<td><span class="textdanger"><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['companyName'] . '</a></span></td>';
 								echo '<td><span class="textdanger"><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['contactPerson'] . '</a></span></td>';
-							
-								echo '<td><span class="textdanger"><a href="projecten.php?customerNR=' . $row['customerNR'] . '">€' . $row['credit'] . ',-</a></span></td>';
+							$sql = $con->query("SELECT * FROM projects WHERE customerNR = '".$row['customerNR']."'");
+								$amountProjects = mysqli_num_rows($sql);
+								echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $amountProjects . '</a></td>';
 											
 												$sql = $con->query("SELECT * FROM projects WHERE customerNR = '".$row['customerNR']."'");
 								
@@ -67,7 +69,7 @@ header("location:../login.php");
 					if ($credit1 < 0) {
 						echo '<td class="textdanger">-€'  . $credit2 . ',-</td>';
 					} else {
-					
+						echo '<td>€'  . $credit1 . ',-</td>'; 
 					}
 							
 								
