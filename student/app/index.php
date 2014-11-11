@@ -2,9 +2,7 @@
 session_start();
 require '../config/config.php'; 
 require 'templates/header.php';
- ?>
 
-<?php 
 
 if (!isset($_SESSION['name'])) {
 	$msg = urlencode('u dient ingelogd te zijn');
