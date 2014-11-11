@@ -33,45 +33,49 @@ header("location:../login.php");
 					<th>Company name</th>
 					<th>Contact person</th>
 					<th>Projects</th>
-					<th>Last contact date</th>
-					<th>Balance</th>
 					<th>Limit</th>
+					<th>Credit</th>
 				</tr>
 			</thead>			
 			<tbody class="projects">
 				<?php 
-					$customerNR = 2;
-					$sql = "SELECT * FROM customers ORDER BY balance ASC";
+					$sql = "SELECT * FROM customers ";
 
 					$query = mysqli_query($con, $sql);
 					
 					while ($row = mysqli_fetch_assoc($query)) {
+							$id = $row['customerNR'];
 						echo '<tr>';
-							if ($row['balance'] > $row['maxAmount']) {
-								echo '<td><span class="textdanger"><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['companyName'] . '</a></span></td>';
+
+									echo '<td><span class="textdanger"><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['companyName'] . '</a></span></td>';
 								echo '<td><span class="textdanger"><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['contactPerson'] . '</a></span></td>';
+							
+								echo '<td><span class="textdanger"><a href="projecten.php?customerNR=' . $row['customerNR'] . '">€' . $row['credit'] . ',-</a></span></td>';
+											
+												$sql = $con->query("SELECT * FROM projects WHERE customerNR = '".$row['customerNR']."'");
 								
-								$sql = $con->query("SELECT * FROM projects WHERE customerNR = '".$row['customerNR']."'");
+							
+
 								$amountProjects = mysqli_num_rows($sql);
-								echo '<td><span class="textdanger"><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $amountProjects . '</a></span></td>';
+									echo '<td>€'  . $row['maxAmount'] . ',-</td>';
+
+					$limiet = $row['maxAmount'];
+					$totaalbedrag = $row['salesAmount'];
+					$credit1 = $limiet - $totaalbedrag;
+					$credit2 = 0 - $credit1;
+
+					if ($credit1 < 0) {
+						echo '<td class="textdanger">-€'  . $credit2 . ',-</td>';
+					} else {
+					
+					}
+							
 								
-								echo '<td><span class="textdanger"><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['lastcontactDate'] . '</a></span></td>';	
-								echo '<td><span class="textdanger"><a href="projecten.php?customerNR=' . $row['customerNR'] . '">€' . $row['balance'] . ',-</a></span></td>';
-								echo '<td><span class="textdanger"><a href="projecten.php?customerNR=' . $row['customerNR'] . '">€' . $row['maxAmount'] . ',-</a></span></td>';
-							} else {
-								echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['companyName'] . '</a></td>';
-								echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['contactPerson'] . '</a></td>';
 								
-								$sql = $con->query("SELECT * FROM projects WHERE customerNR = '".$row['customerNR']."'");
-								$amountProjects = mysqli_num_rows($sql);
-								echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $amountProjects . '</a></td>';
-								
-								echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['lastcontactDate'] . '</a></td>';	
-								echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">€' . $row['balance'] . ',-</a></td>';
-								echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">€' . $row['maxAmount'] . ',-</a></td>';
+					
 							}
 						echo '</tr>';
-						}
+
 					?>
 			</tbody>		
 		</table>
