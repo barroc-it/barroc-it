@@ -77,29 +77,30 @@
     <?php 
     include '../templates/header.php';
     require '../../config/config.php';
+
     session_start();
-if($_SESSION['login'] == 2) {  
-} else {
-header("location:../login.php");
-}
+    if($_SESSION['login'] == 2) {  
+    } else {
+        header("location:../login.php");
+    }
 
     $customerNR = $_GET['customerNR'];
     
     if (isset($_POST['submit'] ) ) {
         $datum = mysqli_real_escape_string($con, $_POST['datum']);
         $projectNR = mysqli_real_escape_string($con, $_POST['projectNR']);
-        $btw = mysqli_real_escape_string($con, $_POST['btw']);
-        $active = mysqli_real_escape_string($con, $_POST['active']);
         $quintity = mysqli_real_escape_string($con, $_POST['quintity']);
         $price = mysqli_real_escape_string($con, $_POST['price']);
         $description = mysqli_real_escape_string($con, $_POST['description']);
            
         $sql = "INSERT INTO invoices (customerNR, datum,  projectNR, btw, active,  quintity, price, description)
-        VALUES ('$customerNR' '$datum', '$projectNR', '$btw', '$active', $quintity', '$price', '$description')";
+        VALUES ('$customerNR' '$datum', '$projectNR', 21, 1, $quintity', '$price', '$description')";
         $query = mysqli_query($con, $sql);
 
         if($query) {      
             header('location: projecten.php?customerNR=' . $customerNR);
+        } else {
+            
         }
     }
     ?>
