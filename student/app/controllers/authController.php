@@ -23,7 +23,7 @@ if ( isset($_POST['authUser'])){
     }
     else{
 
-            $msg = urlencode('Gebruikersnaam of wachtwoord onjuist');
+            $msg = urlencode('Username and password incorect');
             header('location: ../login.php?msg=' . $msg );
         }
 }
@@ -31,6 +31,6 @@ if ( isset($_POST['authUser'])){
 //handelt de uitlog af 
 if (isset($_GET['logout'])) {
     session_destroy();
-    $msg = urlencode("u bent succelsvol uitgelogd");
+    $msg = urlencode("You have successfully logged out");
     header('location:../login.php?msg='. $msg );    
 }
