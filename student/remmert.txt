@@ -1,0 +1,3 @@
+$sql = $con->query("SELECT * FROM projects WHERE customerNR = '".$row['customerNR']."'");
+								$amountProjects = mysqli_num_rows($sql);
+								echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $amountProjects . '</a></td>';
