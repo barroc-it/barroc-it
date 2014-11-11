@@ -21,6 +21,20 @@ header("location:../login.php");
 	</form>
 	<a class="btn btn-info col-md-2 col-md-offset-2 btn-sm" href="logout.php">logout</a>
 </div>
+
+<?php
+	if ( isset($_GET['customerNR']) ) {
+		$customerNR = $_GET['customerNR'];
+		$sql = "SELECT * FROM customers WHERE customerNR = '$customerNR'";
+
+		if (!$query = mysqli_query($con, $sql)) {
+			echo '<a href="index.php"><button>Kan selectie niet uitvoeren, Klik hier om terug te gaan.</button></a>';
+			die();
+			}
+		$row = mysqli_fetch_assoc($query);
+		}
+?>
+
 	<div class="container">
 		<h1>Finance panel Activate</h1>
 		<table class="table table-striped">
@@ -37,6 +51,8 @@ header("location:../login.php");
 				</tr>
 			</thead>
 					
+	<a href="index.php" class="btn btn-primary">Back</a> 
+		<a class="btn btn-primary " href="addinvoices.php?customerNR=<?php echo $customerNR ?>">AddInvoices</a>
 			<tbody class="finance">
 				<?php
 
@@ -71,6 +87,7 @@ header("location:../login.php");
 			<?php 		echo '</tr>';
 	}
 }
+
 /*
 	$sql = "SELECT * FROM invoices";
 		$query = mysqli_query($con, $sql);
@@ -90,16 +107,5 @@ header("location:../login.php");
 					?>
 </tbody>
 </table>
-<?php
-	$sql = "SELECT * FROM invoices WHERE customerNR = '$customerNR' LIMIT 1";
-	$query = mysqli_query($con, $sql);
-	
-	while($row = mysqli_fetch_assoc($query)) {
-?>
-	<a href="index.php" class="btn btn-primary">Back</a> 
-	<a class="btn btn-primary " href="addinvoices.php?customerNR=<?php echo $row['customerNR'] ?>">Add Invoices</a>
-<?php
-	}
-?>
 </body>
 </html>

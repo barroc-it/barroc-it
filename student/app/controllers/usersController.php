@@ -44,16 +44,18 @@ if ( isset($_POST['input_customer']) )
 	$companyName      	=mysqli_real_escape_string($con, $_POST['companyName']);
 	$address 			=mysqli_real_escape_string($con, $_POST['address']);
 	$postcode    		=mysqli_real_escape_string($con, $_POST['postcode']);
+	$maxAmount    		=mysqli_real_escape_string($con, $_POST['maxAmount']);
 	$residence      	=mysqli_real_escape_string($con, $_POST['residence']);
 	$telephonenumber    =mysqli_real_escape_string($con, $_POST['telephonenumber']);
 	$email           	=mysqli_real_escape_string($con, $_POST['email']);
 		
 
-	$sql = "INSERT INTO customers (companyName, address, postcode, residence, telephonenumber, email)
+	$sql = "INSERT INTO customers (companyName, address, postcode, maxAmount residence, telephonenumber, email)
 			VALUES (
 					'$companyName',
 					'$address',
 					'$postcode',
+					1000,
 					'$residence',
 					'$telephonenumber',
 					'$email'
