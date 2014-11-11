@@ -93,7 +93,7 @@
         $price = mysqli_real_escape_string($con, $_POST['price']);
         $description = mysqli_real_escape_string($con, $_POST['description']);
            
-        $sql = "INSERT INTO invoices (customerNR, datum,  projectNR, btw, active,  quintity, price, description)
+        $sql = "INSERT INTO invoices (customerNR, datum, projectNR, btw, active, quintity, price, description)
         VALUES ('$customerNR' '$datum', '$projectNR', 21, 1, $quintity', '$price', '$description')";
         $query = mysqli_query($con, $sql);
 
@@ -125,14 +125,6 @@
             <div class="form-group col-md-8">
                 <label class="col-md-3" for="price">Price:</label>
                 <input class="col-md-6" type="text"  class="form-control" name="price" id="price">
-            </div>
-              <div class="form-group col-md-8">
-                <label class="col-md-3" for="btw">BTW:</label>
-                <input class="col-md-6" type="text"  class="form-control" name="btw" id="btw" >
-            </div>
-              <div class="form-group col-md-8">
-                <label class="col-md-3" for="active">Active:</label>
-                <input class="col-md-6" type="text"  class="form-control" name="active" id="active" >
             </div>
             <div class="form-group col-md-8">
                 <label class="col-md-3" for="description">Description:</label>
