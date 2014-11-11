@@ -95,7 +95,7 @@
         $description = mysqli_real_escape_string($con, $_POST['description']);
            
         $sql = "INSERT INTO invoices (customerNR, datum, projectNR, btw, active, quintity, price, description)
-<<<<<<< HEAD
+
         VALUES ('$customerNR', '$datum', '$projectNR', 21, 0, '$quintity', '$price', '$description')";
 
         $query = mysqli_query($con, $sql);
@@ -104,16 +104,8 @@
             echo "doet het niet";
         } else {
             header('location: activate.php?customerNR=' . $customerNR);
-=======
-        VALUES ('$customerNR' '$datum', '$projectNR', 21, 1, $quintity', '$price', '$description')";
-        $query = mysqli_query($con, $sql);
 
-        if($query) {      
-            header('location: projecten.php?customerNR=' . $customerNR);
-        } else {
-            
->>>>>>> origin/master
-        }
+     }
     }
     ?>
 
