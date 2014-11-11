@@ -32,13 +32,10 @@ header("location:../login.php");
 				<tr>
 					<th>Date</th>
 					<th>amount</th>
-					<th>paid</th>
 					<th>quintity</th>
 					<th>price</th>
 					<th>BTW</th>
-					<th>Description</th>
-					<th>Edit</th>
-					<th>Deactivate</th>
+					<th>Activate</th>
 				</tr>
 			</thead>
 					
@@ -51,11 +48,9 @@ header("location:../login.php");
 							echo '<tr>';
 							echo '<td>' . $row['datum'] . '</td>';
 							echo '<td>' . $row['amount'] . '</td>';
-							echo '<td>' . $row['paid'] . '</td>';
 							echo '<td>' . $row['quintity'] . '</td>';
 							echo '<td>' . $row['price'] . '</td>';
 							echo '<td>' . $row['btw'] . '</td>';
-							echo '<td><a href="activateEdit.php">Edit</a></td>';
 							echo '<td><a href="activating.php?invoicesNR=' . $row['invoicesNR'] . '">' ?><button class="edit-btn">Activate</button></a></td>
 				<?php
 							echo '</tr>';
